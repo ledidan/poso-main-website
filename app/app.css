@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  
+  --color-ocha-primary: #00c94a;
+  --color-ocha-dark: #191b1e;
+  --color-ocha-gray: #4f5664;
+  --color-ocha-gray-dark: #505663;
+  --color-ocha-bg: #f8f9fc;
+}
+
+html,
+body {
+  @apply bg-white font-sans;
+
+  @media (prefers-color-scheme: dark) {
+    color-scheme: dark;
+  }
+}

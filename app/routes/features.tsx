@@ -1,0 +1,215 @@
+import type { Route } from "./+types/features";
+import { Link } from "react-router";
+
+export function meta({}: Route.MetaArgs) {
+  return [
+    { title: "Tính năng - Ocha POS" },
+    { name: "description", content: "Khám phá các tính năng mạnh mẽ của Ocha POS" },
+  ];
+}
+
+export default function Features() {
+  const features = [
+    {
+      category: "Quản lý bán hàng",
+      items: [
+        {
+          title: "Bán hàng nhanh chóng",
+          description: "Giao diện thân thiện, xử lý đơn hàng chỉ trong vài giây",
+        },
+        {
+          title: "Quản lý đơn hàng",
+          description: "Theo dõi trạng thái đơn hàng theo thời gian thực",
+        },
+        {
+          title: "In hóa đơn",
+          description: "In hóa đơn nhiệt nhanh chóng, hỗ trợ nhiều loại máy in",
+        },
+      ],
+    },
+    {
+      category: "Quản lý kho",
+      items: [
+        {
+          title: "Tồn kho thời gian thực",
+          description: "Cập nhật tồn kho tự động sau mỗi giao dịch",
+        },
+        {
+          title: "Cảnh báo hết hàng",
+          description: "Nhận thông báo khi hàng hóa sắp hết",
+        },
+        {
+          title: "Nhập xuất kho",
+          description: "Quản lý nhập xuất hàng hóa chi tiết, có lịch sử đầy đủ",
+        },
+      ],
+    },
+    {
+      category: "Báo cáo & Thống kê",
+      items: [
+        {
+          title: "Báo cáo doanh thu",
+          description: "Báo cáo doanh thu chi tiết theo ngày, tuần, tháng, năm",
+        },
+        {
+          title: "Sản phẩm bán chạy",
+          description: "Phân tích sản phẩm bán chạy, doanh thu theo từng món",
+        },
+        {
+          title: "Thống kê nhân viên",
+          description: "Theo dõi hiệu suất làm việc của từng nhân viên",
+        },
+      ],
+    },
+    {
+      category: "Quản lý nhân viên",
+      items: [
+        {
+          title: "Phân quyền chi tiết",
+          description: "Cấu hình quyền truy cập cho từng nhân viên",
+        },
+        {
+          title: "Chấm công",
+          description: "Quản lý giờ làm việc, ca làm việc tự động",
+        },
+        {
+          title: "Tính lương",
+          description: "Tính lương tự động dựa trên giờ làm việc",
+        },
+      ],
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Header */}
+      <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <nav className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <Link to="/" className="flex items-center">
+              <h1 className="text-2xl font-bold text-[#191b1e]">Ocha POS</h1>
+            </Link>
+            <div className="hidden md:flex items-center space-x-8">
+              <Link to="/products" className="text-[#4f5664] hover:text-[#00c94a] transition-colors">
+                Sản phẩm
+              </Link>
+              <Link to="/features" className="text-[#00c94a] font-semibold">
+                Tính năng
+              </Link>
+              <Link to="/faq" className="text-[#4f5664] hover:text-[#00c94a] transition-colors">
+                FAQ
+              </Link>
+              <Link to="/news" className="text-[#4f5664] hover:text-[#00c94a] transition-colors">
+                Tin tức
+              </Link>
+              <Link to="/contact" className="text-[#4f5664] hover:text-[#00c94a] transition-colors">
+                Liên hệ
+              </Link>
+              <Link to="/about" className="text-[#4f5664] hover:text-[#00c94a] transition-colors">
+                Giới thiệu
+              </Link>
+              <Link to="/contact" className="bg-[#00c94a] text-white px-6 py-2 rounded-md font-semibold hover:bg-[#00b845] transition-colors">
+                Dùng thử miễn phí
+              </Link>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      {/* Hero Section */}
+      <section className="bg-[#f8f9fc] py-20">
+        <div className="container mx-auto px-4">
+          <h1 className="text-5xl font-bold text-[#191b1e] text-center mb-6">
+            Tính năng Ocha POS
+          </h1>
+          <p className="text-xl text-[#4f5664] text-center max-w-3xl mx-auto opacity-80">
+            Khám phá các tính năng mạnh mẽ giúp quản lý nhà hàng hiệu quả hơn
+          </p>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="space-y-16">
+            {features.map((category, categoryIndex) => (
+              <div key={categoryIndex}>
+                <h2 className="text-3xl font-bold text-[#191b1e] mb-8 text-center">
+                  {category.category}
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  {category.items.map((item, itemIndex) => (
+                    <div
+                      key={itemIndex}
+                      className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow"
+                    >
+                      <h3 className="text-xl font-semibold text-[#191b1e] mb-3">
+                        {item.title}
+                      </h3>
+                      <p className="text-[#4f5664] opacity-80">
+                        {item.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="bg-[#00c94a] py-16">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold text-white mb-4">
+            Trải nghiệm tất cả tính năng ngay hôm nay
+          </h2>
+          <Link
+            to="/contact"
+            className="bg-white text-[#00c94a] px-8 py-4 rounded-md font-semibold text-lg hover:bg-gray-100 transition-colors inline-block mt-4"
+          >
+            Dùng thử miễn phí
+          </Link>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-[#191b1e] text-white py-12">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <h4 className="text-xl font-bold mb-4">Ocha POS</h4>
+              <p className="text-gray-400 text-sm">
+                Giải pháp quản lý nhà hàng hàng đầu
+              </p>
+            </div>
+            <div>
+              <h5 className="font-semibold mb-4">Sản phẩm</h5>
+              <ul className="space-y-2 text-gray-400 text-sm">
+                <li><Link to="/products" className="hover:text-white transition-colors">Sản phẩm</Link></li>
+                <li><Link to="/features" className="hover:text-white transition-colors">Tính năng</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h5 className="font-semibold mb-4">Hỗ trợ</h5>
+              <ul className="space-y-2 text-gray-400 text-sm">
+                <li><Link to="/faq" className="hover:text-white transition-colors">FAQ</Link></li>
+                <li><Link to="/contact" className="hover:text-white transition-colors">Liên hệ</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h5 className="font-semibold mb-4">Công ty</h5>
+              <ul className="space-y-2 text-gray-400 text-sm">
+                <li><Link to="/about" className="hover:text-white transition-colors">Giới thiệu</Link></li>
+                <li><Link to="/news" className="hover:text-white transition-colors">Tin tức</Link></li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
+            <p>© 2024 Ocha POS. Tất cả quyền được bảo lưu.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
