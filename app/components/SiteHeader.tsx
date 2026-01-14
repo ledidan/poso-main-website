@@ -101,7 +101,7 @@ export function SiteHeader({ variant }: { variant: HeaderVariant }) {
                           </div>
                         </div>
                         <h3 className="font-semibold text-gray-900 group-hover:text-poso-primary">
-                          Ocha POS
+                          POSO POS
                         </h3>
                         <p className="text-sm text-gray-500 mt-1">
                           Dành cho Quản lý và Nhân viên
@@ -119,7 +119,7 @@ export function SiteHeader({ variant }: { variant: HeaderVariant }) {
                           </div>
                         </div>
                         <h3 className="font-semibold text-gray-900 group-hover:text-poso-primary">
-                          Ocha Boss
+                          POSO Boss
                         </h3>
                         <p className="text-sm text-gray-500 mt-1">
                           Dành cho Chủ Nhà Hàng

@@ -1,6 +1,6 @@
 import type { Route } from "./+types/boss";
 import { Link } from "react-router";
-import { PageHero } from "../../components/PageHero";
+import { useState } from "react";
 import { SiteHeader } from "../../components/SiteHeader";
 
 export function meta({}: Route.MetaArgs) {
@@ -9,187 +9,227 @@ export function meta({}: Route.MetaArgs) {
     {
       name: "description",
       content:
-        "Khám phá các tính năng mạnh mẽ của POSO Boss - Ứng dụng quản lý cho chủ quán",
+        "Tính năng POSO Boss - Ứng dụng quản lý cho chủ quán, mọi báo cáo trong tầm tay",
     },
   ];
 }
 
 export default function FeaturesBoss() {
-  const features = [
-    {
-      num: "01",
-      title: "Quản lý giao hàng MỚI",
-      description:
-        "Tích hợp dịch vụ giao thức ăn trực tuyến ShopeeFood.vn giúp quản lý và tự động hóa giao hàng. Xem và xử lý đơn hàng giao hàng từ xa.",
-      icon: "🚚",
-    },
-    {
-      num: "02",
-      title: "Quản lý thực đơn",
-      description:
-        "Quản lý thực đơn từ xa với khả năng thêm, sửa, xóa món ăn. Phân loại món theo danh mục và quản lý giá cả từ ứng dụng mobile.",
-      icon: "📋",
-    },
-    {
-      num: "03",
-      title: "Quản lý bàn",
-      description:
-        "Theo dõi trạng thái bàn từ xa. Quản lý đặt bàn, chuyển bàn và thanh toán từ ứng dụng mobile.",
-      icon: "🪑",
-    },
-    {
-      num: "04",
-      title: "Quản lý đơn hàng",
-      description:
-        "Tổng hợp đơn hàng từ nhiều kênh: tại quán, giao hàng, đặt bàn. Xử lý và theo dõi trạng thái đơn hàng từ xa.",
-      icon: "📦",
-    },
-    {
-      num: "05",
-      title: "Báo cáo thời gian thực",
-      description:
-        "Báo cáo doanh thu, sản phẩm bán chạy được cập nhật theo thời gian thực. Xem báo cáo từ mọi nơi trên ứng dụng mobile.",
-      icon: "📊",
-    },
-    {
-      num: "06",
-      title: "Quản lý hàng tồn",
-      description:
-        "Theo dõi tồn kho từ xa, cảnh báo khi hàng sắp hết. Quản lý nhập xuất hàng hóa từ ứng dụng mobile.",
-      icon: "📦",
-    },
-    {
-      num: "07",
-      title: "Quản lý nhân viên",
-      description:
-        "Phân quyền chi tiết cho từng nhân viên. Quản lý ca làm việc, chấm công từ ứng dụng mobile.",
-      icon: "👥",
-    },
-  ];
+  const featureList = [
+    { id: "activity", label: "Hoạt động" },
+    { id: "currentBills", label: "Hóa đơn hiện tại" },
+    { id: "revenue", label: "Tổng quan doanh thu" },
+    { id: "categoryTop", label: "Danh mục bán chạy nhất" },
+    { id: "itemTop", label: "Mặt hàng bán chạy" },
+    { id: "otherReports", label: "Báo cáo khác" },
+  ] as const;
+
+  const [activeFeatureId, setActiveFeatureId] =
+    useState<(typeof featureList)[number]["id"]>("activity");
+
+  const activeFeature =
+    activeFeatureId === "activity"
+      ? {
+          title: "Hoạt động",
+          summary:
+            "Cập nhật tình hình kinh doanh theo thời gian thực, mọi biến động đều được hiển thị ngay trên ứng dụng.",
+          bullets: [
+            "Theo dõi và xem từng giao dịch theo: hóa đơn, thực đơn, nhân viên, phương thức thanh toán",
+            "Xem chi tiết dòng tiền ra vào trong từng khung giờ",
+            "Giúp theo dõi vận hành của quán sát sao hơn dù bạn ở bất cứ đâu",
+          ],
+        }
+      : activeFeatureId === "currentBills"
+      ? {
+          title: "Hóa đơn hiện tại",
+          summary:
+            "Nắm được tất cả hóa đơn đang mở và trạng thái thanh toán theo thời gian thực.",
+          bullets: [
+            "Xem danh sách hóa đơn đang phục vụ tại quán",
+            "Kiểm tra nhanh giá trị hóa đơn và phương thức thanh toán",
+            "Giảm thất thoát do bỏ sót hóa đơn hoặc thanh toán sai",
+          ],
+        }
+      : activeFeatureId === "revenue"
+      ? {
+          title: "Tổng quan doanh thu",
+          summary:
+            "Nắm toàn cảnh doanh thu cửa hàng trong ngày chỉ trong vài giây.",
+          bullets: [
+            "Xem doanh thu theo ngày, tuần, tháng với biểu đồ trực quan",
+            "So sánh doanh thu giữa các khung giờ trong ngày",
+            "Theo dõi doanh thu theo chi nhánh nếu vận hành chuỗi",
+          ],
+        }
+      : activeFeatureId === "categoryTop"
+      ? {
+          title: "Danh mục bán chạy nhất",
+          summary:
+            "Biết danh mục nào đang mang lại doanh thu chính để tối ưu thực đơn.",
+          bullets: [
+            "Xếp hạng danh mục theo doanh thu và số lượng bán",
+            "Hỗ trợ quyết định tăng cường khuyến mãi cho danh mục chủ lực",
+            "Phát hiện danh mục hoạt động kém để điều chỉnh",
+          ],
+        }
+      : activeFeatureId === "itemTop"
+      ? {
+          title: "Mặt hàng bán chạy",
+          summary:
+            "Theo dõi món bán chạy giúp tối ưu tồn kho và chiến dịch marketing.",
+          bullets: [
+            "Xếp hạng từng món theo số lượng và doanh thu",
+            "Nhận biết món chủ lực để đưa lên vị trí nổi bật trong menu",
+            "Phân tích hiệu quả giá bán và combo",
+          ],
+        }
+      : {
+          title: "Các báo cáo khác",
+          summary:
+            "Bộ báo cáo đa dạng giúp chủ quán theo dõi sâu hơn về vận hành và tài chính.",
+          bullets: [
+            "Báo cáo chi phí, lợi nhuận và hiệu quả theo từng khoảng thời gian",
+            "Báo cáo hiệu suất nhân viên, ca làm việc",
+            "Xuất dữ liệu phục vụ kế toán và quản trị doanh nghiệp",
+          ],
+        };
 
   return (
     <div className="min-h-screen bg-white">
       <SiteHeader variant="page" />
 
-      {/* Hero Section */}
-      <PageHero
-        title="Tính năng POSO Boss"
-        subtitle="Ứng dụng quản lý cho chủ quán - Quản lý cửa hàng mọi lúc, mọi nơi"
-      />
-
-      {/* Features Section */}
-      <section className="py-20">
+      <section className="bg-gradient-to-r from-[#e5f6ff] via-[#f4fbff] to-[#e0ffe9] pt-20 md:pt-24 pb-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-[1340px] mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {features.map((feature, index) => (
-                <div
-                  key={index}
-                  className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="text-4xl">{feature.icon}</div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-2">
-                        <span className="text-poso-primary font-bold text-lg">
-                          {feature.num}
-                        </span>
-                        <h3 className="text-xl font-semibold text-poso-dark">
-                          {feature.title}
-                        </h3>
-                      </div>
-                      <p className="text-poso-gray opacity-80 leading-relaxed">
-                        {feature.description}
-                      </p>
+          <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16">
+            <div className="flex-1 w-full mb-6 md:mb-0">
+              <div className="relative max-w-md mx-auto">
+                <div className="absolute -top-6 -left-10 w-24 h-24 bg-white/40 rounded-[32px]" />
+                <div className="absolute -bottom-10 -right-8 w-28 h-28 bg-white/30 rounded-full" />
+                <div className="relative rounded-[32px] bg-white shadow-xl border border-gray-100 px-4 py-6 md:px-6 md:py-8">
+                  <img
+                    src="/images/hero_poso_manager.png"
+                    alt="POSO Boss"
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="flex-1 text-center md:text-left">
+              <p className="text-sm font-semibold text-poso-primary uppercase tracking-wide mb-3">
+                POSO Boss
+              </p>
+              <h1 className="text-3xl md:text-5xl font-bold text-poso-dark mb-4 md:mb-6 leading-tight">
+                Ứng dụng quản lý cho chủ quán
+              </h1>
+              <ul className="text-base md:text-lg text-poso-gray opacity-90 space-y-1 mb-6 md:mb-8">
+                <li>
+                  • Quản lý cửa hàng mọi lúc, mọi nơi dù bạn ở nơi đâu
+                </li>
+                <li>• Mọi báo cáo bạn cần ngay trong tầm tay</li>
+                <li>• Tải miễn phí</li>
+              </ul>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+                <button className="flex items-center justify-center gap-2 bg-black text-white px-6 py-3 rounded-lg font-semibold text-sm md:text-base hover:bg-gray-800 transition-colors">
+                  <span className="text-base">▶︎</span>
+                  <span>Google Play</span>
+                </button>
+                <button className="flex items-center justify-center gap-2 bg-black text-white px-6 py-3 rounded-lg font-semibold text-sm md:text-base hover:bg-gray-800 transition-colors">
+                  <span className="text-base"></span>
+                  <span>App Store</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-16 md:py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-[1200px] mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-poso-dark text-center mb-4">
+              Tính năng của POSO Boss
+            </h2>
+            <p className="text-center text-poso-gray opacity-80 mb-10">
+              Mọi báo cáo và số liệu vận hành cửa hàng đều được cập nhật liên
+              tục, giúp chủ quán kiểm soát kinh doanh dễ dàng.
+            </p>
+
+            <div className="flex flex-col lg:flex-row gap-8">
+              <div className="w-full lg:w-64">
+                <ul className="space-y-1 border border-gray-200 rounded-2xl p-3 bg-gray-50">
+                  {featureList.map((item) => {
+                    const isActive = activeFeatureId === item.id;
+                    return (
+                      <li key={item.id}>
+                        <button
+                          onClick={() =>
+                            setActiveFeatureId(
+                              item.id as (typeof featureList)[number]["id"]
+                            )
+                          }
+                          className={`w-full text-left px-4 py-2.5 rounded-xl text-sm md:text-base transition-colors ${
+                            isActive
+                              ? "bg-white text-poso-primary font-semibold shadow-sm"
+                              : "text-poso-gray hover:bg-white"
+                          }`}
+                        >
+                          {item.label}
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+
+              <div className="flex-1">
+                <div className="rounded-3xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+                  <div className="border-b border-gray-100 px-4 md:px-6 py-3 flex items-center justify-between">
+                    <div className="flex items-center gap-2 text-xs md:text-sm text-poso-gray">
+                      <span className="w-2 h-2 rounded-full bg-green-500" />
+                      <span>POSO Boss</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-[10px] md:text-xs text-poso-gray">
+                      <span className="px-2 py-0.5 rounded-full bg-gray-100">
+                        Doanh thu
+                      </span>
+                      <span className="px-2 py-0.5 rounded-full bg-gray-100">
+                        Hóa đơn
+                      </span>
+                    </div>
+                  </div>
+                  <div className="bg-gray-50 px-2 md:px-4 py-4">
+                    <div className="rounded-2xl bg-white border border-dashed border-gray-200 h-64 md:h-80 flex items-center justify-center">
+                      <span className="text-xs md:text-sm text-poso-gray">
+                        Khu vực mô phỏng màn hình báo cáo POSO Boss
+                      </span>
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white pb-16 md:pb-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-[900px] mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-poso-dark mb-3">
+              {activeFeature.title}
+            </h2>
+            <p className="text-sm md:text-base text-poso-gray mb-4">
+              {activeFeature.summary}
+            </p>
+            <ul className="list-disc pl-5 space-y-2 text-sm md:text-base text-poso-gray mb-6">
+              {activeFeature.bullets.map((item) => (
+                <li key={item}>{item}</li>
               ))}
-            </div>
+            </ul>
           </div>
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="bg-gradient-to-b from-[#f0f9f4] to-white py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-[1340px] mx-auto">
-            <h2 className="text-4xl font-bold text-poso-dark text-center mb-12">
-              Tại sao chọn POSO Boss?
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-poso-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl">📱</span>
-                </div>
-                <h3 className="text-xl font-semibold text-poso-dark mb-2">
-                  Quản lý từ xa
-                </h3>
-                <p className="text-poso-gray opacity-80">
-                  Quản lý cửa hàng mọi lúc, mọi nơi dù bạn ở nơi đâu
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-poso-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl">📊</span>
-                </div>
-                <h3 className="text-xl font-semibold text-poso-dark mb-2">
-                  Báo cáo đầy đủ
-                </h3>
-                <p className="text-poso-gray opacity-80">
-                  Mọi báo cáo bạn cần ngay trong tầm tay, cập nhật theo thời gian thực
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-poso-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl">🆓</span>
-                </div>
-                <h3 className="text-xl font-semibold text-poso-dark mb-2">
-                  Tải miễn phí
-                </h3>
-                <p className="text-poso-gray opacity-80">
-                  Tải ứng dụng miễn phí trên Google Play và App Store
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* App Download Section */}
-      <section className="bg-white py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-[1340px] mx-auto text-center">
-            <h2 className="text-4xl font-bold text-poso-dark mb-8">
-              Tải ứng dụng POSO Boss ngay
-            </h2>
-            <div className="flex flex-wrap justify-center gap-4">
-              <button className="flex items-center gap-2 bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors">
-                <svg
-                  className="w-5 h-5"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.19,15.12L14.96,12.85L17.19,10.58L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
-                </svg>
-                Google Play
-              </button>
-              <button className="flex items-center gap-2 bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors">
-                <svg
-                  className="w-5 h-5"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z" />
-                </svg>
-                App Store
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
       <section className="bg-poso-primary py-16">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-[1340px] mx-auto">
@@ -197,7 +237,7 @@ export default function FeaturesBoss() {
               Bắt đầu quản lý bán hàng ngay hôm nay
             </h2>
             <p className="text-white opacity-90 mb-8 text-lg">
-              Tải ứng dụng POSO Boss miễn phí và quản lý cửa hàng từ mọi nơi
+              Tải ứng dụng POSO Boss miễn phí và theo dõi cửa hàng từ mọi nơi.
             </p>
             <Link
               to="/contact"
@@ -209,7 +249,6 @@ export default function FeaturesBoss() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="bg-poso-dark text-white py-12">
         <div className="container mx-auto px-4">
           <div className="max-w-[1340px] mx-auto">
