@@ -1,10 +1,12 @@
 import type { Route } from "./+types/products";
 import { Link } from "react-router";
+import { PageHero } from "../components/PageHero";
+import { SiteHeader } from "../components/SiteHeader";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Sản phẩm - Ocha POS" },
-    { name: "description", content: "Khám phá các sản phẩm Ocha POS - Giải pháp quản lý nhà hàng toàn diện" },
+    { title: "Sản phẩm - POSO POS" },
+    { name: "description", content: "Khám phá các sản phẩm POSO POS - Giải pháp quản lý nhà hàng toàn diện" },
   ];
 }
 
@@ -12,21 +14,21 @@ export default function Products() {
   const products = [
     {
       id: 1,
-      name: "Ocha POS",
+      name: "POSO POS",
       description: "Hệ thống điểm bán hàng chuyên nghiệp cho nhà hàng, quán cafe, bar",
       features: ["Bán hàng nhanh chóng", "Quản lý đơn hàng", "In hóa đơn", "Báo cáo doanh thu"],
       price: "Liên hệ",
     },
     {
       id: 2,
-      name: "Ocha Manager",
+      name: "POSO Manager",
       description: "Phần mềm quản lý nhà hàng toàn diện từ xa",
       features: ["Quản lý từ xa", "Báo cáo chi tiết", "Quản lý nhân viên", "Theo dõi KPI"],
       price: "Liên hệ",
     },
     {
       id: 3,
-      name: "Ocha Staff",
+      name: "POSO Staff",
       description: "Ứng dụng dành cho nhân viên phục vụ",
       features: ["Nhận order", "Giao tiếp nội bộ", "Xem lịch làm việc", "Báo cáo ca làm"],
       price: "Miễn phí",
@@ -35,51 +37,13 @@ export default function Products() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
-        <nav className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <Link to="/" className="flex items-center">
-              <h1 className="text-2xl font-bold text-[#191b1e]">Ocha POS</h1>
-            </Link>
-            <div className="hidden md:flex items-center space-x-8">
-              <Link to="/products" className="text-[#00c94a] font-semibold">
-                Sản phẩm
-              </Link>
-              <Link to="/features" className="text-[#4f5664] hover:text-[#00c94a] transition-colors">
-                Tính năng
-              </Link>
-              <Link to="/faq" className="text-[#4f5664] hover:text-[#00c94a] transition-colors">
-                FAQ
-              </Link>
-              <Link to="/news" className="text-[#4f5664] hover:text-[#00c94a] transition-colors">
-                Tin tức
-              </Link>
-              <Link to="/contact" className="text-[#4f5664] hover:text-[#00c94a] transition-colors">
-                Liên hệ
-              </Link>
-              <Link to="/about" className="text-[#4f5664] hover:text-[#00c94a] transition-colors">
-                Giới thiệu
-              </Link>
-              <Link to="/contact" className="bg-[#00c94a] text-white px-6 py-2 rounded-md font-semibold hover:bg-[#00b845] transition-colors">
-                Dùng thử miễn phí
-              </Link>
-            </div>
-          </div>
-        </nav>
-      </header>
+      <SiteHeader variant="page" />
 
       {/* Hero Section */}
-      <section className="bg-[#f8f9fc] py-20">
-        <div className="container mx-auto px-4">
-          <h1 className="text-5xl font-bold text-[#191b1e] text-center mb-6">
-            Sản phẩm Ocha POS
-          </h1>
-          <p className="text-xl text-[#4f5664] text-center max-w-3xl mx-auto opacity-80">
-            Giải pháp quản lý nhà hàng toàn diện với bộ sản phẩm đa dạng, đáp ứng mọi nhu cầu của bạn
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="Sản phẩm POSO POS"
+        subtitle="Giải pháp quản lý nhà hàng toàn diện với bộ sản phẩm đa dạng, đáp ứng mọi nhu cầu của bạn"
+      />
 
       {/* Products Grid */}
       <section className="py-20">
@@ -95,7 +59,7 @@ export default function Products() {
                 <ul className="space-y-3 mb-8">
                   {product.features.map((feature, index) => (
                     <li key={index} className="flex items-start">
-                      <span className="text-[#00c94a] mr-2">✓</span>
+                      <span className="text-[#fa7313] mr-2">✓</span>
                       <span className="text-[#4f5664]">{feature}</span>
                     </li>
                   ))}
@@ -104,7 +68,7 @@ export default function Products() {
                   <span className="text-2xl font-bold text-[#191b1e]">{product.price}</span>
                   <Link
                     to="/contact"
-                    className="bg-[#00c94a] text-white px-6 py-2 rounded-md font-semibold hover:bg-[#00b845] transition-colors"
+                    className="bg-[#fa7313] text-white px-6 py-2 rounded-md font-semibold hover:bg-[#00b845] transition-colors"
                   >
                     Liên hệ
                   </Link>
@@ -116,7 +80,7 @@ export default function Products() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-[#00c94a] py-16">
+      <section className="bg-[#fa7313] py-16">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold text-white mb-4">
             Cần tư vấn về sản phẩm?
@@ -126,7 +90,7 @@ export default function Products() {
           </p>
           <Link
             to="/contact"
-            className="bg-white text-[#00c94a] px-8 py-4 rounded-md font-semibold text-lg hover:bg-gray-100 transition-colors inline-block"
+            className="bg-white text-[#fa7313] px-8 py-4 rounded-md font-semibold text-lg hover:bg-gray-100 transition-colors inline-block"
           >
             Liên hệ ngay
           </Link>
@@ -138,7 +102,7 @@ export default function Products() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <h4 className="text-xl font-bold mb-4">Ocha POS</h4>
+              <h4 className="text-xl font-bold mb-4">POSO POS</h4>
               <p className="text-gray-400 text-sm">
                 Giải pháp quản lý nhà hàng hàng đầu
               </p>
@@ -166,7 +130,7 @@ export default function Products() {
             </div>
           </div>
           <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
-            <p>© 2024 Ocha POS. Tất cả quyền được bảo lưu.</p>
+            <p>© 2024 POSO POS. Tất cả quyền được bảo lưu.</p>
           </div>
         </div>
       </footer>

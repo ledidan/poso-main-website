@@ -1,11 +1,13 @@
 import type { Route } from "./+types/faq";
 import { Link } from "react-router";
 import { useState } from "react";
+import { PageHero } from "../components/PageHero";
+import { SiteHeader } from "../components/SiteHeader";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "FAQ - Ocha POS" },
-    { name: "description", content: "Câu hỏi thường gặp về Ocha POS" },
+    { title: "FAQ - POSO POS" },
+    { name: "description", content: "Câu hỏi thường gặp về POSO POS" },
   ];
 }
 
@@ -14,20 +16,20 @@ export default function FAQ() {
 
   const faqs = [
     {
-      question: "Ocha POS có phù hợp với quán cafe nhỏ không?",
-      answer: "Có, Ocha POS được thiết kế để phù hợp với mọi quy mô nhà hàng, từ quán cafe nhỏ đến chuỗi nhà hàng lớn. Bạn có thể bắt đầu với gói cơ bản và nâng cấp khi cần.",
+      question: "POSO POS có phù hợp với quán cafe nhỏ không?",
+      answer: "Có, POSO POS được thiết kế để phù hợp với mọi quy mô nhà hàng, từ quán cafe nhỏ đến chuỗi nhà hàng lớn. Bạn có thể bắt đầu với gói cơ bản và nâng cấp khi cần.",
     },
     {
       question: "Tôi có cần kết nối internet để sử dụng không?",
-      answer: "Ocha POS có thể hoạt động offline và đồng bộ dữ liệu khi có kết nối internet. Điều này đảm bảo bạn không bị gián đoạn kinh doanh.",
+      answer: "POSO POS có thể hoạt động offline và đồng bộ dữ liệu khi có kết nối internet. Điều này đảm bảo bạn không bị gián đoạn kinh doanh.",
     },
     {
-      question: "Chi phí sử dụng Ocha POS là bao nhiêu?",
-      answer: "Ocha POS có nhiều gói dịch vụ phù hợp với nhu cầu khác nhau. Chúng tôi có gói dùng thử miễn phí và các gói trả phí với tính năng nâng cao. Vui lòng liên hệ để được tư vấn chi tiết.",
+      question: "Chi phí sử dụng POSO POS là bao nhiêu?",
+      answer: "POSO POS có nhiều gói dịch vụ phù hợp với nhu cầu khác nhau. Chúng tôi có gói dùng thử miễn phí và các gói trả phí với tính năng nâng cao. Vui lòng liên hệ để được tư vấn chi tiết.",
     },
     {
       question: "Tôi có thể tích hợp với các hệ thống thanh toán khác không?",
-      answer: "Có, Ocha POS hỗ trợ tích hợp với nhiều cổng thanh toán phổ biến như Momo, ZaloPay, VNPay, và các hệ thống thanh toán quốc tế.",
+      answer: "Có, POSO POS hỗ trợ tích hợp với nhiều cổng thanh toán phổ biến như Momo, ZaloPay, VNPay, và các hệ thống thanh toán quốc tế.",
     },
     {
       question: "Hỗ trợ kỹ thuật được cung cấp như thế nào?",
@@ -42,58 +44,20 @@ export default function FAQ() {
       answer: "Có, bạn có thể dễ dàng tùy chỉnh menu, thêm/xóa/sửa sản phẩm, điều chỉnh giá cả, và tạo các combo menu theo nhu cầu.",
     },
     {
-      question: "Ocha POS hỗ trợ in hóa đơn như thế nào?",
-      answer: "Ocha POS hỗ trợ in hóa đơn với nhiều loại máy in nhiệt phổ biến. Bạn có thể tùy chỉnh mẫu hóa đơn, in nhiều bản, và gửi hóa đơn điện tử qua email/SMS.",
+      question: "POSO POS hỗ trợ in hóa đơn như thế nào?",
+      answer: "POSO POS hỗ trợ in hóa đơn với nhiều loại máy in nhiệt phổ biến. Bạn có thể tùy chỉnh mẫu hóa đơn, in nhiều bản, và gửi hóa đơn điện tử qua email/SMS.",
     },
   ];
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
-        <nav className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <Link to="/" className="flex items-center">
-              <h1 className="text-2xl font-bold text-[#191b1e]">Ocha POS</h1>
-            </Link>
-            <div className="hidden md:flex items-center space-x-8">
-              <Link to="/products" className="text-[#4f5664] hover:text-[#00c94a] transition-colors">
-                Sản phẩm
-              </Link>
-              <Link to="/features" className="text-[#4f5664] hover:text-[#00c94a] transition-colors">
-                Tính năng
-              </Link>
-              <Link to="/faq" className="text-[#00c94a] font-semibold">
-                FAQ
-              </Link>
-              <Link to="/news" className="text-[#4f5664] hover:text-[#00c94a] transition-colors">
-                Tin tức
-              </Link>
-              <Link to="/contact" className="text-[#4f5664] hover:text-[#00c94a] transition-colors">
-                Liên hệ
-              </Link>
-              <Link to="/about" className="text-[#4f5664] hover:text-[#00c94a] transition-colors">
-                Giới thiệu
-              </Link>
-              <Link to="/contact" className="bg-[#00c94a] text-white px-6 py-2 rounded-md font-semibold hover:bg-[#00b845] transition-colors">
-                Dùng thử miễn phí
-              </Link>
-            </div>
-          </div>
-        </nav>
-      </header>
+      <SiteHeader variant="page" />
 
       {/* Hero Section */}
-      <section className="bg-[#f8f9fc] py-20">
-        <div className="container mx-auto px-4">
-          <h1 className="text-5xl font-bold text-[#191b1e] text-center mb-6">
-            Câu hỏi thường gặp
-          </h1>
-          <p className="text-xl text-[#4f5664] text-center max-w-3xl mx-auto opacity-80">
-            Tìm câu trả lời cho những thắc mắc phổ biến về Ocha POS
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="Câu hỏi thường gặp"
+        subtitle="Tìm câu trả lời cho những thắc mắc phổ biến về POSO POS"
+      />
 
       {/* FAQ Section */}
       <section className="py-20">
@@ -111,7 +75,7 @@ export default function FAQ() {
                   <span className="text-lg font-semibold text-[#191b1e] pr-4">
                     {faq.question}
                   </span>
-                  <span className="text-[#00c94a] text-2xl flex-shrink-0">
+                  <span className="text-[#fa7313] text-2xl flex-shrink-0">
                     {openIndex === index ? "−" : "+"}
                   </span>
                 </button>
@@ -127,7 +91,7 @@ export default function FAQ() {
       </section>
 
       {/* Contact CTA */}
-      <section className="bg-[#00c94a] py-16">
+      <section className="bg-[#fa7313] py-16">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold text-white mb-4">
             Không tìm thấy câu trả lời?
@@ -137,7 +101,7 @@ export default function FAQ() {
           </p>
           <Link
             to="/contact"
-            className="bg-white text-[#00c94a] px-8 py-4 rounded-md font-semibold text-lg hover:bg-gray-100 transition-colors inline-block"
+            className="bg-white text-[#fa7313] px-8 py-4 rounded-md font-semibold text-lg hover:bg-gray-100 transition-colors inline-block"
           >
             Liên hệ ngay
           </Link>
@@ -149,7 +113,7 @@ export default function FAQ() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <h4 className="text-xl font-bold mb-4">Ocha POS</h4>
+              <h4 className="text-xl font-bold mb-4">POSO POS</h4>
               <p className="text-gray-400 text-sm">
                 Giải pháp quản lý nhà hàng hàng đầu
               </p>
@@ -177,7 +141,7 @@ export default function FAQ() {
             </div>
           </div>
           <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
-            <p>© 2024 Ocha POS. Tất cả quyền được bảo lưu.</p>
+            <p>© 2024 POSO POS. Tất cả quyền được bảo lưu.</p>
           </div>
         </div>
       </footer>

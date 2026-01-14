@@ -1,14 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  
-  --color-ocha-primary: #00c94a;
-  --color-ocha-dark: #191b1e;
-  --color-ocha-gray: #4f5664;
-  --color-ocha-gray-dark: #505663;
-  --color-ocha-bg: #f8f9fc;
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  --color-poso-primary: #fa7313;
+  --color-poso-primary-hover: #e8650f;
+  --color-poso-dark: #191b1e;
+  --color-poso-gray: #4f5664;
+  --color-poso-gray-dark: #505663;
+  --color-poso-bg: #f8f9fc;
 }
 
 html,
@@ -18,4 +20,40 @@ body {
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
+}
+
+/* Shared Page Hero */
+.page-hero {
+  /* Soft "banner" background similar to the screenshots */
+  background:
+    radial-gradient(
+      900px 400px at 20% 40%,
+      rgba(250, 115, 19, 0.12),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 400px at 80% 30%,
+      rgba(0, 0, 0, 0.04),
+      transparent 60%
+    ),
+    linear-gradient(135deg, rgba(250, 115, 19, 0.06), rgba(248, 249, 252, 1));
+}
+
+/* Swiper Custom Styles */
+.hero-swiper .swiper-button-next,
+.hero-swiper .swiper-button-prev,
+.testimonials-swiper .swiper-button-next,
+.testimonials-swiper .swiper-button-prev {
+  color: var(--color-poso-primary);
+}
+
+.hero-swiper .swiper-pagination-bullet-active,
+.testimonials-swiper .swiper-pagination-bullet-active {
+  background-color: var(--color-poso-primary);
+}
+
+.hero-swiper .swiper-pagination-bullet,
+.testimonials-swiper .swiper-pagination-bullet {
+  background-color: var(--color-poso-gray);
+  opacity: 0.5;
 }

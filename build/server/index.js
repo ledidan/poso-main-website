@@ -120,10 +120,10 @@ const route0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
 }, Symbol.toStringTag, { value: "Module" }));
 function meta$6({}) {
   return [{
-    title: "Ocha POS"
+    title: "POSO POS"
   }, {
     name: "description",
-    content: "Ocha là Nhãn Hiệu Máy Bán Hàng Hàng Đầu Thế Giới. Giải pháp quản lý nhà hàng duy nhất bạn cần."
+    content: "POSO là Nhãn Hiệu Máy Bán Hàng Hàng Đầu Thế Giới. Giải pháp quản lý nhà hàng duy nhất bạn cần."
   }];
 }
 const home = UNSAFE_withComponentProps(function Home() {
@@ -140,50 +140,50 @@ const home = UNSAFE_withComponentProps(function Home() {
             to: "/",
             className: "flex items-center",
             children: /* @__PURE__ */ jsx("h1", {
-              className: "text-2xl font-bold text-[#00c94a]",
-              children: "Ocha"
+              className: "text-2xl font-bold text-[#fa7313]",
+              children: "POSO"
             })
           }), /* @__PURE__ */ jsxs("div", {
             className: "hidden md:flex items-center space-x-8",
             children: [/* @__PURE__ */ jsx(Link, {
               to: "/products",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "Sản phẩm"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/features",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "Tính năng"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/faq",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "FAQ"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/news",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "Tin tức"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/contact",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "Liên hệ"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/about",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "Giới thiệu"
             }), /* @__PURE__ */ jsxs("div", {
               className: "flex items-center space-x-4",
               children: [/* @__PURE__ */ jsx(Link, {
                 to: "/contact",
-                className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+                className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
                 children: "Đăng nhập"
               }), /* @__PURE__ */ jsx(Link, {
                 to: "/contact",
-                className: "bg-[#00c94a] text-white px-6 py-2 rounded-md font-semibold hover:bg-[#00b845] transition-colors",
+                className: "bg-[#fa7313] text-white px-6 py-2 rounded-md font-semibold hover:bg-[#00b845] transition-colors",
                 children: "Đăng ký"
               })]
             })]
           }), /* @__PURE__ */ jsx("button", {
             onClick: () => setMobileMenuOpen(!mobileMenuOpen),
-            className: "md:hidden p-2 text-[#4f5664] hover:text-[#00c94a] transition-colors",
+            className: "md:hidden p-2 text-[#4f5664] hover:text-[#fa7313] transition-colors",
             "aria-label": "Toggle menu",
             children: /* @__PURE__ */ jsx("svg", {
               className: "w-6 h-6",
@@ -207,44 +207,44 @@ const home = UNSAFE_withComponentProps(function Home() {
             children: [/* @__PURE__ */ jsx(Link, {
               to: "/products",
               onClick: () => setMobileMenuOpen(false),
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors py-2",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors py-2",
               children: "Sản phẩm"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/features",
               onClick: () => setMobileMenuOpen(false),
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors py-2",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors py-2",
               children: "Tính năng"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/faq",
               onClick: () => setMobileMenuOpen(false),
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors py-2",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors py-2",
               children: "FAQ"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/news",
               onClick: () => setMobileMenuOpen(false),
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors py-2",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors py-2",
               children: "Tin tức"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/contact",
               onClick: () => setMobileMenuOpen(false),
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors py-2",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors py-2",
               children: "Liên hệ"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/about",
               onClick: () => setMobileMenuOpen(false),
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors py-2",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors py-2",
               children: "Giới thiệu"
             }), /* @__PURE__ */ jsxs("div", {
               className: "flex flex-col space-y-2 pt-2 border-t border-gray-200",
               children: [/* @__PURE__ */ jsx(Link, {
                 to: "/contact",
                 onClick: () => setMobileMenuOpen(false),
-                className: "text-[#4f5664] hover:text-[#00c94a] transition-colors py-2",
+                className: "text-[#4f5664] hover:text-[#fa7313] transition-colors py-2",
                 children: "Đăng nhập"
               }), /* @__PURE__ */ jsx(Link, {
                 to: "/contact",
                 onClick: () => setMobileMenuOpen(false),
-                className: "bg-[#00c94a] text-white px-6 py-2 rounded-md font-semibold hover:bg-[#00b845] transition-colors text-center",
+                className: "bg-[#fa7313] text-white px-6 py-2 rounded-md font-semibold hover:bg-[#00b845] transition-colors text-center",
                 children: "Đăng ký"
               })]
             })]
@@ -258,7 +258,7 @@ const home = UNSAFE_withComponentProps(function Home() {
         children: [/* @__PURE__ */ jsxs("div", {
           children: [/* @__PURE__ */ jsx("h2", {
             className: "text-5xl md:text-6xl font-bold text-[#191b1e] mb-6 leading-tight",
-            children: "Ocha Boss"
+            children: "POSO Boss"
           }), /* @__PURE__ */ jsxs("p", {
             className: "text-xl text-[#4f5664] mb-8 opacity-80 leading-relaxed",
             children: ["Quản lý quán mọi lúc, mọi nơi", /* @__PURE__ */ jsx("br", {}), "Ứng dụng quản lý cho chủ quán"]
@@ -290,9 +290,9 @@ const home = UNSAFE_withComponentProps(function Home() {
             children: [/* @__PURE__ */ jsxs("div", {
               className: "flex items-center gap-3",
               children: [/* @__PURE__ */ jsx("div", {
-                className: "w-12 h-12 bg-[#00c94a]/10 rounded-full flex items-center justify-center flex-shrink-0",
+                className: "w-12 h-12 bg-[#fa7313]/10 rounded-full flex items-center justify-center flex-shrink-0",
                 children: /* @__PURE__ */ jsx("span", {
-                  className: "text-[#00c94a] text-xl",
+                  className: "text-[#fa7313] text-xl",
                   children: "✓"
                 })
               }), /* @__PURE__ */ jsx("span", {
@@ -302,9 +302,9 @@ const home = UNSAFE_withComponentProps(function Home() {
             }), /* @__PURE__ */ jsxs("div", {
               className: "flex items-center gap-3",
               children: [/* @__PURE__ */ jsx("div", {
-                className: "w-12 h-12 bg-[#00c94a]/10 rounded-full flex items-center justify-center flex-shrink-0",
+                className: "w-12 h-12 bg-[#fa7313]/10 rounded-full flex items-center justify-center flex-shrink-0",
                 children: /* @__PURE__ */ jsx("span", {
-                  className: "text-[#00c94a] text-xl",
+                  className: "text-[#fa7313] text-xl",
                   children: "✓"
                 })
               }), /* @__PURE__ */ jsx("span", {
@@ -314,9 +314,9 @@ const home = UNSAFE_withComponentProps(function Home() {
             }), /* @__PURE__ */ jsxs("div", {
               className: "flex items-center gap-3",
               children: [/* @__PURE__ */ jsx("div", {
-                className: "w-12 h-12 bg-[#00c94a]/10 rounded-full flex items-center justify-center flex-shrink-0",
+                className: "w-12 h-12 bg-[#fa7313]/10 rounded-full flex items-center justify-center flex-shrink-0",
                 children: /* @__PURE__ */ jsx("span", {
-                  className: "text-[#00c94a] text-xl",
+                  className: "text-[#fa7313] text-xl",
                   children: "✓"
                 })
               }), /* @__PURE__ */ jsx("span", {
@@ -326,9 +326,9 @@ const home = UNSAFE_withComponentProps(function Home() {
             }), /* @__PURE__ */ jsxs("div", {
               className: "flex items-center gap-3",
               children: [/* @__PURE__ */ jsx("div", {
-                className: "w-12 h-12 bg-[#00c94a]/10 rounded-full flex items-center justify-center flex-shrink-0",
+                className: "w-12 h-12 bg-[#fa7313]/10 rounded-full flex items-center justify-center flex-shrink-0",
                 children: /* @__PURE__ */ jsx("span", {
-                  className: "text-[#00c94a] text-xl",
+                  className: "text-[#fa7313] text-xl",
                   children: "✓"
                 })
               }), /* @__PURE__ */ jsx("span", {
@@ -346,7 +346,7 @@ const home = UNSAFE_withComponentProps(function Home() {
               children: [/* @__PURE__ */ jsxs("div", {
                 className: "w-32 h-56 bg-white rounded-2xl shadow-2xl mx-auto mb-4 p-4 border-4 border-gray-200",
                 children: [/* @__PURE__ */ jsx("div", {
-                  className: "bg-[#00c94a] h-8 rounded-t-lg mb-2"
+                  className: "bg-[#fa7313] h-8 rounded-t-lg mb-2"
                 }), /* @__PURE__ */ jsxs("div", {
                   className: "space-y-2",
                   children: [/* @__PURE__ */ jsx("div", {
@@ -361,7 +361,7 @@ const home = UNSAFE_withComponentProps(function Home() {
                 })]
               }), /* @__PURE__ */ jsx("p", {
                 className: "text-sm text-gray-500",
-                children: "Ocha Boss App"
+                children: "POSO Boss App"
               })]
             })
           })
@@ -373,7 +373,7 @@ const home = UNSAFE_withComponentProps(function Home() {
         className: "container mx-auto px-4",
         children: [/* @__PURE__ */ jsx("h2", {
           className: "text-4xl font-bold text-[#191b1e] mb-12 text-center",
-          children: "Ocha POS"
+          children: "POSO POS"
         }), /* @__PURE__ */ jsxs("div", {
           className: "grid grid-cols-1 lg:grid-cols-2 gap-12 items-center",
           children: [/* @__PURE__ */ jsx("div", {
@@ -438,7 +438,7 @@ const home = UNSAFE_withComponentProps(function Home() {
                 children: [/* @__PURE__ */ jsx("div", {
                   className: "flex-shrink-0",
                   children: /* @__PURE__ */ jsx("span", {
-                    className: "text-2xl font-bold text-[#00c94a]",
+                    className: "text-2xl font-bold text-[#fa7313]",
                     children: feature.num
                   })
                 }), /* @__PURE__ */ jsxs("div", {
@@ -455,7 +455,7 @@ const home = UNSAFE_withComponentProps(function Home() {
               className: "mt-8 text-right",
               children: /* @__PURE__ */ jsx(Link, {
                 to: "/features",
-                className: "text-[#00c94a] font-semibold hover:underline",
+                className: "text-[#fa7313] font-semibold hover:underline",
                 children: "Xem thêm →"
               })
             })]
@@ -476,7 +476,7 @@ const home = UNSAFE_withComponentProps(function Home() {
             children: [/* @__PURE__ */ jsx("div", {
               className: "absolute inset-0 flex items-center justify-center",
               children: /* @__PURE__ */ jsx("button", {
-                className: "w-20 h-20 bg-[#00c94a] rounded-full flex items-center justify-center hover:bg-[#00b845] transition-colors shadow-2xl",
+                className: "w-20 h-20 bg-[#fa7313] rounded-full flex items-center justify-center hover:bg-[#00b845] transition-colors shadow-2xl",
                 children: /* @__PURE__ */ jsx("svg", {
                   className: "w-10 h-10 text-white ml-1",
                   fill: "currentColor",
@@ -511,11 +511,11 @@ const home = UNSAFE_withComponentProps(function Home() {
         }), /* @__PURE__ */ jsxs("div", {
           className: "max-w-4xl mx-auto bg-gray-50 rounded-2xl p-8 md:p-12",
           children: [/* @__PURE__ */ jsx("div", {
-            className: "text-6xl text-[#00c94a] mb-6",
+            className: "text-6xl text-[#fa7313] mb-6",
             children: '"'
           }), /* @__PURE__ */ jsx("blockquote", {
             className: "text-xl text-[#191b1e] mb-6 leading-relaxed",
-            children: "Ocha POS đã giúp chúng tôi quản lý nhà hàng hiệu quả hơn rất nhiều. Giao diện dễ sử dụng, tính năng đầy đủ và hỗ trợ khách hàng rất tốt."
+            children: "POSO POS đã giúp chúng tôi quản lý nhà hàng hiệu quả hơn rất nhiều. Giao diện dễ sử dụng, tính năng đầy đủ và hỗ trợ khách hàng rất tốt."
           }), /* @__PURE__ */ jsx("cite", {
             className: "text-[#4f5664] font-semibold",
             children: "- Nhà hàng Mỹ Cay Naga Phú Nhuận - Anh Thái"
@@ -532,15 +532,15 @@ const home = UNSAFE_withComponentProps(function Home() {
         }), /* @__PURE__ */ jsx("div", {
           className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8",
           children: [{
-            title: "Ocha Cập Nhật Chính Sách Bán Hàng",
+            title: "POSO Cập Nhật Chính Sách Bán Hàng",
             date: "15/12/2024",
             views: "1.2K"
           }, {
-            title: "Ocha Cập Nhật Email Hỗ Trợ Quản",
+            title: "POSO Cập Nhật Email Hỗ Trợ Quản",
             date: "10/12/2024",
             views: "890"
           }, {
-            title: "Ocha Chúc Mừng Năm Mới",
+            title: "POSO Chúc Mừng Năm Mới",
             date: "01/01/2024",
             views: "2.5K"
           }, {
@@ -574,20 +574,20 @@ const home = UNSAFE_withComponentProps(function Home() {
           className: "text-center",
           children: /* @__PURE__ */ jsx(Link, {
             to: "/news",
-            className: "text-[#00c94a] font-semibold hover:underline",
+            className: "text-[#fa7313] font-semibold hover:underline",
             children: "Xem thêm →"
           })
         })]
       })
     }), /* @__PURE__ */ jsxs("section", {
-      className: "bg-[#00c94a] py-16 relative overflow-hidden",
+      className: "bg-[#fa7313] py-16 relative overflow-hidden",
       children: [/* @__PURE__ */ jsx("div", {
         className: "container mx-auto px-4 relative z-10",
         children: /* @__PURE__ */ jsxs("div", {
           className: "max-w-4xl mx-auto text-center text-white",
           children: [/* @__PURE__ */ jsx("h2", {
             className: "text-4xl md:text-5xl font-bold mb-4",
-            children: "Ocha POS"
+            children: "POSO POS"
           }), /* @__PURE__ */ jsx("p", {
             className: "text-xl mb-2 opacity-90",
             children: "Hệ thống quản lý nhà hàng chuyên nghiệp"
@@ -596,7 +596,7 @@ const home = UNSAFE_withComponentProps(function Home() {
             children: "Giải pháp nhà hàng toàn diện"
           }), /* @__PURE__ */ jsx(Link, {
             to: "/contact",
-            className: "bg-white text-[#00c94a] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors inline-block",
+            className: "bg-white text-[#fa7313] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors inline-block",
             children: "Đăng ký Ngay"
           })]
         })
@@ -614,8 +614,8 @@ const home = UNSAFE_withComponentProps(function Home() {
           className: "grid grid-cols-1 md:grid-cols-3 gap-8 mb-8",
           children: [/* @__PURE__ */ jsxs("div", {
             children: [/* @__PURE__ */ jsx("h4", {
-              className: "text-xl font-bold text-[#00c94a] mb-4",
-              children: "Ocha"
+              className: "text-xl font-bold text-[#fa7313] mb-4",
+              children: "POSO"
             }), /* @__PURE__ */ jsx("p", {
               className: "text-gray-400 text-sm leading-relaxed",
               children: "Giải pháp quản lý nhà hàng hàng đầu Việt Nam. Chúng tôi cung cấp các sản phẩm và dịch vụ tốt nhất để giúp doanh nghiệp của bạn phát triển."
@@ -627,7 +627,7 @@ const home = UNSAFE_withComponentProps(function Home() {
             }), /* @__PURE__ */ jsxs("ul", {
               className: "space-y-2 text-gray-400 text-sm",
               children: [/* @__PURE__ */ jsx("li", {
-                children: "Email: contact@ochapos.vn"
+                children: "Email: contact@POSOpos.vn"
               }), /* @__PURE__ */ jsx("li", {
                 children: "Địa chỉ: 123 Đường ABC, TP. Hồ Chí Minh"
               })]
@@ -682,7 +682,7 @@ const home = UNSAFE_withComponentProps(function Home() {
               className: "flex gap-4",
               children: [/* @__PURE__ */ jsx("a", {
                 href: "#",
-                className: "w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#00c94a] transition-colors",
+                className: "w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#fa7313] transition-colors",
                 children: /* @__PURE__ */ jsx("svg", {
                   className: "w-5 h-5",
                   fill: "currentColor",
@@ -693,7 +693,7 @@ const home = UNSAFE_withComponentProps(function Home() {
                 })
               }), /* @__PURE__ */ jsx("a", {
                 href: "#",
-                className: "w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#00c94a] transition-colors",
+                className: "w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#fa7313] transition-colors",
                 children: /* @__PURE__ */ jsx("svg", {
                   className: "w-5 h-5",
                   fill: "currentColor",
@@ -708,7 +708,7 @@ const home = UNSAFE_withComponentProps(function Home() {
         }), /* @__PURE__ */ jsx("div", {
           className: "border-t border-gray-700 pt-8 text-center text-gray-400 text-sm",
           children: /* @__PURE__ */ jsx("p", {
-            children: "© 2024 Ocha POS. Tất cả quyền được bảo lưu."
+            children: "© 2024 POSO POS. Tất cả quyền được bảo lưu."
           })
         })]
       })
@@ -722,28 +722,28 @@ const route1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
 }, Symbol.toStringTag, { value: "Module" }));
 function meta$5({}) {
   return [{
-    title: "Sản phẩm - Ocha POS"
+    title: "Sản phẩm - POSO POS"
   }, {
     name: "description",
-    content: "Khám phá các sản phẩm Ocha POS - Giải pháp quản lý nhà hàng toàn diện"
+    content: "Khám phá các sản phẩm POSO POS - Giải pháp quản lý nhà hàng toàn diện"
   }];
 }
 const products = UNSAFE_withComponentProps(function Products() {
   const products2 = [{
     id: 1,
-    name: "Ocha POS",
+    name: "POSO POS",
     description: "Hệ thống điểm bán hàng chuyên nghiệp cho nhà hàng, quán cafe, bar",
     features: ["Bán hàng nhanh chóng", "Quản lý đơn hàng", "In hóa đơn", "Báo cáo doanh thu"],
     price: "Liên hệ"
   }, {
     id: 2,
-    name: "Ocha Manager",
+    name: "POSO Manager",
     description: "Phần mềm quản lý nhà hàng toàn diện từ xa",
     features: ["Quản lý từ xa", "Báo cáo chi tiết", "Quản lý nhân viên", "Theo dõi KPI"],
     price: "Liên hệ"
   }, {
     id: 3,
-    name: "Ocha Staff",
+    name: "POSO Staff",
     description: "Ứng dụng dành cho nhân viên phục vụ",
     features: ["Nhận order", "Giao tiếp nội bộ", "Xem lịch làm việc", "Báo cáo ca làm"],
     price: "Miễn phí"
@@ -761,37 +761,37 @@ const products = UNSAFE_withComponentProps(function Products() {
             className: "flex items-center",
             children: /* @__PURE__ */ jsx("h1", {
               className: "text-2xl font-bold text-[#191b1e]",
-              children: "Ocha POS"
+              children: "POSO POS"
             })
           }), /* @__PURE__ */ jsxs("div", {
             className: "hidden md:flex items-center space-x-8",
             children: [/* @__PURE__ */ jsx(Link, {
               to: "/products",
-              className: "text-[#00c94a] font-semibold",
+              className: "text-[#fa7313] font-semibold",
               children: "Sản phẩm"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/features",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "Tính năng"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/faq",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "FAQ"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/news",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "Tin tức"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/contact",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "Liên hệ"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/about",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "Giới thiệu"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/contact",
-              className: "bg-[#00c94a] text-white px-6 py-2 rounded-md font-semibold hover:bg-[#00b845] transition-colors",
+              className: "bg-[#fa7313] text-white px-6 py-2 rounded-md font-semibold hover:bg-[#00b845] transition-colors",
               children: "Dùng thử miễn phí"
             })]
           })]
@@ -803,7 +803,7 @@ const products = UNSAFE_withComponentProps(function Products() {
         className: "container mx-auto px-4",
         children: [/* @__PURE__ */ jsx("h1", {
           className: "text-5xl font-bold text-[#191b1e] text-center mb-6",
-          children: "Sản phẩm Ocha POS"
+          children: "Sản phẩm POSO POS"
         }), /* @__PURE__ */ jsx("p", {
           className: "text-xl text-[#4f5664] text-center max-w-3xl mx-auto opacity-80",
           children: "Giải pháp quản lý nhà hàng toàn diện với bộ sản phẩm đa dạng, đáp ứng mọi nhu cầu của bạn"
@@ -828,7 +828,7 @@ const products = UNSAFE_withComponentProps(function Products() {
               children: product.features.map((feature, index) => /* @__PURE__ */ jsxs("li", {
                 className: "flex items-start",
                 children: [/* @__PURE__ */ jsx("span", {
-                  className: "text-[#00c94a] mr-2",
+                  className: "text-[#fa7313] mr-2",
                   children: "✓"
                 }), /* @__PURE__ */ jsx("span", {
                   className: "text-[#4f5664]",
@@ -842,7 +842,7 @@ const products = UNSAFE_withComponentProps(function Products() {
                 children: product.price
               }), /* @__PURE__ */ jsx(Link, {
                 to: "/contact",
-                className: "bg-[#00c94a] text-white px-6 py-2 rounded-md font-semibold hover:bg-[#00b845] transition-colors",
+                className: "bg-[#fa7313] text-white px-6 py-2 rounded-md font-semibold hover:bg-[#00b845] transition-colors",
                 children: "Liên hệ"
               })]
             })]
@@ -850,7 +850,7 @@ const products = UNSAFE_withComponentProps(function Products() {
         })
       })
     }), /* @__PURE__ */ jsx("section", {
-      className: "bg-[#00c94a] py-16",
+      className: "bg-[#fa7313] py-16",
       children: /* @__PURE__ */ jsxs("div", {
         className: "container mx-auto px-4 text-center",
         children: [/* @__PURE__ */ jsx("h2", {
@@ -861,7 +861,7 @@ const products = UNSAFE_withComponentProps(function Products() {
           children: "Đội ngũ của chúng tôi sẵn sàng hỗ trợ bạn"
         }), /* @__PURE__ */ jsx(Link, {
           to: "/contact",
-          className: "bg-white text-[#00c94a] px-8 py-4 rounded-md font-semibold text-lg hover:bg-gray-100 transition-colors inline-block",
+          className: "bg-white text-[#fa7313] px-8 py-4 rounded-md font-semibold text-lg hover:bg-gray-100 transition-colors inline-block",
           children: "Liên hệ ngay"
         })]
       })
@@ -874,7 +874,7 @@ const products = UNSAFE_withComponentProps(function Products() {
           children: [/* @__PURE__ */ jsxs("div", {
             children: [/* @__PURE__ */ jsx("h4", {
               className: "text-xl font-bold mb-4",
-              children: "Ocha POS"
+              children: "POSO POS"
             }), /* @__PURE__ */ jsx("p", {
               className: "text-gray-400 text-sm",
               children: "Giải pháp quản lý nhà hàng hàng đầu"
@@ -943,7 +943,7 @@ const products = UNSAFE_withComponentProps(function Products() {
         }), /* @__PURE__ */ jsx("div", {
           className: "border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm",
           children: /* @__PURE__ */ jsx("p", {
-            children: "© 2024 Ocha POS. Tất cả quyền được bảo lưu."
+            children: "© 2024 POSO POS. Tất cả quyền được bảo lưu."
           })
         })]
       })
@@ -957,10 +957,10 @@ const route2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
 }, Symbol.toStringTag, { value: "Module" }));
 function meta$4({}) {
   return [{
-    title: "Tính năng - Ocha POS"
+    title: "Tính năng - POSO POS"
   }, {
     name: "description",
-    content: "Khám phá các tính năng mạnh mẽ của Ocha POS"
+    content: "Khám phá các tính năng mạnh mẽ của POSO POS"
   }];
 }
 const features = UNSAFE_withComponentProps(function Features() {
@@ -1026,37 +1026,37 @@ const features = UNSAFE_withComponentProps(function Features() {
             className: "flex items-center",
             children: /* @__PURE__ */ jsx("h1", {
               className: "text-2xl font-bold text-[#191b1e]",
-              children: "Ocha POS"
+              children: "POSO POS"
             })
           }), /* @__PURE__ */ jsxs("div", {
             className: "hidden md:flex items-center space-x-8",
             children: [/* @__PURE__ */ jsx(Link, {
               to: "/products",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "Sản phẩm"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/features",
-              className: "text-[#00c94a] font-semibold",
+              className: "text-[#fa7313] font-semibold",
               children: "Tính năng"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/faq",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "FAQ"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/news",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "Tin tức"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/contact",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "Liên hệ"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/about",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "Giới thiệu"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/contact",
-              className: "bg-[#00c94a] text-white px-6 py-2 rounded-md font-semibold hover:bg-[#00b845] transition-colors",
+              className: "bg-[#fa7313] text-white px-6 py-2 rounded-md font-semibold hover:bg-[#00b845] transition-colors",
               children: "Dùng thử miễn phí"
             })]
           })]
@@ -1068,7 +1068,7 @@ const features = UNSAFE_withComponentProps(function Features() {
         className: "container mx-auto px-4",
         children: [/* @__PURE__ */ jsx("h1", {
           className: "text-5xl font-bold text-[#191b1e] text-center mb-6",
-          children: "Tính năng Ocha POS"
+          children: "Tính năng POSO POS"
         }), /* @__PURE__ */ jsx("p", {
           className: "text-xl text-[#4f5664] text-center max-w-3xl mx-auto opacity-80",
           children: "Khám phá các tính năng mạnh mẽ giúp quản lý nhà hàng hiệu quả hơn"
@@ -1101,7 +1101,7 @@ const features = UNSAFE_withComponentProps(function Features() {
         })
       })
     }), /* @__PURE__ */ jsx("section", {
-      className: "bg-[#00c94a] py-16",
+      className: "bg-[#fa7313] py-16",
       children: /* @__PURE__ */ jsxs("div", {
         className: "container mx-auto px-4 text-center",
         children: [/* @__PURE__ */ jsx("h2", {
@@ -1109,7 +1109,7 @@ const features = UNSAFE_withComponentProps(function Features() {
           children: "Trải nghiệm tất cả tính năng ngay hôm nay"
         }), /* @__PURE__ */ jsx(Link, {
           to: "/contact",
-          className: "bg-white text-[#00c94a] px-8 py-4 rounded-md font-semibold text-lg hover:bg-gray-100 transition-colors inline-block mt-4",
+          className: "bg-white text-[#fa7313] px-8 py-4 rounded-md font-semibold text-lg hover:bg-gray-100 transition-colors inline-block mt-4",
           children: "Dùng thử miễn phí"
         })]
       })
@@ -1122,7 +1122,7 @@ const features = UNSAFE_withComponentProps(function Features() {
           children: [/* @__PURE__ */ jsxs("div", {
             children: [/* @__PURE__ */ jsx("h4", {
               className: "text-xl font-bold mb-4",
-              children: "Ocha POS"
+              children: "POSO POS"
             }), /* @__PURE__ */ jsx("p", {
               className: "text-gray-400 text-sm",
               children: "Giải pháp quản lý nhà hàng hàng đầu"
@@ -1191,7 +1191,7 @@ const features = UNSAFE_withComponentProps(function Features() {
         }), /* @__PURE__ */ jsx("div", {
           className: "border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm",
           children: /* @__PURE__ */ jsx("p", {
-            children: "© 2024 Ocha POS. Tất cả quyền được bảo lưu."
+            children: "© 2024 POSO POS. Tất cả quyền được bảo lưu."
           })
         })]
       })
@@ -1205,26 +1205,26 @@ const route3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
 }, Symbol.toStringTag, { value: "Module" }));
 function meta$3({}) {
   return [{
-    title: "FAQ - Ocha POS"
+    title: "FAQ - POSO POS"
   }, {
     name: "description",
-    content: "Câu hỏi thường gặp về Ocha POS"
+    content: "Câu hỏi thường gặp về POSO POS"
   }];
 }
 const faq = UNSAFE_withComponentProps(function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
   const faqs = [{
-    question: "Ocha POS có phù hợp với quán cafe nhỏ không?",
-    answer: "Có, Ocha POS được thiết kế để phù hợp với mọi quy mô nhà hàng, từ quán cafe nhỏ đến chuỗi nhà hàng lớn. Bạn có thể bắt đầu với gói cơ bản và nâng cấp khi cần."
+    question: "POSO POS có phù hợp với quán cafe nhỏ không?",
+    answer: "Có, POSO POS được thiết kế để phù hợp với mọi quy mô nhà hàng, từ quán cafe nhỏ đến chuỗi nhà hàng lớn. Bạn có thể bắt đầu với gói cơ bản và nâng cấp khi cần."
   }, {
     question: "Tôi có cần kết nối internet để sử dụng không?",
-    answer: "Ocha POS có thể hoạt động offline và đồng bộ dữ liệu khi có kết nối internet. Điều này đảm bảo bạn không bị gián đoạn kinh doanh."
+    answer: "POSO POS có thể hoạt động offline và đồng bộ dữ liệu khi có kết nối internet. Điều này đảm bảo bạn không bị gián đoạn kinh doanh."
   }, {
-    question: "Chi phí sử dụng Ocha POS là bao nhiêu?",
-    answer: "Ocha POS có nhiều gói dịch vụ phù hợp với nhu cầu khác nhau. Chúng tôi có gói dùng thử miễn phí và các gói trả phí với tính năng nâng cao. Vui lòng liên hệ để được tư vấn chi tiết."
+    question: "Chi phí sử dụng POSO POS là bao nhiêu?",
+    answer: "POSO POS có nhiều gói dịch vụ phù hợp với nhu cầu khác nhau. Chúng tôi có gói dùng thử miễn phí và các gói trả phí với tính năng nâng cao. Vui lòng liên hệ để được tư vấn chi tiết."
   }, {
     question: "Tôi có thể tích hợp với các hệ thống thanh toán khác không?",
-    answer: "Có, Ocha POS hỗ trợ tích hợp với nhiều cổng thanh toán phổ biến như Momo, ZaloPay, VNPay, và các hệ thống thanh toán quốc tế."
+    answer: "Có, POSO POS hỗ trợ tích hợp với nhiều cổng thanh toán phổ biến như Momo, ZaloPay, VNPay, và các hệ thống thanh toán quốc tế."
   }, {
     question: "Hỗ trợ kỹ thuật được cung cấp như thế nào?",
     answer: "Chúng tôi cung cấp hỗ trợ kỹ thuật 24/7 qua nhiều kênh: email, hotline, chat trực tuyến. Ngoài ra, chúng tôi có đội ngũ hỗ trợ tại chỗ cho khách hàng enterprise."
@@ -1235,8 +1235,8 @@ const faq = UNSAFE_withComponentProps(function FAQ() {
     question: "Tôi có thể tùy chỉnh menu và sản phẩm không?",
     answer: "Có, bạn có thể dễ dàng tùy chỉnh menu, thêm/xóa/sửa sản phẩm, điều chỉnh giá cả, và tạo các combo menu theo nhu cầu."
   }, {
-    question: "Ocha POS hỗ trợ in hóa đơn như thế nào?",
-    answer: "Ocha POS hỗ trợ in hóa đơn với nhiều loại máy in nhiệt phổ biến. Bạn có thể tùy chỉnh mẫu hóa đơn, in nhiều bản, và gửi hóa đơn điện tử qua email/SMS."
+    question: "POSO POS hỗ trợ in hóa đơn như thế nào?",
+    answer: "POSO POS hỗ trợ in hóa đơn với nhiều loại máy in nhiệt phổ biến. Bạn có thể tùy chỉnh mẫu hóa đơn, in nhiều bản, và gửi hóa đơn điện tử qua email/SMS."
   }];
   return /* @__PURE__ */ jsxs("div", {
     className: "min-h-screen bg-white",
@@ -1251,37 +1251,37 @@ const faq = UNSAFE_withComponentProps(function FAQ() {
             className: "flex items-center",
             children: /* @__PURE__ */ jsx("h1", {
               className: "text-2xl font-bold text-[#191b1e]",
-              children: "Ocha POS"
+              children: "POSO POS"
             })
           }), /* @__PURE__ */ jsxs("div", {
             className: "hidden md:flex items-center space-x-8",
             children: [/* @__PURE__ */ jsx(Link, {
               to: "/products",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "Sản phẩm"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/features",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "Tính năng"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/faq",
-              className: "text-[#00c94a] font-semibold",
+              className: "text-[#fa7313] font-semibold",
               children: "FAQ"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/news",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "Tin tức"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/contact",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "Liên hệ"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/about",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "Giới thiệu"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/contact",
-              className: "bg-[#00c94a] text-white px-6 py-2 rounded-md font-semibold hover:bg-[#00b845] transition-colors",
+              className: "bg-[#fa7313] text-white px-6 py-2 rounded-md font-semibold hover:bg-[#00b845] transition-colors",
               children: "Dùng thử miễn phí"
             })]
           })]
@@ -1296,7 +1296,7 @@ const faq = UNSAFE_withComponentProps(function FAQ() {
           children: "Câu hỏi thường gặp"
         }), /* @__PURE__ */ jsx("p", {
           className: "text-xl text-[#4f5664] text-center max-w-3xl mx-auto opacity-80",
-          children: "Tìm câu trả lời cho những thắc mắc phổ biến về Ocha POS"
+          children: "Tìm câu trả lời cho những thắc mắc phổ biến về POSO POS"
         })]
       })
     }), /* @__PURE__ */ jsx("section", {
@@ -1314,7 +1314,7 @@ const faq = UNSAFE_withComponentProps(function FAQ() {
                 className: "text-lg font-semibold text-[#191b1e] pr-4",
                 children: faq2.question
               }), /* @__PURE__ */ jsx("span", {
-                className: "text-[#00c94a] text-2xl flex-shrink-0",
+                className: "text-[#fa7313] text-2xl flex-shrink-0",
                 children: openIndex === index ? "−" : "+"
               })]
             }), openIndex === index && /* @__PURE__ */ jsx("div", {
@@ -1328,7 +1328,7 @@ const faq = UNSAFE_withComponentProps(function FAQ() {
         })
       })
     }), /* @__PURE__ */ jsx("section", {
-      className: "bg-[#00c94a] py-16",
+      className: "bg-[#fa7313] py-16",
       children: /* @__PURE__ */ jsxs("div", {
         className: "container mx-auto px-4 text-center",
         children: [/* @__PURE__ */ jsx("h2", {
@@ -1339,7 +1339,7 @@ const faq = UNSAFE_withComponentProps(function FAQ() {
           children: "Liên hệ với chúng tôi để được hỗ trợ"
         }), /* @__PURE__ */ jsx(Link, {
           to: "/contact",
-          className: "bg-white text-[#00c94a] px-8 py-4 rounded-md font-semibold text-lg hover:bg-gray-100 transition-colors inline-block",
+          className: "bg-white text-[#fa7313] px-8 py-4 rounded-md font-semibold text-lg hover:bg-gray-100 transition-colors inline-block",
           children: "Liên hệ ngay"
         })]
       })
@@ -1352,7 +1352,7 @@ const faq = UNSAFE_withComponentProps(function FAQ() {
           children: [/* @__PURE__ */ jsxs("div", {
             children: [/* @__PURE__ */ jsx("h4", {
               className: "text-xl font-bold mb-4",
-              children: "Ocha POS"
+              children: "POSO POS"
             }), /* @__PURE__ */ jsx("p", {
               className: "text-gray-400 text-sm",
               children: "Giải pháp quản lý nhà hàng hàng đầu"
@@ -1421,7 +1421,7 @@ const faq = UNSAFE_withComponentProps(function FAQ() {
         }), /* @__PURE__ */ jsx("div", {
           className: "border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm",
           children: /* @__PURE__ */ jsx("p", {
-            children: "© 2024 Ocha POS. Tất cả quyền được bảo lưu."
+            children: "© 2024 POSO POS. Tất cả quyền được bảo lưu."
           })
         })]
       })
@@ -1435,46 +1435,46 @@ const route4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
 }, Symbol.toStringTag, { value: "Module" }));
 function meta$2({}) {
   return [{
-    title: "Tin tức - Ocha POS"
+    title: "Tin tức - POSO POS"
   }, {
     name: "description",
-    content: "Tin tức và cập nhật mới nhất về Ocha POS"
+    content: "Tin tức và cập nhật mới nhất về POSO POS"
   }];
 }
 const news = UNSAFE_withComponentProps(function News() {
   const newsItems = [{
     id: 1,
-    title: "Ocha POS ra mắt tính năng quản lý đa chi nhánh",
+    title: "POSO POS ra mắt tính năng quản lý đa chi nhánh",
     excerpt: "Giờ đây bạn có thể quản lý nhiều chi nhánh từ một tài khoản duy nhất, theo dõi doanh thu và hoạt động của từng chi nhánh trong thời gian thực.",
     date: "15 Tháng 12, 2024",
     category: "Cập nhật"
   }, {
     id: 2,
-    title: "Hướng dẫn tối ưu hóa doanh thu với Ocha POS",
-    excerpt: "Khám phá các mẹo và chiến lược để tăng doanh thu nhà hàng của bạn bằng cách sử dụng các tính năng báo cáo và phân tích của Ocha POS.",
+    title: "Hướng dẫn tối ưu hóa doanh thu với POSO POS",
+    excerpt: "Khám phá các mẹo và chiến lược để tăng doanh thu nhà hàng của bạn bằng cách sử dụng các tính năng báo cáo và phân tích của POSO POS.",
     date: "10 Tháng 12, 2024",
     category: "Hướng dẫn"
   }, {
     id: 3,
-    title: "Ocha POS tích hợp với các cổng thanh toán mới",
+    title: "POSO POS tích hợp với các cổng thanh toán mới",
     excerpt: "Chúng tôi vui mừng thông báo về việc tích hợp với thêm nhiều cổng thanh toán phổ biến, giúp khách hàng thanh toán dễ dàng hơn.",
     date: "5 Tháng 12, 2024",
     category: "Cập nhật"
   }, {
     id: 4,
-    title: "Case study: Quán cafe tăng 30% doanh thu nhờ Ocha POS",
-    excerpt: "Câu chuyện thành công của một quán cafe tại TP.HCM đã tăng doanh thu đáng kể sau khi triển khai Ocha POS.",
+    title: "Case study: Quán cafe tăng 30% doanh thu nhờ POSO POS",
+    excerpt: "Câu chuyện thành công của một quán cafe tại TP.HCM đã tăng doanh thu đáng kể sau khi triển khai POSO POS.",
     date: "28 Tháng 11, 2024",
     category: "Case study"
   }, {
     id: 5,
-    title: "Bảo mật dữ liệu: Ưu tiên hàng đầu tại Ocha POS",
+    title: "Bảo mật dữ liệu: Ưu tiên hàng đầu tại POSO POS",
     excerpt: "Tìm hiểu về các biện pháp bảo mật mà chúng tôi áp dụng để bảo vệ dữ liệu của khách hàng.",
     date: "20 Tháng 11, 2024",
     category: "Bảo mật"
   }, {
     id: 6,
-    title: "Ocha POS phiên bản 2.0 - Nhiều cải tiến mới",
+    title: "POSO POS phiên bản 2.0 - Nhiều cải tiến mới",
     excerpt: "Ra mắt phiên bản 2.0 với giao diện mới, hiệu năng tốt hơn và nhiều tính năng được yêu cầu bởi người dùng.",
     date: "15 Tháng 11, 2024",
     category: "Cập nhật"
@@ -1492,37 +1492,37 @@ const news = UNSAFE_withComponentProps(function News() {
             className: "flex items-center",
             children: /* @__PURE__ */ jsx("h1", {
               className: "text-2xl font-bold text-[#191b1e]",
-              children: "Ocha POS"
+              children: "POSO POS"
             })
           }), /* @__PURE__ */ jsxs("div", {
             className: "hidden md:flex items-center space-x-8",
             children: [/* @__PURE__ */ jsx(Link, {
               to: "/products",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "Sản phẩm"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/features",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "Tính năng"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/faq",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "FAQ"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/news",
-              className: "text-[#00c94a] font-semibold",
+              className: "text-[#fa7313] font-semibold",
               children: "Tin tức"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/contact",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "Liên hệ"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/about",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "Giới thiệu"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/contact",
-              className: "bg-[#00c94a] text-white px-6 py-2 rounded-md font-semibold hover:bg-[#00b845] transition-colors",
+              className: "bg-[#fa7313] text-white px-6 py-2 rounded-md font-semibold hover:bg-[#00b845] transition-colors",
               children: "Dùng thử miễn phí"
             })]
           })]
@@ -1537,7 +1537,7 @@ const news = UNSAFE_withComponentProps(function News() {
           children: "Tin tức & Cập nhật"
         }), /* @__PURE__ */ jsx("p", {
           className: "text-xl text-[#4f5664] text-center max-w-3xl mx-auto opacity-80",
-          children: "Cập nhật mới nhất về Ocha POS, tính năng mới, và các câu chuyện thành công"
+          children: "Cập nhật mới nhất về POSO POS, tính năng mới, và các câu chuyện thành công"
         })]
       })
     }), /* @__PURE__ */ jsx("section", {
@@ -1553,21 +1553,21 @@ const news = UNSAFE_withComponentProps(function News() {
               children: [/* @__PURE__ */ jsxs("div", {
                 className: "flex items-center justify-between mb-3",
                 children: [/* @__PURE__ */ jsx("span", {
-                  className: "text-sm font-semibold text-[#00c94a] bg-[#00c94a]/10 px-3 py-1 rounded-full",
+                  className: "text-sm font-semibold text-[#fa7313] bg-[#fa7313]/10 px-3 py-1 rounded-full",
                   children: item.category
                 }), /* @__PURE__ */ jsx("span", {
                   className: "text-sm text-[#4f5664] opacity-70",
                   children: item.date
                 })]
               }), /* @__PURE__ */ jsx("h3", {
-                className: "text-xl font-bold text-[#191b1e] mb-3 hover:text-[#00c94a] transition-colors",
+                className: "text-xl font-bold text-[#191b1e] mb-3 hover:text-[#fa7313] transition-colors",
                 children: item.title
               }), /* @__PURE__ */ jsx("p", {
                 className: "text-[#4f5664] opacity-80 leading-relaxed mb-4",
                 children: item.excerpt
               }), /* @__PURE__ */ jsx(Link, {
                 to: `/news/${item.id}`,
-                className: "text-[#00c94a] font-semibold hover:underline inline-flex items-center",
+                className: "text-[#fa7313] font-semibold hover:underline inline-flex items-center",
                 children: "Đọc thêm →"
               })]
             })
@@ -1583,7 +1583,7 @@ const news = UNSAFE_withComponentProps(function News() {
           children: [/* @__PURE__ */ jsxs("div", {
             children: [/* @__PURE__ */ jsx("h4", {
               className: "text-xl font-bold mb-4",
-              children: "Ocha POS"
+              children: "POSO POS"
             }), /* @__PURE__ */ jsx("p", {
               className: "text-gray-400 text-sm",
               children: "Giải pháp quản lý nhà hàng hàng đầu"
@@ -1652,7 +1652,7 @@ const news = UNSAFE_withComponentProps(function News() {
         }), /* @__PURE__ */ jsx("div", {
           className: "border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm",
           children: /* @__PURE__ */ jsx("p", {
-            children: "© 2024 Ocha POS. Tất cả quyền được bảo lưu."
+            children: "© 2024 POSO POS. Tất cả quyền được bảo lưu."
           })
         })]
       })
@@ -1666,10 +1666,10 @@ const route5 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
 }, Symbol.toStringTag, { value: "Module" }));
 function meta$1({}) {
   return [{
-    title: "Liên hệ - Ocha POS"
+    title: "Liên hệ - POSO POS"
   }, {
     name: "description",
-    content: "Liên hệ với Ocha POS để được tư vấn và hỗ trợ"
+    content: "Liên hệ với POSO POS để được tư vấn và hỗ trợ"
   }];
 }
 const contact = UNSAFE_withComponentProps(function Contact() {
@@ -1686,37 +1686,37 @@ const contact = UNSAFE_withComponentProps(function Contact() {
             className: "flex items-center",
             children: /* @__PURE__ */ jsx("h1", {
               className: "text-2xl font-bold text-[#191b1e]",
-              children: "Ocha POS"
+              children: "POSO POS"
             })
           }), /* @__PURE__ */ jsxs("div", {
             className: "hidden md:flex items-center space-x-8",
             children: [/* @__PURE__ */ jsx(Link, {
               to: "/products",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "Sản phẩm"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/features",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "Tính năng"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/faq",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "FAQ"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/news",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "Tin tức"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/contact",
-              className: "text-[#00c94a] font-semibold",
+              className: "text-[#fa7313] font-semibold",
               children: "Liên hệ"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/about",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "Giới thiệu"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/contact",
-              className: "bg-[#00c94a] text-white px-6 py-2 rounded-md font-semibold hover:bg-[#00b845] transition-colors",
+              className: "bg-[#fa7313] text-white px-6 py-2 rounded-md font-semibold hover:bg-[#00b845] transition-colors",
               children: "Dùng thử miễn phí"
             })]
           })]
@@ -1756,7 +1756,7 @@ const contact = UNSAFE_withComponentProps(function Contact() {
                   id: "name",
                   name: "name",
                   required: true,
-                  className: "w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#00c94a] focus:border-transparent",
+                  className: "w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fa7313] focus:border-transparent",
                   placeholder: "Nhập họ và tên của bạn"
                 })]
               }), /* @__PURE__ */ jsxs("div", {
@@ -1769,7 +1769,7 @@ const contact = UNSAFE_withComponentProps(function Contact() {
                   id: "email",
                   name: "email",
                   required: true,
-                  className: "w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#00c94a] focus:border-transparent",
+                  className: "w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fa7313] focus:border-transparent",
                   placeholder: "your@email.com"
                 })]
               }), /* @__PURE__ */ jsxs("div", {
@@ -1782,7 +1782,7 @@ const contact = UNSAFE_withComponentProps(function Contact() {
                   id: "phone",
                   name: "phone",
                   required: true,
-                  className: "w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#00c94a] focus:border-transparent",
+                  className: "w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fa7313] focus:border-transparent",
                   placeholder: "0901234567"
                 })]
               }), /* @__PURE__ */ jsxs("div", {
@@ -1795,12 +1795,12 @@ const contact = UNSAFE_withComponentProps(function Contact() {
                   name: "message",
                   rows: 6,
                   required: true,
-                  className: "w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#00c94a] focus:border-transparent",
+                  className: "w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fa7313] focus:border-transparent",
                   placeholder: "Nhập tin nhắn của bạn..."
                 })]
               }), /* @__PURE__ */ jsx("button", {
                 type: "submit",
-                className: "w-full bg-[#00c94a] text-white px-6 py-4 rounded-md font-semibold text-lg hover:bg-[#00b845] transition-colors",
+                className: "w-full bg-[#fa7313] text-white px-6 py-4 rounded-md font-semibold text-lg hover:bg-[#00b845] transition-colors",
                 children: "Gửi tin nhắn"
               })]
             })]
@@ -1826,7 +1826,7 @@ const contact = UNSAFE_withComponentProps(function Contact() {
                   className: "text-[#4f5664] opacity-80",
                   children: /* @__PURE__ */ jsx("a", {
                     href: "tel:+84901234567",
-                    className: "hover:text-[#00c94a] transition-colors",
+                    className: "hover:text-[#fa7313] transition-colors",
                     children: "+84 90 123 4567"
                   })
                 })]
@@ -1837,9 +1837,9 @@ const contact = UNSAFE_withComponentProps(function Contact() {
                 }), /* @__PURE__ */ jsx("p", {
                   className: "text-[#4f5664] opacity-80",
                   children: /* @__PURE__ */ jsx("a", {
-                    href: "mailto:contact@ochapos.vn",
-                    className: "hover:text-[#00c94a] transition-colors",
-                    children: "contact@ochapos.vn"
+                    href: "mailto:contact@POSOpos.vn",
+                    className: "hover:text-[#fa7313] transition-colors",
+                    children: "contact@POSOpos.vn"
                   })
                 })]
               }), /* @__PURE__ */ jsxs("div", {
@@ -1864,7 +1864,7 @@ const contact = UNSAFE_withComponentProps(function Contact() {
           children: [/* @__PURE__ */ jsxs("div", {
             children: [/* @__PURE__ */ jsx("h4", {
               className: "text-xl font-bold mb-4",
-              children: "Ocha POS"
+              children: "POSO POS"
             }), /* @__PURE__ */ jsx("p", {
               className: "text-gray-400 text-sm",
               children: "Giải pháp quản lý nhà hàng hàng đầu"
@@ -1933,7 +1933,7 @@ const contact = UNSAFE_withComponentProps(function Contact() {
         }), /* @__PURE__ */ jsx("div", {
           className: "border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm",
           children: /* @__PURE__ */ jsx("p", {
-            children: "© 2024 Ocha POS. Tất cả quyền được bảo lưu."
+            children: "© 2024 POSO POS. Tất cả quyền được bảo lưu."
           })
         })]
       })
@@ -1947,10 +1947,10 @@ const route6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
 }, Symbol.toStringTag, { value: "Module" }));
 function meta({}) {
   return [{
-    title: "Giới thiệu - Ocha POS"
+    title: "Giới thiệu - POSO POS"
   }, {
     name: "description",
-    content: "Tìm hiểu về Ocha POS và sứ mệnh của chúng tôi"
+    content: "Tìm hiểu về POSO POS và sứ mệnh của chúng tôi"
   }];
 }
 const about = UNSAFE_withComponentProps(function About() {
@@ -1993,37 +1993,37 @@ const about = UNSAFE_withComponentProps(function About() {
             className: "flex items-center",
             children: /* @__PURE__ */ jsx("h1", {
               className: "text-2xl font-bold text-[#191b1e]",
-              children: "Ocha POS"
+              children: "POSO POS"
             })
           }), /* @__PURE__ */ jsxs("div", {
             className: "hidden md:flex items-center space-x-8",
             children: [/* @__PURE__ */ jsx(Link, {
               to: "/products",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "Sản phẩm"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/features",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "Tính năng"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/faq",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "FAQ"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/news",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "Tin tức"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/contact",
-              className: "text-[#4f5664] hover:text-[#00c94a] transition-colors",
+              className: "text-[#4f5664] hover:text-[#fa7313] transition-colors",
               children: "Liên hệ"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/about",
-              className: "text-[#00c94a] font-semibold",
+              className: "text-[#fa7313] font-semibold",
               children: "Giới thiệu"
             }), /* @__PURE__ */ jsx(Link, {
               to: "/contact",
-              className: "bg-[#00c94a] text-white px-6 py-2 rounded-md font-semibold hover:bg-[#00b845] transition-colors",
+              className: "bg-[#fa7313] text-white px-6 py-2 rounded-md font-semibold hover:bg-[#00b845] transition-colors",
               children: "Dùng thử miễn phí"
             })]
           })]
@@ -2035,7 +2035,7 @@ const about = UNSAFE_withComponentProps(function About() {
         className: "container mx-auto px-4",
         children: [/* @__PURE__ */ jsx("h1", {
           className: "text-5xl font-bold text-[#191b1e] text-center mb-6",
-          children: "Về Ocha POS"
+          children: "Về POSO POS"
         }), /* @__PURE__ */ jsx("p", {
           className: "text-xl text-[#4f5664] text-center max-w-3xl mx-auto opacity-80",
           children: "Giải pháp quản lý nhà hàng hàng đầu Việt Nam"
@@ -2052,13 +2052,13 @@ const about = UNSAFE_withComponentProps(function About() {
             children: "Sứ mệnh của chúng tôi"
           }), /* @__PURE__ */ jsx("p", {
             className: "text-[#4f5664] opacity-80 leading-relaxed mb-8 text-lg",
-            children: "Ocha POS được thành lập với sứ mệnh giúp các nhà hàng, quán cafe, và doanh nghiệp F&B quản lý hoạt động kinh doanh một cách hiệu quả và chuyên nghiệp. Chúng tôi tin rằng công nghệ nên đơn giản, dễ sử dụng và giúp doanh nghiệp phát triển."
+            children: "POSO POS được thành lập với sứ mệnh giúp các nhà hàng, quán cafe, và doanh nghiệp F&B quản lý hoạt động kinh doanh một cách hiệu quả và chuyên nghiệp. Chúng tôi tin rằng công nghệ nên đơn giản, dễ sử dụng và giúp doanh nghiệp phát triển."
           }), /* @__PURE__ */ jsx("h2", {
             className: "text-3xl font-bold text-[#191b1e] mb-6 mt-12",
             children: "Câu chuyện của chúng tôi"
           }), /* @__PURE__ */ jsx("p", {
             className: "text-[#4f5664] opacity-80 leading-relaxed mb-4 text-lg",
-            children: "Bắt đầu từ năm 2020, Ocha POS được ra đời từ nhu cầu thực tế của các chủ nhà hàng muốn có một giải pháp quản lý toàn diện nhưng đơn giản và giá cả phải chăng."
+            children: "Bắt đầu từ năm 2020, POSO POS được ra đời từ nhu cầu thực tế của các chủ nhà hàng muốn có một giải pháp quản lý toàn diện nhưng đơn giản và giá cả phải chăng."
           }), /* @__PURE__ */ jsx("p", {
             className: "text-[#4f5664] opacity-80 leading-relaxed mb-8 text-lg",
             children: "Sau nhiều năm phát triển, chúng tôi tự hào là một trong những nhà cung cấp giải pháp POS hàng đầu tại Việt Nam, phục vụ hàng chục nghìn khách hàng từ quy mô nhỏ đến lớn."
@@ -2074,7 +2074,7 @@ const about = UNSAFE_withComponentProps(function About() {
           children: stats.map((stat, index) => /* @__PURE__ */ jsxs("div", {
             className: "text-center",
             children: [/* @__PURE__ */ jsx("div", {
-              className: "text-4xl md:text-5xl font-bold text-[#00c94a] mb-2",
+              className: "text-4xl md:text-5xl font-bold text-[#fa7313] mb-2",
               children: stat.number
             }), /* @__PURE__ */ jsx("div", {
               className: "text-[#4f5664] opacity-80 font-semibold",
@@ -2105,7 +2105,7 @@ const about = UNSAFE_withComponentProps(function About() {
         })]
       })
     }), /* @__PURE__ */ jsx("section", {
-      className: "bg-[#00c94a] py-16",
+      className: "bg-[#fa7313] py-16",
       children: /* @__PURE__ */ jsxs("div", {
         className: "container mx-auto px-4 text-center",
         children: [/* @__PURE__ */ jsx("h2", {
@@ -2116,7 +2116,7 @@ const about = UNSAFE_withComponentProps(function About() {
           children: "Bắt đầu hành trình số hóa nhà hàng của bạn ngay hôm nay"
         }), /* @__PURE__ */ jsx(Link, {
           to: "/contact",
-          className: "bg-white text-[#00c94a] px-8 py-4 rounded-md font-semibold text-lg hover:bg-gray-100 transition-colors inline-block",
+          className: "bg-white text-[#fa7313] px-8 py-4 rounded-md font-semibold text-lg hover:bg-gray-100 transition-colors inline-block",
           children: "Liên hệ ngay"
         })]
       })
@@ -2129,7 +2129,7 @@ const about = UNSAFE_withComponentProps(function About() {
           children: [/* @__PURE__ */ jsxs("div", {
             children: [/* @__PURE__ */ jsx("h4", {
               className: "text-xl font-bold mb-4",
-              children: "Ocha POS"
+              children: "POSO POS"
             }), /* @__PURE__ */ jsx("p", {
               className: "text-gray-400 text-sm",
               children: "Giải pháp quản lý nhà hàng hàng đầu"
@@ -2198,7 +2198,7 @@ const about = UNSAFE_withComponentProps(function About() {
         }), /* @__PURE__ */ jsx("div", {
           className: "border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm",
           children: /* @__PURE__ */ jsx("p", {
-            children: "© 2024 Ocha POS. Tất cả quyền được bảo lưu."
+            children: "© 2024 POSO POS. Tất cả quyền được bảo lưu."
           })
         })]
       })
