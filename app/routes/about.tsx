@@ -44,7 +44,7 @@ export default function About() {
       {/* Hero Section */}
       <PageHero
         title="Về POSO POS"
-        subtitle="Giải pháp quản lý nhà hàng hàng đầu Việt Nam"
+        subtitle="Giải pháp quản lý bán hàng hàng đầu Việt Nam"
       />
 
       {/* About Content */}
@@ -142,7 +142,7 @@ export default function About() {
             <div>
               <h4 className="text-xl font-bold mb-4">POSO POS</h4>
               <p className="text-gray-400 text-sm">
-                Giải pháp quản lý nhà hàng hàng đầu
+                Giải pháp quản lý bán hàng hàng đầu
               </p>
             </div>
             <div>

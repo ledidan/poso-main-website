@@ -194,7 +194,7 @@ export default function FeaturesBoss() {
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-[1340px] mx-auto">
             <h2 className="text-4xl font-bold text-white mb-4">
-              Bắt đầu quản lý nhà hàng ngay hôm nay
+              Bắt đầu quản lý bán hàng ngay hôm nay
             </h2>
             <p className="text-white opacity-90 mb-8 text-lg">
               Tải ứng dụng POSO Boss miễn phí và quản lý cửa hàng từ mọi nơi
@@ -219,7 +219,7 @@ export default function FeaturesBoss() {
                   POSO
                 </h4>
                 <p className="text-gray-400 text-sm">
-                  Giải pháp quản lý nhà hàng hàng đầu Việt Nam
+                  Giải pháp quản lý bán hàng hàng đầu Việt Nam
                 </p>
               </div>
               <div>

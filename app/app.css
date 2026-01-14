@@ -8,7 +8,7 @@
   --color-poso-primary: #fa7313;
   --color-poso-primary-hover: #e8650f;
   --color-poso-dark: #191b1e;
-  --color-poso-gray: #4f5664;
+  --color-poso-gray: #6c757d;
   --color-poso-gray-dark: #505663;
   --color-poso-bg: #f8f9fc;
 }
@@ -16,7 +16,6 @@
 html,
 body {
   @apply bg-white font-sans;
-
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }

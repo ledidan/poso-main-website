@@ -73,7 +73,7 @@ export default function FeaturesPOS() {
       {/* Hero Section */}
       <PageHero
         title="Tính năng POSO POS"
-        subtitle="Hệ thống điểm bán hàng chuyên nghiệp với đầy đủ tính năng quản lý nhà hàng"
+        subtitle="Hệ thống điểm bán hàng chuyên nghiệp với đầy đủ tính năng quản lý bán hàng"
       />
 
       {/* Features Section */}
@@ -163,7 +163,7 @@ export default function FeaturesPOS() {
               Trải nghiệm POSO POS ngay hôm nay
             </h2>
             <p className="text-white opacity-90 mb-8 text-lg">
-              Hệ thống quản lý nhà hàng chuyên nghiệp với đầy đủ tính năng
+              Hệ thống quản lý bán hàng chuyên nghiệp với đầy đủ tính năng
             </p>
             <Link
               to="/contact"
@@ -185,7 +185,7 @@ export default function FeaturesPOS() {
                   POSO
                 </h4>
                 <p className="text-gray-400 text-sm">
-                  Giải pháp quản lý nhà hàng hàng đầu Việt Nam
+                  Giải pháp quản lý bán hàng hàng đầu Việt Nam
                 </p>
               </div>
               <div>

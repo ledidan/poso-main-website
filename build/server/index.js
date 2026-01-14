@@ -123,7 +123,7 @@ function meta$6({}) {
     title: "POSO POS"
   }, {
     name: "description",
-    content: "POSO là Nhãn Hiệu Máy Bán Hàng Hàng Đầu Thế Giới. Giải pháp quản lý nhà hàng duy nhất bạn cần."
+    content: "POSO là Nhãn Hiệu Máy Bán Hàng Hàng Đầu Thế Giới. Giải pháp quản lý bán hàng duy nhất bạn cần."
   }];
 }
 const home = UNSAFE_withComponentProps(function Home() {
@@ -515,7 +515,7 @@ const home = UNSAFE_withComponentProps(function Home() {
             children: '"'
           }), /* @__PURE__ */ jsx("blockquote", {
             className: "text-xl text-[#191b1e] mb-6 leading-relaxed",
-            children: "POSO POS đã giúp chúng tôi quản lý nhà hàng hiệu quả hơn rất nhiều. Giao diện dễ sử dụng, tính năng đầy đủ và hỗ trợ khách hàng rất tốt."
+            children: "POSO POS đã giúp chúng tôi quản lý bán hàng hiệu quả hơn rất nhiều. Giao diện dễ sử dụng, tính năng đầy đủ và hỗ trợ khách hàng rất tốt."
           }), /* @__PURE__ */ jsx("cite", {
             className: "text-[#4f5664] font-semibold",
             children: "- Nhà hàng Mỹ Cay Naga Phú Nhuận - Anh Thái"
@@ -590,10 +590,10 @@ const home = UNSAFE_withComponentProps(function Home() {
             children: "POSO POS"
           }), /* @__PURE__ */ jsx("p", {
             className: "text-xl mb-2 opacity-90",
-            children: "Hệ thống quản lý nhà hàng chuyên nghiệp"
+            children: "Hệ thống quản lý bán hàng chuyên nghiệp"
           }), /* @__PURE__ */ jsx("p", {
             className: "text-lg mb-8 opacity-80",
-            children: "Giải pháp nhà hàng toàn diện"
+            children: "Giải pháp bán hàng toàn diện"
           }), /* @__PURE__ */ jsx(Link, {
             to: "/contact",
             className: "bg-white text-[#fa7313] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors inline-block",
@@ -618,7 +618,7 @@ const home = UNSAFE_withComponentProps(function Home() {
               children: "POSO"
             }), /* @__PURE__ */ jsx("p", {
               className: "text-gray-400 text-sm leading-relaxed",
-              children: "Giải pháp quản lý nhà hàng hàng đầu Việt Nam. Chúng tôi cung cấp các sản phẩm và dịch vụ tốt nhất để giúp doanh nghiệp của bạn phát triển."
+              children: "Giải pháp quản lý bán hàng hàng đầu Việt Nam. Chúng tôi cung cấp các sản phẩm và dịch vụ tốt nhất để giúp doanh nghiệp của bạn phát triển."
             })]
           }), /* @__PURE__ */ jsxs("div", {
             children: [/* @__PURE__ */ jsx("h5", {
@@ -725,7 +725,7 @@ function meta$5({}) {
     title: "Sản phẩm - POSO POS"
   }, {
     name: "description",
-    content: "Khám phá các sản phẩm POSO POS - Giải pháp quản lý nhà hàng toàn diện"
+    content: "Khám phá các sản phẩm POSO POS - Giải pháp quản lý bán hàng toàn diện"
   }];
 }
 const products = UNSAFE_withComponentProps(function Products() {
@@ -738,7 +738,7 @@ const products = UNSAFE_withComponentProps(function Products() {
   }, {
     id: 2,
     name: "POSO Manager",
-    description: "Phần mềm quản lý nhà hàng toàn diện từ xa",
+    description: "Phần mềm quản lý bán hàng toàn diện từ xa",
     features: ["Quản lý từ xa", "Báo cáo chi tiết", "Quản lý nhân viên", "Theo dõi KPI"],
     price: "Liên hệ"
   }, {
@@ -806,7 +806,7 @@ const products = UNSAFE_withComponentProps(function Products() {
           children: "Sản phẩm POSO POS"
         }), /* @__PURE__ */ jsx("p", {
           className: "text-xl text-[#4f5664] text-center max-w-3xl mx-auto opacity-80",
-          children: "Giải pháp quản lý nhà hàng toàn diện với bộ sản phẩm đa dạng, đáp ứng mọi nhu cầu của bạn"
+          children: "Giải pháp quản lý bán hàng toàn diện với bộ sản phẩm đa dạng, đáp ứng mọi nhu cầu của bạn"
         })]
       })
     }), /* @__PURE__ */ jsx("section", {
@@ -877,7 +877,7 @@ const products = UNSAFE_withComponentProps(function Products() {
               children: "POSO POS"
             }), /* @__PURE__ */ jsx("p", {
               className: "text-gray-400 text-sm",
-              children: "Giải pháp quản lý nhà hàng hàng đầu"
+              children: "Giải pháp quản lý bán hàng hàng đầu"
             })]
           }), /* @__PURE__ */ jsxs("div", {
             children: [/* @__PURE__ */ jsx("h5", {
@@ -1071,7 +1071,7 @@ const features = UNSAFE_withComponentProps(function Features() {
           children: "Tính năng POSO POS"
         }), /* @__PURE__ */ jsx("p", {
           className: "text-xl text-[#4f5664] text-center max-w-3xl mx-auto opacity-80",
-          children: "Khám phá các tính năng mạnh mẽ giúp quản lý nhà hàng hiệu quả hơn"
+          children: "Khám phá các tính năng mạnh mẽ giúp quản lý bán hàng hiệu quả hơn"
         })]
       })
     }), /* @__PURE__ */ jsx("section", {
@@ -1125,7 +1125,7 @@ const features = UNSAFE_withComponentProps(function Features() {
               children: "POSO POS"
             }), /* @__PURE__ */ jsx("p", {
               className: "text-gray-400 text-sm",
-              children: "Giải pháp quản lý nhà hàng hàng đầu"
+              children: "Giải pháp quản lý bán hàng hàng đầu"
             })]
           }), /* @__PURE__ */ jsxs("div", {
             children: [/* @__PURE__ */ jsx("h5", {
@@ -1355,7 +1355,7 @@ const faq = UNSAFE_withComponentProps(function FAQ() {
               children: "POSO POS"
             }), /* @__PURE__ */ jsx("p", {
               className: "text-gray-400 text-sm",
-              children: "Giải pháp quản lý nhà hàng hàng đầu"
+              children: "Giải pháp quản lý bán hàng hàng đầu"
             })]
           }), /* @__PURE__ */ jsxs("div", {
             children: [/* @__PURE__ */ jsx("h5", {
@@ -1586,7 +1586,7 @@ const news = UNSAFE_withComponentProps(function News() {
               children: "POSO POS"
             }), /* @__PURE__ */ jsx("p", {
               className: "text-gray-400 text-sm",
-              children: "Giải pháp quản lý nhà hàng hàng đầu"
+              children: "Giải pháp quản lý bán hàng hàng đầu"
             })]
           }), /* @__PURE__ */ jsxs("div", {
             children: [/* @__PURE__ */ jsx("h5", {
@@ -1867,7 +1867,7 @@ const contact = UNSAFE_withComponentProps(function Contact() {
               children: "POSO POS"
             }), /* @__PURE__ */ jsx("p", {
               className: "text-gray-400 text-sm",
-              children: "Giải pháp quản lý nhà hàng hàng đầu"
+              children: "Giải pháp quản lý bán hàng hàng đầu"
             })]
           }), /* @__PURE__ */ jsxs("div", {
             children: [/* @__PURE__ */ jsx("h5", {
@@ -2038,7 +2038,7 @@ const about = UNSAFE_withComponentProps(function About() {
           children: "Về POSO POS"
         }), /* @__PURE__ */ jsx("p", {
           className: "text-xl text-[#4f5664] text-center max-w-3xl mx-auto opacity-80",
-          children: "Giải pháp quản lý nhà hàng hàng đầu Việt Nam"
+          children: "Giải pháp quản lý bán hàng hàng đầu Việt Nam"
         })]
       })
     }), /* @__PURE__ */ jsx("section", {
@@ -2132,7 +2132,7 @@ const about = UNSAFE_withComponentProps(function About() {
               children: "POSO POS"
             }), /* @__PURE__ */ jsx("p", {
               className: "text-gray-400 text-sm",
-              children: "Giải pháp quản lý nhà hàng hàng đầu"
+              children: "Giải pháp quản lý bán hàng hàng đầu"
             })]
           }), /* @__PURE__ */ jsxs("div", {
             children: [/* @__PURE__ */ jsx("h5", {

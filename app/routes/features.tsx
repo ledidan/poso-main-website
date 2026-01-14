@@ -89,7 +89,7 @@ export default function Features() {
       {/* Hero Section */}
       <PageHero
         title="Tính năng POSO POS"
-        subtitle="Khám phá các tính năng mạnh mẽ giúp quản lý nhà hàng hiệu quả hơn"
+        subtitle="Khám phá các tính năng mạnh mẽ giúp quản lý bán hàng hiệu quả hơn"
       />
 
       {/* Features Section */}
@@ -144,7 +144,7 @@ export default function Features() {
             <div>
               <h4 className="text-xl font-bold mb-4">POSO POS</h4>
               <p className="text-gray-400 text-sm">
-                Giải pháp quản lý nhà hàng hàng đầu
+                Giải pháp quản lý bán hàng hàng đầu
               </p>
             </div>
             <div>

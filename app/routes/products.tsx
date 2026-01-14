@@ -6,7 +6,7 @@ import { SiteHeader } from "../components/SiteHeader";
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "Sản phẩm - POSO POS" },
-    { name: "description", content: "Khám phá các sản phẩm POSO POS - Giải pháp quản lý nhà hàng toàn diện" },
+    { name: "description", content: "Khám phá các sản phẩm POSO POS - Giải pháp quản lý bán hàng toàn diện" },
   ];
 }
 
@@ -22,7 +22,7 @@ export default function Products() {
     {
       id: 2,
       name: "POSO Manager",
-      description: "Phần mềm quản lý nhà hàng toàn diện từ xa",
+      description: "Phần mềm quản lý bán hàng toàn diện từ xa",
       features: ["Quản lý từ xa", "Báo cáo chi tiết", "Quản lý nhân viên", "Theo dõi KPI"],
       price: "Liên hệ",
     },
@@ -42,7 +42,7 @@ export default function Products() {
       {/* Hero Section */}
       <PageHero
         title="Sản phẩm POSO POS"
-        subtitle="Giải pháp quản lý nhà hàng toàn diện với bộ sản phẩm đa dạng, đáp ứng mọi nhu cầu của bạn"
+        subtitle="Giải pháp quản lý bán hàng toàn diện với bộ sản phẩm đa dạng, đáp ứng mọi nhu cầu của bạn"
       />
 
       {/* Products Grid */}
@@ -104,7 +104,7 @@ export default function Products() {
             <div>
               <h4 className="text-xl font-bold mb-4">POSO POS</h4>
               <p className="text-gray-400 text-sm">
-                Giải pháp quản lý nhà hàng hàng đầu
+                Giải pháp quản lý bán hàng hàng đầu
               </p>
             </div>
             <div>
