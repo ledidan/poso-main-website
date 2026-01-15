@@ -181,7 +181,7 @@ export function HomeHighlights() {
               <h3 className="font-semibold text-poso-dark mb-1">
                 {item.title}
               </h3>
-              <p className="text-sm text-poso-gray opacity-80 leading-relaxed w-[80%] mx-auto">
+              <p className=" text-poso-gray opacity-80 leading-relaxed w-[80%] mx-auto">
                 {item.description}
               </p>
             </div>
@@ -344,7 +344,7 @@ export function HomeHighlights() {
                 <h3 className="font-semibold text-md text-poso-dark mb-1">
                   {item.title}
                 </h3>
-                <p className="text-sm font-stretch-50% text-poso-gray opacity-90 w-full mx-auto">
+                <p className=" font-stretch-50% text-poso-gray opacity-90 w-full mx-auto">
                   {item.description}
                 </p>
               </div>

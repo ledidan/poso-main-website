@@ -114,7 +114,7 @@ export default function NewsDetail() {
           <div className="max-w-4xl mx-auto">
             {/* Category Badge */}
             <div className="mb-6">
-              <span className="text-sm font-semibold text-poso-primary bg-poso-primary/10 px-3 py-1 rounded-full">
+              <span className=" font-semibold text-poso-primary bg-poso-primary/10 px-3 py-1 rounded-full">
                 {categoryName}
               </span>
             </div>
@@ -155,17 +155,17 @@ export default function NewsDetail() {
                       >
                         <div className="p-6">
                           <div className="flex items-center justify-between mb-3">
-                            <span className="text-xs font-semibold text-poso-primary bg-poso-primary/10 px-2 py-1 rounded-full">
+                            <span className=" font-semibold text-poso-primary bg-poso-primary/10 px-2 py-1 rounded-full">
                               {relatedCategoryName}
                             </span>
-                            <span className="text-xs text-poso-gray opacity-70">
+                            <span className=" text-poso-gray opacity-70">
                               {relatedFormattedDate}
                             </span>
                           </div>
                           <h3 className="text-lg font-bold text-poso-dark mb-2 line-clamp-2 hover:text-poso-primary transition-colors">
                             {relatedPost.title.rendered}
                           </h3>
-                          <p className="text-sm text-poso-gray opacity-80 line-clamp-2">
+                          <p className=" text-poso-gray opacity-80 line-clamp-2">
                             {relatedPost.excerpt.rendered.replace(/<[^>]*>/g, "")}
                           </p>
                         </div>

@@ -14,7 +14,7 @@ export function HomeHero() {
         pagination={{ clickable: true }}
         className="hero-swiper"
       >
-        <SwiperSlide className="relative overflow-hidden">
+        <SwiperSlide className="relative overflow-hidden min-h-[600px] md:min-h-[600px]">
           <div className="absolute inset-0 -z-10">
             <img
               src="/images/banner-2.png"
@@ -24,20 +24,20 @@ export function HomeHero() {
             <div className="absolute inset-0 bg-black/10" />
           </div>
 
-          <div className="max-w-7xl mx-auto px-6 lg:px-24 py-16">
-            <div className="flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-20 text-center lg:text-left">
+          <div className="max-w-7xl mx-auto justify-center py-16 h-full flex items-center">
+            <div className="flex flex-col lg:flex-row justify-center gap-10 lg:gap-0 items-center text-center lg:text-left">
               <div className="space-y-6">
                 <div className="flex flex-col md:flex-row md:items-center md:gap-4">
                   <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-poso-dark leading-tight">
                     Poso Boss
                   </h1>
-                  <p className="w-full md:w-[40%] text-base md:text-xl text-poso-dark md:border-l md:border-gray-500 md:pl-6 mt-3 md:mt-0 mx-auto md:mx-0">
+                  <p className="w-full md:w-[40%]  md:text-xl text-poso-dark md:border-l md:border-gray-500 md:pl-6 mt-3 md:mt-0 mx-auto md:mx-0">
                     Quản lý quán mọi lúc,
                     <br className=" hidden" />
                     <span className="md:ml-1">mọi nơi</span>
                   </p>
                 </div>
-                <p className="text-base md:text-lg text-poso-gray-dark">
+                <p className=" md:text-lg text-poso-gray-dark">
                   Ứng dụng quản lý cho chủ quán
                 </p>
                 <div className="hidden md:flex flex-col items-center md:flex-row md:items-center gap-4">
@@ -45,7 +45,7 @@ export function HomeHero() {
                     <StoreButton type="google" />
                     <StoreButton type="apple" />
                   </div>
-                  <p className="text-sm text-poso-gray-dark md:ml-6">
+                  <p className=" text-poso-gray-dark md:ml-6">
                     Email: support@poso.vn
                   </p>
                 </div>
@@ -60,16 +60,14 @@ export function HomeHero() {
                   <StoreButton type="google" />
                   <StoreButton type="apple" />
                 </div>
-                <p className="text-sm text-poso-gray-dark md:ml-6">
+                <p className=" text-poso-gray-dark md:ml-6">
                   Email: support@poso.vn
                 </p>
               </div>
             </div>
           </div>
         </SwiperSlide>
-
-        <SwiperSlide className="relative overflow-hidden">
-          {/* Background */}
+        <SwiperSlide className="relative overflow-hidden min-h-[600px] md:min-h-[600px]">
           <div className="absolute inset-0 -z-10">
             <img
               src="/images/banner-3.png"
@@ -79,24 +77,17 @@ export function HomeHero() {
             <div className="absolute inset-0 bg-black/10" />
           </div>
 
-          <div className="max-w-7xl mx-auto px-6 lg:px-24 py-16">
-            <div className="flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-12 text-center lg:text-left">
+          <div className="max-w-7xl mx-auto justify-center py-16 h-full flex items-center">
+            <div className="flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-10 text-center lg:text-left">
               <div className="order-2 lg:order-1">
                 <h2 className="text-3xl md:text-6xl font-bold text-poso-dark mb-6 leading-tight">
                   POSO POS
                 </h2>
 
-                <p className="text-base md:text-xl text-poso-gray-dark mb-6 leading-relaxed">
+                <p className="md:text-xl text-poso-gray-dark mb-6.5 leading-relaxed">
                   Hệ thống quản lý bán hàng chuyên nghiệp
                   <br />
                   Giải pháp bán hàng toàn diện
-                </p>
-
-                <p className="text-base font-medium md:text-xl text-poso-primary mb-4">
-                  Nay tích hợp tính năng ShopeeFood Delivery{" "}
-                  <span className="inline-block align-middle text-[10px] bg-poso-primary text-white px-2 py-0.5 rounded-full ml-1">
-                    NEW
-                  </span>
                 </p>
                 <div className="order-1 lg:order-2 md:hidden">
                   <HeroImage
@@ -115,7 +106,7 @@ export function HomeHero() {
                 <div className="mb-6">
                   <Link
                     to={`${import.meta.env.VITE_MERCHANT_URL}/register`}
-                    className="w-full md:w-auto py-4  inline-block bg-poso-primary text-white px-10 rounded-lg font-medium text-sm md:text-lg hover:bg-poso-primary-hover transition-colors"
+                    className="w-full max-w-xs md:w-auto py-3 inline-block bg-poso-primary text-white px-10 rounded-lg font-medium  md:text-lg hover:bg-poso-primary-hover transition-colors"
                   >
                     Đăng ký ngay
                   </Link>
@@ -128,7 +119,7 @@ export function HomeHero() {
                   <FeatureItem title="Tích hợp ShopeeFood" />
                 </div>
 
-                <p className="mt-8 text-sm text-poso-gray-dark">
+                <p className="mt-8 text-poso-gray-dark">
                   Email: support@poso.vn
                 </p>
               </div>
@@ -180,9 +171,9 @@ function HeroImage({
 
 function StoreButton({ type }: { type: "google" | "apple" }) {
   return (
-    <button className="flex items-center gap-2 bg-poso-primary text-white px-6 py-3 rounded-md font-semibold text-sm shadow-md hover:bg-poso-primary-hover transition-colors">
+    <button className="flex items-center gap-2 bg-poso-primary text-white px-6 py-3 rounded-md font-semibold shadow-md hover:bg-poso-primary-hover transition-colors">
       <span className="text-lg">{type === "google" ? "▶︎" : ""}</span>
-      <span>{type === "google" ? "Google Play" : "App Store"}</span>
+      <span className="">{type === "google" ? "Google Play" : "App Store"}</span>
     </button>
   );
 }
@@ -193,7 +184,7 @@ function FeatureItem({ title }: { title: string }) {
       <div className="w-12 h-12 bg-poso-primary/90 rounded-full flex items-center justify-center">
         <span className="text-white text-xl">✓</span>
       </div>
-      <span className="text-poso-gray-dark text-sm">{title}</span>
+      <span className="text-poso-gray-dark ">{title}</span>
     </div>
   );
 }

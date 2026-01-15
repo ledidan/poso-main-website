@@ -49,7 +49,7 @@ export function HomeNewsSection() {
                 <h3 className="font-semibold text-poso-dark mb-2 line-clamp-2">
                   {news.title}
                 </h3>
-                <div className="flex items-center justify-between text-sm text-poso-gray">
+                <div className="flex items-center justify-between  text-poso-gray">
                   <span>{news.date}</span>
                   <span>{news.views} lượt xem</span>
                 </div>

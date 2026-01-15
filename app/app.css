@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+/* Disable dark mode - override dark variant so it never matches */
+
 @theme {
   --font-sans:
     "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
@@ -18,9 +20,7 @@ body {
   color-scheme: light;
 }
 
-/* Shared Page Hero */
 .page-hero {
-  /* Soft "banner" background similar to the screenshots */
   background:
     radial-gradient(
       900px 400px at 20% 40%,

@@ -88,13 +88,13 @@ export default function Products() {
         <div className="container mx-auto px-4">
           <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16">
             <div className="flex-1 text-center md:text-left">
-              <p className="text-sm font-semibold text-poso-primary uppercase tracking-wide mb-3">
+              <p className=" font-semibold text-poso-primary uppercase tracking-wide mb-3">
                 Sản phẩm
               </p>
               <h1 className="text-2xl md:text-5xl font-bold text-poso-dark mb-4 md:mb-6 leading-tight">
                 Hệ thống quản lý nhà hàng chuyên nghiệp
               </h1>
-              <p className="text-sm md:text-lg text-poso-gray opacity-90 mb-6 md:mb-8">
+              <p className=" md:text-lg text-poso-gray opacity-90 mb-6 md:mb-8">
                 POSO cung cấp phần mềm quản lý bán hàng chuyên nghiệp, tương
                 thích với nhiều thiết bị POS và máy in phổ biến trên thị trường.
                 Giải pháp linh hoạt giúp vận hành quán mượt mà, chính xác và
@@ -103,13 +103,13 @@ export default function Products() {
               <div className="flex md:flex-row gap-3 justify-center md:justify-start">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center bg-poso-primary text-white px-8 py-3 rounded-full font-semibold text-sm md:text-base hover:bg-poso-primary-hover transition-colors"
+                  className="inline-flex items-center justify-center bg-poso-primary text-white px-8 py-3 rounded-full font-semibold  md: hover:bg-poso-primary-hover transition-colors"
                 >
                   Tư vấn miễn phí
                 </Link>
                 <Link
                   to="/features"
-                  className="inline-flex items-center justify-center border border-poso-primary text-poso-primary px-8 py-3 rounded-full font-semibold text-sm md:text-base hover:bg-poso-primary/5 transition-colors"
+                  className="inline-flex items-center justify-center border border-poso-primary text-poso-primary px-8 py-3 rounded-full font-semibold  md: hover:bg-poso-primary/5 transition-colors"
                 >
                   Xem tính năng chi tiết
                 </Link>
@@ -148,23 +148,23 @@ export default function Products() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 md:p-7 flex flex-col h-full">
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="w-8 h-8 rounded-full border border-poso-primary text-poso-primary flex items-center justify-center text-sm font-semibold">
+                    <span className="w-8 h-8 rounded-full border border-poso-primary text-poso-primary flex items-center justify-center  font-semibold">
                       01
                     </span>
                     <div>
                       <h3 className="text-xl font-bold text-poso-dark">
                         POSO POS
                       </h3>
-                      <p className="text-xs text-poso-gray">
+                      <p className=" text-poso-gray">
                         Ứng dụng bán hàng tại quầy
                       </p>
                     </div>
                   </div>
-                  <p className="text-sm text-poso-gray mb-4">
+                  <p className=" text-poso-gray mb-4">
                     Hệ thống điểm bán hàng chuyên nghiệp cho nhà hàng, quán
                     cafe, bar với giao diện thân thiện và tốc độ xử lý nhanh.
                   </p>
-                  <ul className="space-y-2 text-sm text-poso-gray mb-6 flex-1">
+                  <ul className="space-y-2  text-poso-gray mb-6 flex-1">
                     <li>• Bán hàng nhanh chóng, hạn chế sai sót</li>
                     <li>• Quản lý bàn, khu vực phục vụ trực quan</li>
                     <li>• In hóa đơn, tích hợp nhiều loại máy in</li>
@@ -172,7 +172,7 @@ export default function Products() {
                   </ul>
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                     <div>
-                      <p className="text-xs text-poso-gray uppercase tracking-wide">
+                      <p className=" text-poso-gray uppercase tracking-wide">
                         Gói phần mềm
                       </p>
                       <p className="text-xl font-bold text-poso-primary">
@@ -182,11 +182,11 @@ export default function Products() {
                     <div className="flex flex-wrap gap-2 justify-start sm:justify-end">
                       <Link
                         to="/contact"
-                        className="bg-poso-primary text-white px-5 py-2.5 rounded-md text-sm font-semibold hover:bg-poso-primary-hover transition-colors"
+                        className="bg-poso-primary text-white px-5 py-2.5 rounded-md  font-semibold hover:bg-poso-primary-hover transition-colors"
                       >
                         Trải nghiệm ngay
                       </Link>
-                      <button className="text-xs sm:text-sm text-poso-primary underline decoration-dotted underline-offset-4">
+                      <button className=" sm: text-poso-primary underline decoration-dotted underline-offset-4">
                         Phòng thử nghiệm POSO
                       </button>
                     </div>
@@ -195,23 +195,23 @@ export default function Products() {
 
                 <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 md:p-7 flex flex-col h-full">
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="w-8 h-8 rounded-full border border-poso-primary text-poso-primary flex items-center justify-center text-sm font-semibold">
+                    <span className="w-8 h-8 rounded-full border border-poso-primary text-poso-primary flex items-center justify-center  font-semibold">
                       02
                     </span>
                     <div>
                       <h3 className="text-xl font-bold text-poso-dark">
                         POSO Boss / Điều hành
                       </h3>
-                      <p className="text-xs text-poso-gray">
+                      <p className=" text-poso-gray">
                         Ứng dụng quản lý cho chủ quán
                       </p>
                     </div>
                   </div>
-                  <p className="text-sm text-poso-gray mb-4">
+                  <p className=" text-poso-gray mb-4">
                     Theo dõi doanh thu, hoạt động cửa hàng và hiệu quả kinh
                     doanh từ xa trên điện thoại di động, mọi lúc, mọi nơi.
                   </p>
-                  <ul className="space-y-2 text-sm text-poso-gray mb-6 flex-1">
+                  <ul className="space-y-2  text-poso-gray mb-6 flex-1">
                     <li>• Xem tổng quan doanh thu theo ngày, tuần, tháng</li>
                     <li>• Theo dõi hóa đơn hiện tại theo thời gian thực</li>
                     <li>• Danh mục và mặt hàng bán chạy nhất</li>
@@ -219,7 +219,7 @@ export default function Products() {
                   </ul>
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                     <div>
-                      <p className="text-xs text-poso-gray uppercase tracking-wide">
+                      <p className=" text-poso-gray uppercase tracking-wide">
                         Ứng dụng di động
                       </p>
                       <p className="text-xl font-bold text-poso-primary">
@@ -227,12 +227,12 @@ export default function Products() {
                       </p>
                     </div>
                     <div className="flex flex-wrap gap-2 justify-start sm:justify-end">
-                      <button className="flex items-center gap-2 bg-black text-white px-4 py-2.5 rounded-md text-xs sm:text-sm font-semibold hover:bg-gray-800 transition-colors">
-                        <span className="text-base">▶︎</span>
+                      <button className="flex items-center gap-2 bg-black text-white px-4 py-2.5 rounded-md  sm: font-semibold hover:bg-gray-800 transition-colors">
+                        <span className="">▶︎</span>
                         <span>Google Play</span>
                       </button>
-                      <button className="flex items-center gap-2 bg-black text-white px-4 py-2.5 rounded-md text-xs sm:text-sm font-semibold hover:bg-gray-800 transition-colors">
-                        <span className="text-base"></span>
+                      <button className="flex items-center gap-2 bg-black text-white px-4 py-2.5 rounded-md  sm: font-semibold hover:bg-gray-800 transition-colors">
+                        <span className=""></span>
                         <span>App Store</span>
                       </button>
                     </div>
@@ -277,7 +277,7 @@ export default function Products() {
                           | "integrations"
                       )
                     }
-                    className={`pb-3 text-sm md:text-base font-medium transition-colors border-b-2 ${
+                    className={`pb-3  md: font-medium transition-colors border-b-2 ${
                       isActive
                         ? "text-poso-primary border-poso-primary"
                         : "text-poso-gray border-transparent hover:text-poso-primary"
@@ -295,16 +295,16 @@ export default function Products() {
                   <h3 className="text-lg md:text-xl font-semibold text-poso-dark mb-1">
                     {feature.title}
                   </h3>
-                  <p className="text-sm text-poso-gray mb-2">
+                  <p className=" text-poso-gray mb-2">
                     {feature.description}
                   </p>
-                  <ul className="space-y-1 text-sm text-poso-gray mb-4 list-disc list-inside">
+                  <ul className="space-y-1  text-poso-gray mb-4 list-disc list-inside">
                     {feature.bullets.map((item, idx) => (
                       <li key={idx}>• {item}</li>
                     ))}
                   </ul>
                   <div className="mt-auto">
-                    <p className="text-xs text-poso-gray uppercase tracking-wide mb-3">
+                    <p className=" text-poso-gray uppercase tracking-wide mb-3">
                       Thuộc nhóm:{" "}
                       <span className="font-semibold text-poso-primary">
                         {

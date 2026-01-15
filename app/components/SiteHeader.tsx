@@ -35,12 +35,11 @@ export function SiteHeader({ variant }: { variant: HeaderVariant }) {
 
   return (
     <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
-      <nav className="container mx-auto px-4 py-3">
+      <nav className="max-w-6xl mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center justify-start gap-8">
             <Link to="/" className="flex items-center">
-              {/* <h1 className="text-2xl font-bold text-poso-primary">POSO</h1> */}
-              <img src="/logo.png" alt="POSO" className="w-full h-6" />
+              <img src="/logo.png" alt="POSO" className="h-6" />
             </Link>
 
             <div className="hidden md:flex items-center justify-start space-x-4">
@@ -48,8 +47,8 @@ export function SiteHeader({ variant }: { variant: HeaderVariant }) {
                 to="/products"
                 className={({ isActive }) =>
                   isActive
-                    ? "text-poso-primary font-semibold text-sm font-medium"
-                    : "text-poso-dark hover:text-poso-primary transition-colors text-sm"
+                    ? "text-poso-primary font-medium"
+                    : "text-poso-dark hover:text-poso-primary transition-colors "
                 }
               >
                 Sản phẩm
@@ -65,8 +64,8 @@ export function SiteHeader({ variant }: { variant: HeaderVariant }) {
                   to="/features"
                   className={({ isActive }) =>
                     isActive
-                      ? "text-poso-primary flex items-center gap-1 text-sm font-medium"
-                      : "text-poso-gray hover:text-poso-primary transition-colors flex items-center gap-1 text-sm font-medium"
+                      ? "text-poso-primary flex items-center gap-1 font-medium"
+                      : " hover:text-poso-primary transition-colors flex items-center gap-1"
                   }
                 >
                   Tính năng
@@ -108,7 +107,7 @@ export function SiteHeader({ variant }: { variant: HeaderVariant }) {
                         <h3 className="font-semibold text-center text-gray-900 group-hover:text-poso-primary">
                           POSO POS
                         </h3>
-                        <p className="text-sm text-gray-500 mt-1">
+                        <p className=" text-gray-500 mt-1">
                           Dành cho Quản lý và Nhân viên
                         </p>
                       </NavLink>
@@ -130,7 +129,7 @@ export function SiteHeader({ variant }: { variant: HeaderVariant }) {
                         <h3 className="font-semibold text-center text-gray-900 group-hover:text-poso-primary">
                           POSO Boss
                         </h3>
-                        <p className="text-sm text-gray-500 mt-1">
+                        <p className=" text-gray-500 mt-1">
                           Dành cho Chủ Nhà Hàng
                         </p>
                       </NavLink>
@@ -145,8 +144,8 @@ export function SiteHeader({ variant }: { variant: HeaderVariant }) {
                   to={link.to}
                   className={({ isActive }) =>
                     isActive
-                      ? "text-poso-primary font-semibold text-sm font-medium"
-                      : "text-poso-gray hover:text-poso-primary transition-colors text-sm font-medium"
+                      ? "text-poso-primary font-medium"
+                      : "hover:text-poso-primary transition-colors"
                   }
                 >
                   {link.label}

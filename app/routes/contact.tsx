@@ -38,7 +38,7 @@ export default function Contact() {
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-sm font-semibold text-[#191b1e] mb-2"
+                    className="block  font-semibold text-[#191b1e] mb-2"
                   >
                     Họ và tên *
                   </label>
@@ -54,7 +54,7 @@ export default function Contact() {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-semibold text-[#191b1e] mb-2"
+                    className="block  font-semibold text-[#191b1e] mb-2"
                   >
                     Email *
                   </label>
@@ -70,7 +70,7 @@ export default function Contact() {
                 <div>
                   <label
                     htmlFor="phone"
-                    className="block text-sm font-semibold text-[#191b1e] mb-2"
+                    className="block  font-semibold text-[#191b1e] mb-2"
                   >
                     Số điện thoại *
                   </label>
@@ -86,7 +86,7 @@ export default function Contact() {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-semibold text-[#191b1e] mb-2"
+                    className="block  font-semibold text-[#191b1e] mb-2"
                   >
                     Tin nhắn *
                   </label>

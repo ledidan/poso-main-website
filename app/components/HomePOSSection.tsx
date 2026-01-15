@@ -202,7 +202,7 @@ export function HomePOSSection() {
                         )}
                     </div>
                     {feature.detailDesc && (
-                      <p className="text-xs sm:text-sm text-poso-gray leading-relaxed px-2">
+                      <p className=" text-poso-gray leading-relaxed px-2">
                         {feature.detailDesc}
                       </p>
                     )}
@@ -236,12 +236,12 @@ export function HomePOSSection() {
                   />
                 </div>
               )}
-              <div className="absolute left-1/2 -translate-x-1/2 bottom-4 text-sm font-semibold text-poso-primary">
+              <div className="absolute left-1/2 -translate-x-1/2 bottom-4  font-semibold text-poso-primary">
                 {activeTab === "pos" ? "POSO POS" : "POSO Boss"}
               </div>
               {activeTab === "pos" && (
                 <div className="absolute -left-4 top-8 bg-white/95 rounded-2xl shadow-xl px-5 py-4 max-w-xs">
-                  <div className="text-xs font-semibold text-poso-primary mb-1">
+                  <div className=" font-semibold text-poso-primary mb-1">
                     {activeFeature.num} {activeFeature.title}
                   </div>
                   {activeFeature.detailDesc && (
@@ -253,7 +253,7 @@ export function HomePOSSection() {
               )}
               {activeTab === "boss" && (
                 <div className="absolute left-1/2 -translate-x-1/2 top-10 bg-white/95 rounded-full shadow-xl px-6 py-3 flex items-center gap-3">
-                  <div className="text-xs font-semibold text-poso-dark">
+                  <div className=" font-semibold text-poso-dark">
                     {activeFeature.num} {activeFeature.title}
                   </div>
                 </div>
@@ -279,14 +279,14 @@ export function HomePOSSection() {
                   >
                     <div className="flex items-center gap-3">
                       <span
-                        className={`text-sm font-semibold ${
+                        className={` font-semibold ${
                           isActive ? "text-poso-primary" : "text-poso-gray"
                         }`}
                       >
                         {feature.num}
                       </span>
                       <span
-                        className={`text-base ${
+                        className={` ${
                           isActive
                             ? "font-bold text-poso-dark"
                             : "text-poso-dark"
@@ -301,7 +301,7 @@ export function HomePOSSection() {
                       )} */}
                     </div>
                     {isActive && feature.detailDesc && (
-                      <p className="mt-2 text-poso-gray text-sm leading-relaxed max-w-md">
+                      <p className="mt-2 text-poso-gray  leading-relaxed max-w-md">
                         {feature.detailDesc}
                       </p>
                     )}

@@ -117,13 +117,13 @@ export default function FeaturesBoss() {
             </div>
 
             <div className="flex-1 text-center md:text-left">
-              <p className="text-sm font-semibold text-poso-primary uppercase tracking-wide mb-3">
+              <p className=" font-semibold text-poso-primary uppercase tracking-wide mb-3">
                 POSO Boss
               </p>
               <h1 className="text-2xl md:text-5xl font-bold text-poso-dark mb-4 md:mb-6 leading-tight">
                 Ứng dụng quản lý cho chủ quán
               </h1>
-              <ul className="text-sm md:text-lg text-poso-gray opacity-90 space-y-1 mb-6 md:mb-8">
+              <ul className=" md:text-lg text-poso-gray opacity-90 space-y-1 mb-6 md:mb-8">
                 <li>• Quản lý cửa hàng mọi lúc, mọi nơi dù bạn ở nơi đâu</li>
                 <li>• Mọi báo cáo bạn cần ngay trong tầm tay</li>
                 <li>• Tải miễn phí</li>
@@ -136,12 +136,12 @@ export default function FeaturesBoss() {
                 />
               </div>
               <div className="flex md:flex-grow sm:flex-row gap-3 justify-center md:justify-start">
-                <button className="flex items-center justify-center gap-2 bg-black text-white px-6 py-3 rounded-lg font-semibold text-sm md:text-base hover:bg-gray-800 transition-colors">
-                  <span className="text-base">▶︎</span>
+                <button className="flex items-center justify-center gap-2 bg-black text-white px-6 py-3 rounded-lg font-semibold  md: hover:bg-gray-800 transition-colors">
+                  <span className="">▶︎</span>
                   <span>Google Play</span>
                 </button>
-                <button className="flex items-center justify-center gap-2 bg-black text-white px-6 py-3 rounded-lg font-semibold text-sm md:text-base hover:bg-gray-800 transition-colors">
-                  <span className="text-base"></span>
+                <button className="flex items-center justify-center gap-2 bg-black text-white px-6 py-3 rounded-lg font-semibold  md: hover:bg-gray-800 transition-colors">
+                  <span className=""></span>
                   <span>App Store</span>
                 </button>
               </div>
@@ -174,7 +174,7 @@ export default function FeaturesBoss() {
                               item.id as (typeof featureList)[number]["id"]
                             )
                           }
-                          className={`text-left px-4 py-2.5 rounded-full text-sm md:text-base whitespace-nowrap transition-colors lg:w-full ${
+                          className={`text-left px-4 py-2.5 rounded-full  md: whitespace-nowrap transition-colors lg:w-full ${
                             isActive
                               ? "bg-white text-poso-primary font-semibold shadow-sm border border-gray-200"
                               : "text-poso-gray hover:bg-white"
@@ -190,11 +190,11 @@ export default function FeaturesBoss() {
               <div className="flex-1">
                 <div className="rounded-3xl border border-gray-200 bg-white shadow-sm overflow-hidden">
                   <div className="border-b border-gray-100 px-4 md:px-6 py-3 flex items-center justify-between">
-                    <div className="flex items-center gap-2 text-xs md:text-sm text-poso-gray">
+                    <div className="flex items-center gap-2  md: text-poso-gray">
                       <span className="w-2 h-2 rounded-full bg-green-500" />
                       <span>POSO Boss</span>
                     </div>
-                    <div className="flex items-center gap-2 text-[10px] md:text-xs text-poso-gray">
+                    <div className="flex items-center gap-2 text-[10px] md: text-poso-gray">
                       <span className="px-2 py-0.5 rounded-full bg-gray-100">
                         Doanh thu
                       </span>
@@ -205,7 +205,7 @@ export default function FeaturesBoss() {
                   </div>
                   <div className="bg-gray-50 px-2 md:px-4 py-4">
                     <div className="rounded-2xl bg-white border border-dashed border-gray-200 h-64 md:h-80 flex items-center justify-center">
-                      <span className="text-xs md:text-sm text-poso-gray">
+                      <span className=" md: text-poso-gray">
                         Khu vực mô phỏng màn hình báo cáo POSO Boss
                       </span>
                     </div>
@@ -223,10 +223,10 @@ export default function FeaturesBoss() {
             <h2 className="text-2xl md:text-3xl font-bold text-poso-dark mb-3">
               {activeFeature.title}
             </h2>
-            <p className="text-sm md:text-base text-poso-gray mb-4">
+            <p className=" md: text-poso-gray mb-4">
               {activeFeature.summary}
             </p>
-            <ul className="list-disc pl-5 space-y-2 text-sm md:text-base text-poso-gray mb-6">
+            <ul className="list-disc pl-5 space-y-2  md: text-poso-gray mb-6">
               {activeFeature.bullets.map((item) => (
                 <li key={item}>{item}</li>
               ))}

@@ -133,7 +133,6 @@ export default function FeaturesPOS() {
   return (
     <div className="min-h-screen bg-white">
       <SiteHeader variant="page" />
-
       <section className="bg-gradient-to-r from-[#e5f6ff] via-[#f4fbff] to-[#e0ffe9] pt-0 md:pt-24 pb-16">
         <div className="container mx-auto px-4">
           <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16">
@@ -152,19 +151,19 @@ export default function FeaturesPOS() {
             </div>
 
             <div className="flex-1 text-center md:text-left">
-              <p className="text-sm font-semibold text-poso-primary uppercase tracking-wide mb-3">
+              <p className=" font-semibold text-poso-primary uppercase tracking-wide mb-3">
                 POSO POS
               </p>
               <h1 className="text-2xl md:text-5xl font-bold text-poso-dark mb-4 md:mb-6 leading-tight">
                 Hệ thống quản lý nhà hàng chuyên nghiệp
               </h1>
-              <ul className="text-sm md:text-lg text-poso-gray opacity-90 space-y-1 mb-6 md:mb-8">
+              <ul className=" md:text-lg text-poso-gray opacity-90 space-y-1 mb-6 md:mb-8">
                 <li>• Hệ thống quản lý nhà hàng chuyên nghiệp</li>
                 <li>
                   • Giải pháp nhà hàng toàn diện cho quán cafe, trà sữa, F&amp;B
                 </li>
               </ul>
-              <div className="md:hidden relative rounded-[32px]  border border-gray-100 px-4 py-6 md:px-6 md:py-8">
+              <div className="md:hidden relative rounded-[32px] border border-gray-100 px-4 py-6 md:px-6 md:py-8">
                 <img
                   src="/images/poso_sunmi_device.png"
                   alt="POSO POS"
@@ -173,14 +172,14 @@ export default function FeaturesPOS() {
               </div>
               <div className="flex md:flex-grow sm:flex-row gap-3 justify-center md:justify-start">
                 <Link
-                  to="/contact"
-                  className="inline-flex items-center justify-center bg-poso-primary text-white px-8 py-3 rounded-full font-semibold text-sm md:text-base hover:bg-poso-primary-hover transition-colors"
+                  to={`${import.meta.env.VITE_MERCHANT_URL}/register`}
+                  className="inline-flex items-center justify-center bg-poso-primary text-white px-8 py-3 rounded-full font-semibold  md: hover:bg-poso-primary-hover transition-colors"
                 >
                   Trải nghiệm ngay
                 </Link>
                 <Link
                   to="/products"
-                  className="inline-flex items-center justify-center border border-poso-primary text-poso-primary px-8 py-3 rounded-full font-semibold text-sm md:text-base hover:bg-poso-primary/5 transition-colors"
+                  className="inline-flex items-center justify-center border border-poso-primary text-poso-primary px-8 py-3 rounded-full font-semibold  md: hover:bg-poso-primary/5 transition-colors"
                 >
                   Xem sản phẩm POSO
                 </Link>
@@ -214,7 +213,7 @@ export default function FeaturesPOS() {
                               item.id as (typeof featureList)[number]["id"]
                             )
                           }
-                          className={`text-left px-4 py-2.5 rounded-full text-sm md:text-base whitespace-nowrap transition-colors lg:w-full ${
+                          className={`text-left px-4 py-2.5 rounded-full  md: whitespace-nowrap transition-colors lg:w-full ${
                             isActive
                               ? "bg-white text-poso-primary font-semibold shadow-sm border border-gray-200"
                               : "text-poso-gray hover:bg-white"
@@ -231,11 +230,11 @@ export default function FeaturesPOS() {
               <div className="flex-1">
                 <div className="rounded-3xl border border-gray-200 bg-white shadow-sm overflow-hidden">
                   <div className="border-b border-gray-100 px-4 md:px-6 py-3 flex items-center justify-between">
-                    <div className="flex items-center gap-2 text-xs md:text-sm text-poso-gray">
+                    <div className="flex items-center gap-2  md: text-poso-gray">
                       <span className="w-2 h-2 rounded-full bg-green-500" />
                       <span>POSO POS Sunmi</span>
                     </div>
-                    <div className="flex items-center gap-2 text-[10px] md:text-xs text-poso-gray">
+                    <div className="flex items-center gap-2 text-[10px] md: text-poso-gray">
                       <span className="px-2 py-0.5 rounded-full bg-gray-100">
                         Đơn tại quán
                       </span>
@@ -246,7 +245,7 @@ export default function FeaturesPOS() {
                   </div>
                   <div className="bg-gray-50 px-2 md:px-4 py-4">
                     <div className="rounded-2xl bg-white border border-dashed border-gray-200 h-64 md:h-80 flex items-center justify-center">
-                      <span className="text-xs md:text-sm text-poso-gray">
+                      <span className=" md: text-poso-gray">
                         Khu vực mô phỏng màn hình POSO POS / Sunmi
                       </span>
                     </div>
@@ -270,23 +269,21 @@ export default function FeaturesPOS() {
               ) : null}
             </h2>
             {activeFeature.subtitle ? (
-              <p className="text-sm md:text-base text-poso-gray mb-4">
+              <p className=" md: text-poso-gray mb-4">
                 {activeFeature.subtitle}
               </p>
             ) : null}
-            <p className="text-sm md:text-base text-poso-gray mb-4">
-              {activeFeature.summary}
-            </p>
-            <ul className="list-disc pl-5 space-y-2 text-sm md:text-base text-poso-gray mb-6">
+            <p className=" md: text-poso-gray mb-4">{activeFeature.summary}</p>
+            <ul className="list-disc pl-5 space-y-2  md: text-poso-gray mb-6">
               {activeFeature.bullets.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
             <div className="flex flex-wrap gap-3">
-              <button className="inline-flex items-center justify-center bg-[#16a34a] text-white px-4 md:px-5 py-2 rounded-full text-xs md:text-sm font-semibold hover:bg-[#15803d] transition-colors">
+              <button className="inline-flex items-center justify-center bg-[#16a34a] text-white px-4 md:px-5 py-2 rounded-full  md: font-semibold hover:bg-[#15803d] transition-colors">
                 Video hướng dẫn
               </button>
-              <button className="inline-flex items-center justify-center border border-[#16a34a] text-[#16a34a] px-4 md:px-5 py-2 rounded-full text-xs md:text-sm font-semibold hover:bg-[#16a34a]/5 transition-colors">
+              <button className="inline-flex items-center justify-center border border-[#16a34a] text-[#16a34a] px-4 md:px-5 py-2 rounded-full  md: font-semibold hover:bg-[#16a34a]/5 transition-colors">
                 Xem hướng dẫn
               </button>
             </div>

@@ -8,13 +8,13 @@ export function PageFooter() {
           <div>
             {/* <h4 className="text-xl font-bold mb-4">POSO POS</h4> */}
             <img src="/logo.png" alt="POSO POS" className="w-20 h-6" />
-            <p className="text-gray-400 text-sm pt-4">
+            <p className="text-gray-400  pt-4">
               Giải pháp quản lý bán hàng hàng đầu
             </p>
           </div>
           <div>
             <h5 className="font-semibold mb-4">Sản phẩm</h5>
-            <ul className="space-y-2 text-gray-400 text-sm">
+            <ul className="space-y-2 text-gray-400 ">
               <li>
                 <Link
                   to="/products"
@@ -35,12 +35,9 @@ export function PageFooter() {
           </div>
           <div>
             <h5 className="font-semibold mb-4">Hỗ trợ</h5>
-            <ul className="space-y-2 text-gray-400 text-sm">
+            <ul className="space-y-2 text-gray-400 ">
               <li>
-                <Link
-                  to="/faq"
-                  className="hover:text-white transition-colors"
-                >
+                <Link to="/faq" className="hover:text-white transition-colors">
                   FAQ
                 </Link>
               </li>
@@ -56,7 +53,7 @@ export function PageFooter() {
           </div>
           <div>
             <h5 className="font-semibold mb-4">Công ty</h5>
-            <ul className="space-y-2 text-gray-400 text-sm">
+            <ul className="space-y-2 text-gray-400 ">
               <li>
                 <Link
                   to="/about"
@@ -66,21 +63,29 @@ export function PageFooter() {
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/news"
-                  className="hover:text-white transition-colors"
-                >
+                <Link to="/news" className="hover:text-white transition-colors">
                   Tin tức
                 </Link>
               </li>
             </ul>
           </div>
         </div>
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
+        <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 ">
           <p>© 2024 POSO POS. Tất cả quyền được bảo lưu.</p>
+          <Link
+              to="/terms-of-service"
+              className="hover:text-white transition-colors text-amber-700 mx-1"
+            >
+              Điều khoản và điều kiện.
+            </Link>
+            <Link
+              to="/privacy-policy"
+              className="hover:text-white text-amber-700 transition-colors "
+            >
+              Quyền riêng tư
+            </Link>
         </div>
       </div>
     </footer>
   );
 }
-

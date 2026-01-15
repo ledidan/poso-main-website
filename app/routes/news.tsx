@@ -1,5 +1,5 @@
 import type { Route } from "./+types/news";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 import { PageHero } from "../components/PageHero";
 import { SiteHeader } from "../components/SiteHeader";
 import { PageFooter } from "../components/PageFooter";
@@ -70,16 +70,16 @@ export default function News() {
               >
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-sm font-semibold text-poso-primary bg-poso-primary/10 px-3 py-1 rounded-full">
+                    <span className="font-semibold text-poso-primary bg-poso-primary/10 px-3 py-1 rounded-full">
                       {item.categoryName}
                     </span>
-                    <span className="text-sm text-poso-gray opacity-70">
+                    <span className=" text-poso-gray opacity-70">
                       {item.formattedDate}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold text-poso-dark mb-3 hover:text-poso-primary transition-colors">
+                  <NavLink to={`/news/${item.id}`} className="cursor-pointer text-xl font-bold text-poso-dark mb-3 hover:text-poso-primary transition-colors">
                     {item.title.rendered}
-                  </h3>
+                  </NavLink>
                   <p className="text-poso-gray opacity-80 leading-relaxed mb-4">
                     {item.excerpt.rendered.replace(/<[^>]*>/g, "")}
                   </p>
