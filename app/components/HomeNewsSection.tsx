@@ -1,28 +1,33 @@
 import { Link } from "react-router";
+import newsData from "../data/news.json";
+import categoriesData from "../data/categories.json";
+
+type NewsItem = typeof newsData[number];
+
+function formatDateShort(dateString: string): string {
+  const date = new Date(dateString);
+  const day = date.getDate().toString().padStart(2, "0");
+  const month = (date.getMonth() + 1).toString().padStart(2, "0");
+  return `${day}/${month}/${date.getFullYear()}`;
+}
+
+function formatViews(views: number): string {
+  if (views >= 1000) {
+    return `${(views / 1000).toFixed(1)}K`;
+  }
+  return views.toString();
+}
 
 export function HomeNewsSection() {
-  const newsItems = [
-    {
-      title: "POSO Cập Nhật Chính Sách Bán Hàng",
-      date: "15/12/2024",
-      views: "1.2K",
-    },
-    {
-      title: "POSO Cập Nhật Email Hỗ Trợ Quản",
-      date: "10/12/2024",
-      views: "890",
-    },
-    {
-      title: "POSO Chúc Mừng Năm Mới",
-      date: "01/01/2024",
-      views: "2.5K",
-    },
-    {
-      title: "Chương trình khuyến mãi tháng 02 năm 2021",
-      date: "01/02/2021",
-      views: "1.8K",
-    },
-  ];
+  const newsItems = newsData
+    .filter((item) => item.status === "publish")
+    .slice(0, 4)
+    .map((item) => ({
+      id: item.id,
+      title: item.title.rendered,
+      date: formatDateShort(item.date),
+      views: formatViews(item.views || 0),
+    }));
 
   return (
     <section className="bg-white py-20">
@@ -31,10 +36,11 @@ export function HomeNewsSection() {
           Tin Tức
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          {newsItems.map((news, index) => (
-            <article
-              key={index}
-              className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+          {newsItems.map((news) => (
+            <Link
+              key={news.id}
+              to={`/news/${news.id}`}
+              className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow block"
             >
               <div className="h-48 bg-gray-200 flex items-center justify-center">
                 <span className="text-gray-400">Image</span>
@@ -48,7 +54,7 @@ export function HomeNewsSection() {
                   <span>{news.views} lượt xem</span>
                 </div>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
         <div className="text-center">

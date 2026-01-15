@@ -8,6 +8,7 @@ export default [
   route("features/boss", "routes/features/boss.tsx"),
   route("faq", "routes/faq.tsx"),
   route("news", "routes/news.tsx"),
+  route("news/:id", "routes/news.$id.tsx"),
   route("contact", "routes/contact.tsx"),
   route("about", "routes/about.tsx"),
 ] satisfies RouteConfig;

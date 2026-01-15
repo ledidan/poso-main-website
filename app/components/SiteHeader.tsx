@@ -35,11 +35,12 @@ export function SiteHeader({ variant }: { variant: HeaderVariant }) {
 
   return (
     <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
-      <nav className="container mx-auto px-4 py-4">
+      <nav className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center justify-start gap-8">
             <Link to="/" className="flex items-center">
-              <h1 className="text-2xl font-bold text-poso-primary">POSO</h1>
+              {/* <h1 className="text-2xl font-bold text-poso-primary">POSO</h1> */}
+              <img src="/logo.png" alt="POSO" className="w-full h-6" />
             </Link>
 
             <div className="hidden md:flex items-center justify-start space-x-4">
@@ -96,11 +97,15 @@ export function SiteHeader({ variant }: { variant: HeaderVariant }) {
                       >
                         <div className="mb-3">
                           {/* icon */}
-                          <div className="w-10 h-10 bg-poso-primary/10 text-poso-primary flex items-center justify-center rounded-md">
-                            🖥️
+                          <div className="w-full h-full text-poso-primary flex items-center justify-center rounded-md">
+                            <img
+                              src="/images/pos-staff.png"
+                              alt="POSO POS"
+                              className="w-full h-full"
+                            />
                           </div>
                         </div>
-                        <h3 className="font-semibold text-gray-900 group-hover:text-poso-primary">
+                        <h3 className="font-semibold text-center text-gray-900 group-hover:text-poso-primary">
                           POSO POS
                         </h3>
                         <p className="text-sm text-gray-500 mt-1">
@@ -114,11 +119,15 @@ export function SiteHeader({ variant }: { variant: HeaderVariant }) {
                         className="group rounded-lg  p-4 hover:border-poso-primary hover:bg-poso-primary/5 transition"
                       >
                         <div className="mb-3">
-                          <div className="w-10 h-10 bg-poso-primary/10 text-poso-primary flex items-center justify-center rounded-md">
-                            📊
+                          <div className="w-full h-full text-poso-primary flex items-center justify-center rounded-md">
+                            <img
+                              src="/images/pos-terminal-owner.png"
+                              alt="POSO Boss"
+                              className="w-full h-full"
+                            />
                           </div>
                         </div>
-                        <h3 className="font-semibold text-gray-900 group-hover:text-poso-primary">
+                        <h3 className="font-semibold text-center text-gray-900 group-hover:text-poso-primary">
                           POSO Boss
                         </h3>
                         <p className="text-sm text-gray-500 mt-1">
@@ -149,23 +158,17 @@ export function SiteHeader({ variant }: { variant: HeaderVariant }) {
           <div className="hidden md:flex items-center justify-end space-x-4">
             {variant === "home" ? (
               <>
-                {/* <Link
-                  to="/contact"
-                  className="text-poso-gray hover:text-poso-primary transition-colors"
-                >
-                  Đăng nhập
-                </Link> */}
                 <Link
-                  to="/contact"
-                  className="bg-poso-primary text-white px-6 py-2 rounded-md font-semibold hover:bg-poso-primary-hover transition-colors"
+                  to={`${import.meta.env.VITE_MERCHANT_URL}/register`}
+                  className="border border-poso-primary text-poso-primary px-6 py-2 rounded-full font-semibold hover:text-white hover:bg-poso-primary-hover transition-colors"
                 >
                   Đăng ký
                 </Link>
               </>
             ) : (
               <Link
-                to="/contact"
-                className="bg-poso-primary text-white px-6 py-2 rounded-md font-semibold hover:bg-poso-primary-hover transition-colors"
+                to={`${import.meta.env.VITE_MERCHANT_URL}/register`}
+                className="border border-poso-primary text-poso-primary px-6 py-2 rounded-full font-semibold hover:text-white hover:bg-poso-primary-hover transition-colors"
               >
                 Dùng thử miễn phí
               </Link>
@@ -175,7 +178,7 @@ export function SiteHeader({ variant }: { variant: HeaderVariant }) {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen((v) => !v)}
-            className="md:hidden p-2 text-poso-gray hover:text-poso-primary transition-colors"
+            className="md:hidden p-2 cursor-pointer text-poso-gray hover:text-poso-primary transition-colors"
             aria-label="Toggle menu"
           >
             <svg
@@ -196,74 +199,29 @@ export function SiteHeader({ variant }: { variant: HeaderVariant }) {
           </button>
         </div>
 
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-gray-200">
-            <div className="flex flex-col space-y-4 pt-4">
-              <NavLink
-                to="/products"
-                onClick={() => setMobileMenuOpen(false)}
-                className={({ isActive }) =>
-                  isActive
-                    ? "text-poso-primary font-semibold transition-colors py-2"
-                    : "text-poso-gray hover:text-poso-primary transition-colors py-2"
-                }
-              >
-                Sản phẩm
-              </NavLink>
+        {/* Mobile Menu - Slide in from right */}
+        <div className="md:hidden">
+          <div
+            className={`fixed inset-0 z-40 flex justify-end transform transition-transform duration-300 ${
+              mobileMenuOpen ? "translate-x-0" : "translate-x-full"
+            }`}
+          >
+            {/* Overlay */}
+            <button
+              type="button"
+              aria-label="Đóng menu"
+              className="flex-1 bg-black/40"
+              onClick={() => {
+                setMobileMenuOpen(false);
+                setFeaturesDropdownOpen(false);
+              }}
+            />
 
-              {/* Mobile Features Dropdown */}
-              <div>
-                <button
-                  onClick={() => setFeaturesDropdownOpen(!featuresDropdownOpen)}
-                  className="w-full text-left text-poso-gray hover:text-poso-primary transition-colors py-2 flex items-center justify-between"
-                >
-                  Tính năng
-                  <svg
-                    className={`w-4 h-4 transition-transform ${
-                      featuresDropdownOpen ? "rotate-180" : ""
-                    }`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </button>
-                {featuresDropdownOpen && (
-                  <div className="pl-4 mt-2 space-y-2">
-                    {featuresSubmenu.map((item) => (
-                      <NavLink
-                        key={item.to}
-                        to={item.to}
-                        onClick={() => {
-                          setMobileMenuOpen(false);
-                          setFeaturesDropdownOpen(false);
-                        }}
-                        className={({ isActive }) =>
-                          `block py-2 transition-colors ${
-                            isActive
-                              ? "text-poso-primary font-semibold"
-                              : "text-poso-gray hover:text-poso-primary"
-                          }`
-                        }
-                      >
-                        {item.label}
-                      </NavLink>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {navigationLinks.slice(1).map((link) => (
+            {/* Panel */}
+            <div className="w-80 max-w-[80%] h-full bg-white shadow-xl border-l border-gray-200 px-4 py-6 overflow-y-auto">
+              <div className="flex flex-col space-y-4">
                 <NavLink
-                  key={link.to}
-                  to={link.to}
+                  to="/products"
                   onClick={() => setMobileMenuOpen(false)}
                   className={({ isActive }) =>
                     isActive
@@ -271,41 +229,99 @@ export function SiteHeader({ variant }: { variant: HeaderVariant }) {
                       : "text-poso-gray hover:text-poso-primary transition-colors py-2"
                   }
                 >
-                  {link.label}
+                  Sản phẩm
                 </NavLink>
-              ))}
 
-              <div className="flex flex-col space-y-2 pt-2 border-t border-gray-200">
-                {variant === "home" ? (
-                  <>
-                    {/* <Link
-                      to="/contact"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="text-poso-gray hover:text-poso-primary transition-colors py-2"
-                    >
-                      Đăng nhập
-                    </Link> */}
-                    <Link
-                      to="/contact"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="bg-poso-primary text-white px-6 py-2 rounded-md font-semibold hover:bg-poso-primary-hover transition-colors text-center"
-                    >
-                      Đăng ký
-                    </Link>
-                  </>
-                ) : (
-                  <Link
-                    to="/contact"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="bg-poso-primary text-white px-6 py-2 rounded-md font-semibold hover:bg-poso-primary-hover transition-colors text-center"
+                {/* Mobile Features Dropdown */}
+                <div>
+                  <button
+                    onClick={() =>
+                      setFeaturesDropdownOpen(!featuresDropdownOpen)
+                    }
+                    className="w-full text-left text-poso-gray hover:text-poso-primary transition-colors py-2 flex items-center justify-between"
                   >
-                    Dùng thử miễn phí
-                  </Link>
-                )}
+                    Tính năng
+                    <svg
+                      className={`w-4 h-4 transition-transform ${
+                        featuresDropdownOpen ? "rotate-180" : ""
+                      }`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </button>
+                  {featuresDropdownOpen && (
+                    <div className="pl-4 mt-2 space-y-2">
+                      {featuresSubmenu.map((item) => (
+                        <NavLink
+                          key={item.to}
+                          to={item.to}
+                          onClick={() => {
+                            setMobileMenuOpen(false);
+                            setFeaturesDropdownOpen(false);
+                          }}
+                          className={({ isActive }) =>
+                            `block py-2 transition-colors ${
+                              isActive
+                                ? "text-poso-primary font-semibold"
+                                : "text-poso-gray hover:text-poso-primary"
+                            }`
+                          }
+                        >
+                          {item.label}
+                        </NavLink>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                {navigationLinks.slice(1).map((link) => (
+                  <NavLink
+                    key={link.to}
+                    to={link.to}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={({ isActive }) =>
+                      isActive
+                        ? "text-poso-primary font-semibold transition-colors py-2"
+                        : "text-poso-gray hover:text-poso-primary transition-colors py-2"
+                    }
+                  >
+                    {link.label}
+                  </NavLink>
+                ))}
+
+                <div className="flex flex-col space-y-2 pt-2 border-t border-gray-200">
+                  {variant === "home" ? (
+                    <>
+                      <Link
+                        to={`${import.meta.env.VITE_MERCHANT_URL}/register`}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="bg-poso-primary text-white px-6 py-2 rounded-full font-semibold hover:text-white hover:bg-poso-primary-hover transition-colors text-center"
+                      >
+                        Đăng ký
+                      </Link>
+                    </>
+                  ) : (
+                    <Link
+                      to={`${import.meta.env.VITE_MERCHANT_URL}/register`}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="bg-poso-primary text-white px-6 py-2 rounded-full font-semibold hover:text-white hover:bg-poso-primary-hover transition-colors text-center"
+                    >
+                      Dùng thử miễn phí
+                    </Link>
+                  )}
+                </div>
               </div>
             </div>
           </div>
-        )}
+        </div>
       </nav>
     </header>
   );

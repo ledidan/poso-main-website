@@ -2,6 +2,7 @@ import type { Route } from "./+types/boss";
 import { Link } from "react-router";
 import { useState } from "react";
 import { SiteHeader } from "../../components/SiteHeader";
+import { PageFooter } from "../../components/PageFooter";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -40,72 +41,72 @@ export default function FeaturesBoss() {
           ],
         }
       : activeFeatureId === "currentBills"
-      ? {
-          title: "Hóa đơn hiện tại",
-          summary:
-            "Nắm được tất cả hóa đơn đang mở và trạng thái thanh toán theo thời gian thực.",
-          bullets: [
-            "Xem danh sách hóa đơn đang phục vụ tại quán",
-            "Kiểm tra nhanh giá trị hóa đơn và phương thức thanh toán",
-            "Giảm thất thoát do bỏ sót hóa đơn hoặc thanh toán sai",
-          ],
-        }
-      : activeFeatureId === "revenue"
-      ? {
-          title: "Tổng quan doanh thu",
-          summary:
-            "Nắm toàn cảnh doanh thu cửa hàng trong ngày chỉ trong vài giây.",
-          bullets: [
-            "Xem doanh thu theo ngày, tuần, tháng với biểu đồ trực quan",
-            "So sánh doanh thu giữa các khung giờ trong ngày",
-            "Theo dõi doanh thu theo chi nhánh nếu vận hành chuỗi",
-          ],
-        }
-      : activeFeatureId === "categoryTop"
-      ? {
-          title: "Danh mục bán chạy nhất",
-          summary:
-            "Biết danh mục nào đang mang lại doanh thu chính để tối ưu thực đơn.",
-          bullets: [
-            "Xếp hạng danh mục theo doanh thu và số lượng bán",
-            "Hỗ trợ quyết định tăng cường khuyến mãi cho danh mục chủ lực",
-            "Phát hiện danh mục hoạt động kém để điều chỉnh",
-          ],
-        }
-      : activeFeatureId === "itemTop"
-      ? {
-          title: "Mặt hàng bán chạy",
-          summary:
-            "Theo dõi món bán chạy giúp tối ưu tồn kho và chiến dịch marketing.",
-          bullets: [
-            "Xếp hạng từng món theo số lượng và doanh thu",
-            "Nhận biết món chủ lực để đưa lên vị trí nổi bật trong menu",
-            "Phân tích hiệu quả giá bán và combo",
-          ],
-        }
-      : {
-          title: "Các báo cáo khác",
-          summary:
-            "Bộ báo cáo đa dạng giúp chủ quán theo dõi sâu hơn về vận hành và tài chính.",
-          bullets: [
-            "Báo cáo chi phí, lợi nhuận và hiệu quả theo từng khoảng thời gian",
-            "Báo cáo hiệu suất nhân viên, ca làm việc",
-            "Xuất dữ liệu phục vụ kế toán và quản trị doanh nghiệp",
-          ],
-        };
+        ? {
+            title: "Hóa đơn hiện tại",
+            summary:
+              "Nắm được tất cả hóa đơn đang mở và trạng thái thanh toán theo thời gian thực.",
+            bullets: [
+              "Xem danh sách hóa đơn đang phục vụ tại quán",
+              "Kiểm tra nhanh giá trị hóa đơn và phương thức thanh toán",
+              "Giảm thất thoát do bỏ sót hóa đơn hoặc thanh toán sai",
+            ],
+          }
+        : activeFeatureId === "revenue"
+          ? {
+              title: "Tổng quan doanh thu",
+              summary:
+                "Nắm toàn cảnh doanh thu cửa hàng trong ngày chỉ trong vài giây.",
+              bullets: [
+                "Xem doanh thu theo ngày, tuần, tháng với biểu đồ trực quan",
+                "So sánh doanh thu giữa các khung giờ trong ngày",
+                "Theo dõi doanh thu theo chi nhánh nếu vận hành chuỗi",
+              ],
+            }
+          : activeFeatureId === "categoryTop"
+            ? {
+                title: "Danh mục bán chạy nhất",
+                summary:
+                  "Biết danh mục nào đang mang lại doanh thu chính để tối ưu thực đơn.",
+                bullets: [
+                  "Xếp hạng danh mục theo doanh thu và số lượng bán",
+                  "Hỗ trợ quyết định tăng cường khuyến mãi cho danh mục chủ lực",
+                  "Phát hiện danh mục hoạt động kém để điều chỉnh",
+                ],
+              }
+            : activeFeatureId === "itemTop"
+              ? {
+                  title: "Mặt hàng bán chạy",
+                  summary:
+                    "Theo dõi món bán chạy giúp tối ưu tồn kho và chiến dịch marketing.",
+                  bullets: [
+                    "Xếp hạng từng món theo số lượng và doanh thu",
+                    "Nhận biết món chủ lực để đưa lên vị trí nổi bật trong menu",
+                    "Phân tích hiệu quả giá bán và combo",
+                  ],
+                }
+              : {
+                  title: "Các báo cáo khác",
+                  summary:
+                    "Bộ báo cáo đa dạng giúp chủ quán theo dõi sâu hơn về vận hành và tài chính.",
+                  bullets: [
+                    "Báo cáo chi phí, lợi nhuận và hiệu quả theo từng khoảng thời gian",
+                    "Báo cáo hiệu suất nhân viên, ca làm việc",
+                    "Xuất dữ liệu phục vụ kế toán và quản trị doanh nghiệp",
+                  ],
+                };
 
   return (
     <div className="min-h-screen bg-white">
       <SiteHeader variant="page" />
 
-      <section className="bg-gradient-to-r from-[#e5f6ff] via-[#f4fbff] to-[#e0ffe9] pt-20 md:pt-24 pb-16">
+      <section className="bg-gradient-to-r from-[#e5f6ff] via-[#f4fbff] to-[#e0ffe9] md:pt-24 pb-16">
         <div className="container mx-auto px-4">
           <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16">
             <div className="flex-1 w-full mb-6 md:mb-0">
-              <div className="relative max-w-md mx-auto">
+              <div className="relative max-w-xs mx-auto">
                 <div className="absolute -top-6 -left-10 w-24 h-24 bg-white/40 rounded-[32px]" />
                 <div className="absolute -bottom-10 -right-8 w-28 h-28 bg-white/30 rounded-full" />
-                <div className="relative rounded-[32px] bg-white shadow-xl border border-gray-100 px-4 py-6 md:px-6 md:py-8">
+                <div className="hidden md:block relative rounded-[32px] bg-white shadow-xl border border-gray-100 px-4 py-6 md:px-6 md:py-8">
                   <img
                     src="/images/hero_poso_manager.png"
                     alt="POSO Boss"
@@ -119,17 +120,22 @@ export default function FeaturesBoss() {
               <p className="text-sm font-semibold text-poso-primary uppercase tracking-wide mb-3">
                 POSO Boss
               </p>
-              <h1 className="text-3xl md:text-5xl font-bold text-poso-dark mb-4 md:mb-6 leading-tight">
+              <h1 className="text-2xl md:text-5xl font-bold text-poso-dark mb-4 md:mb-6 leading-tight">
                 Ứng dụng quản lý cho chủ quán
               </h1>
-              <ul className="text-base md:text-lg text-poso-gray opacity-90 space-y-1 mb-6 md:mb-8">
-                <li>
-                  • Quản lý cửa hàng mọi lúc, mọi nơi dù bạn ở nơi đâu
-                </li>
+              <ul className="text-sm md:text-lg text-poso-gray opacity-90 space-y-1 mb-6 md:mb-8">
+                <li>• Quản lý cửa hàng mọi lúc, mọi nơi dù bạn ở nơi đâu</li>
                 <li>• Mọi báo cáo bạn cần ngay trong tầm tay</li>
                 <li>• Tải miễn phí</li>
               </ul>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+              <div className="md:hidden relative rounded-[32px] px-4 py-6 md:px-6 md:py-8">
+                <img
+                  src="/images/hero_poso_manager.png"
+                  alt="POSO Boss"
+                  className="w-full h-48 md:h-auto object-contain"
+                />
+              </div>
+              <div className="flex md:flex-grow sm:flex-row gap-3 justify-center md:justify-start">
                 <button className="flex items-center justify-center gap-2 bg-black text-white px-6 py-3 rounded-lg font-semibold text-sm md:text-base hover:bg-gray-800 transition-colors">
                   <span className="text-base">▶︎</span>
                   <span>Google Play</span>
@@ -157,7 +163,7 @@ export default function FeaturesBoss() {
 
             <div className="flex flex-col lg:flex-row gap-8">
               <div className="w-full lg:w-64">
-                <ul className="space-y-1 border border-gray-200 rounded-2xl p-3 bg-gray-50">
+                <ul className="flex gap-2 overflow-x-auto lg:flex-col lg:space-y-1 lg:gap-0 lg:overflow-visible rounded-2xl p-1 lg:p-3">
                   {featureList.map((item) => {
                     const isActive = activeFeatureId === item.id;
                     return (
@@ -168,9 +174,9 @@ export default function FeaturesBoss() {
                               item.id as (typeof featureList)[number]["id"]
                             )
                           }
-                          className={`w-full text-left px-4 py-2.5 rounded-xl text-sm md:text-base transition-colors ${
+                          className={`text-left px-4 py-2.5 rounded-full text-sm md:text-base whitespace-nowrap transition-colors lg:w-full ${
                             isActive
-                              ? "bg-white text-poso-primary font-semibold shadow-sm"
+                              ? "bg-white text-poso-primary font-semibold shadow-sm border border-gray-200"
                               : "text-poso-gray hover:bg-white"
                           }`}
                         >
@@ -181,7 +187,6 @@ export default function FeaturesBoss() {
                   })}
                 </ul>
               </div>
-
               <div className="flex-1">
                 <div className="rounded-3xl border border-gray-200 bg-white shadow-sm overflow-hidden">
                   <div className="border-b border-gray-100 px-4 md:px-6 py-3 flex items-center justify-between">
@@ -232,7 +237,7 @@ export default function FeaturesBoss() {
 
       <section className="bg-poso-primary py-16">
         <div className="container mx-auto px-4 text-center">
-          <div className="max-w-[1340px] mx-auto">
+          <div className="max-w-[1250px] mx-auto">
             <h2 className="text-4xl font-bold text-white mb-4">
               Bắt đầu quản lý bán hàng ngay hôm nay
             </h2>
@@ -249,88 +254,7 @@ export default function FeaturesBoss() {
         </div>
       </section>
 
-      <footer className="bg-poso-dark text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="max-w-[1340px] mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              <div>
-                <h4 className="text-xl font-bold text-poso-primary mb-4">
-                  POSO
-                </h4>
-                <p className="text-gray-400 text-sm">
-                  Giải pháp quản lý bán hàng hàng đầu Việt Nam
-                </p>
-              </div>
-              <div>
-                <h5 className="font-semibold mb-4">Sản phẩm</h5>
-                <ul className="space-y-2 text-gray-400 text-sm">
-                  <li>
-                    <Link
-                      to="/products"
-                      className="hover:text-white transition-colors"
-                    >
-                      Sản phẩm
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/features"
-                      className="hover:text-white transition-colors"
-                    >
-                      Tính năng
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h5 className="font-semibold mb-4">Hỗ trợ</h5>
-                <ul className="space-y-2 text-gray-400 text-sm">
-                  <li>
-                    <Link
-                      to="/faq"
-                      className="hover:text-white transition-colors"
-                    >
-                      FAQ
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/contact"
-                      className="hover:text-white transition-colors"
-                    >
-                      Liên hệ
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h5 className="font-semibold mb-4">Công ty</h5>
-                <ul className="space-y-2 text-gray-400 text-sm">
-                  <li>
-                    <Link
-                      to="/about"
-                      className="hover:text-white transition-colors"
-                    >
-                      Giới thiệu
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/news"
-                      className="hover:text-white transition-colors"
-                    >
-                      Tin tức
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
-              <p>© 2024 POSO POS. Tất cả quyền được bảo lưu.</p>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <PageFooter />
     </div>
   );
 }

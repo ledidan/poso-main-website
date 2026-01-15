@@ -2,6 +2,7 @@ import type { Route } from "./+types/products";
 import { Link } from "react-router";
 import { useState } from "react";
 import { SiteHeader } from "../components/SiteHeader";
+import { PageFooter } from "../components/PageFooter";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -15,9 +16,69 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Products() {
-  const [activeDeviceTab, setActiveDeviceTab] = useState<
-    "all" | "package" | "promo" | "printer" | "cashdrawer"
-  >("package");
+  const [activeFeatureTab, setActiveFeatureTab] = useState<
+    "all" | "selling" | "management" | "reports" | "integrations"
+  >("all");
+
+  const featureCategories = [
+    {
+      id: "selling" as const,
+      label: "Bán hàng tại quầy",
+      title: "Bán hàng nhanh, hạn chế sai sót",
+      description:
+        "Giao diện bán hàng đơn giản, thao tác chạm nhanh, hỗ trợ nhiều phương thức thanh toán.",
+      bullets: [
+        "Tạo hóa đơn chỉ với vài thao tác",
+        "Quản lý bàn/khu vực phục vụ trực quan",
+        "Tách/gộp bàn, chuyển món linh hoạt",
+        "In hóa đơn cho quầy và bếp",
+      ],
+    },
+    {
+      id: "management" as const,
+      label: "Quản lý vận hành",
+      title: "Quản lý menu, giá bán và nhân viên",
+      description:
+        "Dễ dàng cập nhật menu, giá bán và phân quyền cho nhân viên theo vai trò.",
+      bullets: [
+        "Quản lý danh mục món, topping, combo",
+        "Thiết lập giá theo khung giờ hoặc chi nhánh",
+        "Phân quyền nhân viên theo chức vụ",
+        "Lịch sử thao tác để kiểm soát gian lận",
+      ],
+    },
+    {
+      id: "reports" as const,
+      label: "Báo cáo & số liệu",
+      title: "Báo cáo doanh thu theo thời gian thực",
+      description:
+        "Theo dõi doanh thu, lợi nhuận và món bán chạy mọi lúc mọi nơi trên điện thoại.",
+      bullets: [
+        "Báo cáo doanh thu theo ca, ngày, tuần, tháng",
+        "Thống kê món bán chạy, khung giờ cao điểm",
+        "So sánh hiệu quả giữa các chi nhánh",
+        "Xuất báo cáo để làm việc với kế toán",
+      ],
+    },
+    {
+      id: "integrations" as const,
+      label: "Tích hợp & mở rộng",
+      title: "Kết nối với đối tác giao hàng và thiết bị",
+      description:
+        "Tích hợp sẵn với các thiết bị phổ biến và nền tảng giao hàng để tối ưu vận hành.",
+      bullets: [
+        "Kết nối máy in bill, két tiền, máy POS phổ biến",
+        "Tự động đồng bộ đơn hàng từ kênh giao hàng (theo lộ trình)",
+        "API mở để tích hợp hệ thống khác",
+        "Đồng bộ dữ liệu an toàn, bảo mật",
+      ],
+    },
+  ];
+
+  const visibleFeatureCards =
+    activeFeatureTab === "all"
+      ? featureCategories
+      : featureCategories.filter((item) => item.id === activeFeatureTab);
 
   return (
     <div className="min-h-screen bg-white">
@@ -30,23 +91,25 @@ export default function Products() {
               <p className="text-sm font-semibold text-poso-primary uppercase tracking-wide mb-3">
                 Sản phẩm
               </p>
-              <h1 className="text-3xl md:text-5xl font-bold text-poso-dark mb-4 md:mb-6 leading-tight">
+              <h1 className="text-2xl md:text-5xl font-bold text-poso-dark mb-4 md:mb-6 leading-tight">
                 Hệ thống quản lý nhà hàng chuyên nghiệp
               </h1>
-              <p className="text-base md:text-lg text-poso-gray opacity-90 mb-6 md:mb-8">
-                Từ phần mềm bán hàng đến thiết bị phần cứng, POSO cung cấp trọn
-                bộ giải pháp giúp vận hành quán mượt mà, chính xác và hiệu quả.
+              <p className="text-sm md:text-lg text-poso-gray opacity-90 mb-6 md:mb-8">
+                POSO cung cấp phần mềm quản lý bán hàng chuyên nghiệp, tương
+                thích với nhiều thiết bị POS và máy in phổ biến trên thị trường.
+                Giải pháp linh hoạt giúp vận hành quán mượt mà, chính xác và
+                hiệu quả.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+              <div className="flex md:flex-row gap-3 justify-center md:justify-start">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center bg-poso-primary text-white px-8 py-3 rounded-lg font-semibold text-sm md:text-base hover:bg-poso-primary-hover transition-colors"
+                  className="inline-flex items-center justify-center bg-poso-primary text-white px-8 py-3 rounded-full font-semibold text-sm md:text-base hover:bg-poso-primary-hover transition-colors"
                 >
                   Tư vấn miễn phí
                 </Link>
                 <Link
                   to="/features"
-                  className="inline-flex items-center justify-center border border-poso-primary text-poso-primary px-8 py-3 rounded-lg font-semibold text-sm md:text-base hover:bg-poso-primary/5 transition-colors"
+                  className="inline-flex items-center justify-center border border-poso-primary text-poso-primary px-8 py-3 rounded-full font-semibold text-sm md:text-base hover:bg-poso-primary/5 transition-colors"
                 >
                   Xem tính năng chi tiết
                 </Link>
@@ -57,11 +120,11 @@ export default function Products() {
               <div className="relative max-w-md mx-auto">
                 <div className="absolute -top-6 -left-10 w-24 h-24 bg-poso-primary/10 rounded-[32px]" />
                 <div className="absolute -bottom-10 -right-8 w-28 h-28 bg-poso-primary/5 rounded-full" />
-                <div className="relative rounded-[32px] bg-white shadow-xl border border-gray-100 px-4 py-6 md:px-6 md:py-8">
+                <div className="relative rounded-[32px]  border border-gray-100 px-4 py-6 md:px-6 md:py-8">
                   <img
                     src="/images/poso_sunmi_device.png"
                     alt="Thiết bị POSO"
-                    className="w-full h-auto object-contain"
+                    className="w-full h-48 md:h-auto object-contain"
                   />
                 </div>
               </div>
@@ -81,7 +144,7 @@ export default function Products() {
               theo dõi hoạt động kinh doanh mọi lúc mọi nơi.
             </p>
 
-            <div className="bg-[#f5f7fb] rounded-3xl p-6 md:p-10">
+            <div className="md:p-10">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 md:p-7 flex flex-col h-full">
                   <div className="flex items-center gap-3 mb-4">
@@ -184,30 +247,34 @@ export default function Products() {
       <section className="bg-[#f5f7fb] py-16 md:py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-[1060px] mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-poso-dark text-center mb-6">
-              Thiết bị POSO
+            <h2 className="text-3xl md:text-4xl font-bold text-poso-dark text-center mb-4">
+              Tính năng nổi bật của POSO POS
             </h2>
-
-            <div className="flex flex-wrap justify-center gap-6 border-b border-gray-200 mb-8">
+            <p className="text-center text-poso-gray opacity-80 mb-6 max-w-2xl mx-auto">
+              Nhóm tính năng được thiết kế riêng cho nhà hàng, quán cafe, trà
+              sữa, giúp bạn bán hàng nhanh hơn, quản lý chặt hơn và ra quyết
+              định chính xác hơn.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6 border-b border-gray-200 pb-4 mb-8">
               {[
-                { id: "all", label: "Hiển thị tất cả" },
-                { id: "package", label: "Gói" },
-                { id: "promo", label: "Khuyến mãi" },
-                { id: "printer", label: "Máy in" },
-                { id: "cashdrawer", label: "Két sắt" },
+                { id: "all", label: "Tất cả" },
+                { id: "selling", label: "Bán hàng" },
+                { id: "management", label: "Quản lý vận hành" },
+                { id: "reports", label: "Báo cáo" },
+                { id: "integrations", label: "Tích hợp" },
               ].map((tab) => {
-                const isActive = activeDeviceTab === tab.id;
+                const isActive = activeFeatureTab === tab.id;
                 return (
                   <button
                     key={tab.id}
                     onClick={() =>
-                      setActiveDeviceTab(
+                      setActiveFeatureTab(
                         tab.id as
                           | "all"
-                          | "package"
-                          | "promo"
-                          | "printer"
-                          | "cashdrawer"
+                          | "selling"
+                          | "management"
+                          | "reports"
+                          | "integrations"
                       )
                     }
                     className={`pb-3 text-sm md:text-base font-medium transition-colors border-b-2 ${
@@ -222,52 +289,33 @@ export default function Products() {
               })}
             </div>
 
-            <div className="bg-white rounded-3xl border border-gray-100 shadow-sm p-6 md:p-8 flex flex-col md:flex-row items-center gap-8">
-              <div className="flex-1">
-                <p className="text-xs font-semibold text-poso-primary uppercase tracking-wide mb-2">
-                  Gói
-                </p>
-                <h3 className="text-2xl md:text-3xl font-bold text-poso-dark mb-3">
-                  Gói thiết bị POSO Sunmi
-                </h3>
-                <p className="text-sm text-poso-gray mb-4">
-                  Gói thiết bị đồng bộ với phần mềm POSO POS, phù hợp cho nhà
-                  hàng, quán cafe, trà sữa và mô hình chuỗi nhỏ.
-                </p>
-                <ul className="space-y-1 text-sm text-poso-gray mb-6">
-                  <li>• Máy POS Sunmi V2s hoặc tương đương</li>
-                  <li>• Máy in hóa đơn nhiệt khổ 80mm</li>
-                  <li>• Ngăn kéo đựng tiền kết nối với máy in</li>
-                  <li>• Cáp kết nối và phụ kiện đi kèm</li>
-                  <li>• Cài đặt và hướng dẫn sử dụng cơ bản</li>
-                </ul>
-                <div className="flex flex-wrap items-center gap-4">
-                  <div>
-                    <p className="text-xs text-poso-gray uppercase tracking-wide">
-                      Giá trọn gói tham khảo
-                    </p>
-                    <p className="text-2xl font-bold text-poso-primary">
-                      10.309.000 VNĐ
+            <div className="space-y-6">
+              {visibleFeatureCards.map((feature) => (
+                <div key={feature.id} className="flex flex-col ">
+                  <h3 className="text-lg md:text-xl font-semibold text-poso-dark mb-1">
+                    {feature.title}
+                  </h3>
+                  <p className="text-sm text-poso-gray mb-2">
+                    {feature.description}
+                  </p>
+                  <ul className="space-y-1 text-sm text-poso-gray mb-4 list-disc list-inside">
+                    {feature.bullets.map((item, idx) => (
+                      <li key={idx}>• {item}</li>
+                    ))}
+                  </ul>
+                  <div className="mt-auto">
+                    <p className="text-xs text-poso-gray uppercase tracking-wide mb-3">
+                      Thuộc nhóm:{" "}
+                      <span className="font-semibold text-poso-primary">
+                        {
+                          featureCategories.find((c) => c.id === feature.id)
+                            ?.label
+                        }
+                      </span>
                     </p>
                   </div>
-                  <a
-                    href="#"
-                    className="inline-flex items-center justify-center bg-poso-primary text-white px-6 py-3 rounded-md text-sm font-semibold hover:bg-poso-primary-hover transition-colors"
-                  >
-                    Mua tại Shopee
-                  </a>
                 </div>
-              </div>
-
-              <div className="flex-1 w-full flex justify-center">
-                <div className="max-w-xs w-full">
-                  <img
-                    src="/images/poso_sunmi_device.png"
-                    alt="Gói thiết bị POSO Sunmi"
-                    className="w-full h-auto object-contain"
-                  />
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -275,7 +323,7 @@ export default function Products() {
 
       <section className="bg-poso-primary py-16">
         <div className="container mx-auto px-4 text-center">
-          <div className="max-w-[1340px] mx-auto">
+          <div className="max-w-[1250px] mx-auto">
             <h2 className="text-4xl font-bold text-white mb-4">
               Cần tư vấn về sản phẩm POSO?
             </h2>
@@ -293,88 +341,7 @@ export default function Products() {
         </div>
       </section>
 
-      <footer className="bg-poso-dark text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="max-w-[1340px] mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              <div>
-                <h4 className="text-xl font-bold text-poso-primary mb-4">
-                  POSO
-                </h4>
-                <p className="text-gray-400 text-sm">
-                  Giải pháp quản lý bán hàng hàng đầu Việt Nam
-                </p>
-              </div>
-              <div>
-                <h5 className="font-semibold mb-4">Sản phẩm</h5>
-                <ul className="space-y-2 text-gray-400 text-sm">
-                  <li>
-                    <Link
-                      to="/products"
-                      className="hover:text-white transition-colors"
-                    >
-                      Sản phẩm
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/features"
-                      className="hover:text-white transition-colors"
-                    >
-                      Tính năng
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h5 className="font-semibold mb-4">Hỗ trợ</h5>
-                <ul className="space-y-2 text-gray-400 text-sm">
-                  <li>
-                    <Link
-                      to="/faq"
-                      className="hover:text-white transition-colors"
-                    >
-                      FAQ
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/contact"
-                      className="hover:text-white transition-colors"
-                    >
-                      Liên hệ
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h5 className="font-semibold mb-4">Công ty</h5>
-                <ul className="space-y-2 text-gray-400 text-sm">
-                  <li>
-                    <Link
-                      to="/about"
-                      className="hover:text-white transition-colors"
-                    >
-                      Giới thiệu
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/news"
-                      className="hover:text-white transition-colors"
-                    >
-                      Tin tức
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
-              <p>© 2024 POSO POS. Tất cả quyền được bảo lưu.</p>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <PageFooter />
     </div>
   );
 }

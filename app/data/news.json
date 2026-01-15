@@ -1,0 +1,176 @@
+[
+  {
+    "id": 1,
+    "date": "2024-12-15T00:00:00",
+    "date_gmt": "2024-12-15T00:00:00",
+    "slug": "poso-pos-ra-mat-tinh-nang-quan-ly-da-chi-nhanh",
+    "status": "publish",
+    "type": "post",
+    "link": "/news/1",
+    "title": {
+      "rendered": "POSO POS ra mắt tính năng quản lý đa chi nhánh"
+    },
+    "content": {
+      "rendered": "<p>POSO POS giới thiệu tính năng quản lý đa chi nhánh, giúp bạn xem nhanh doanh thu và tình hình hoạt động của từng cửa hàng trên một màn hình duy nhất.</p><p>Tính năng này phù hợp cho các chuỗi quán cafe, nhà hàng đang mở rộng quy mô.</p>"
+    },
+    "excerpt": {
+      "rendered": "POSO POS ra mắt tính năng quản lý đa chi nhánh, xem nhanh doanh thu của từng cửa hàng."
+    },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "sticky": false,
+    "template": "",
+    "format": "standard",
+    "meta": {},
+    "categories": [1],
+    "tags": [],
+    "views": 1200
+  },
+  {
+    "id": 2,
+    "date": "2024-12-10T00:00:00",
+    "date_gmt": "2024-12-10T00:00:00",
+    "slug": "huong-dan-toi-uu-hoa-doanh-thu-voi-poso-pos",
+    "status": "publish",
+    "type": "post",
+    "link": "/news/2",
+    "title": {
+      "rendered": "Hướng dẫn tối ưu hóa doanh thu với POSO POS"
+    },
+    "content": {
+      "rendered": "<p>Bài viết này tổng hợp một số cách đơn giản để bạn tận dụng báo cáo trong POSO POS và theo dõi doanh thu hiệu quả hơn.</p><p>Đây chỉ là nội dung minh họa ngắn gọn để demo trang chi tiết bài viết.</p>"
+    },
+    "excerpt": {
+      "rendered": "Một vài gợi ý cơ bản để theo dõi doanh thu với POSO POS (mock data)."
+    },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "sticky": false,
+    "template": "",
+    "format": "standard",
+    "meta": {},
+    "categories": [2],
+    "tags": [],
+    "views": 890
+  },
+  {
+    "id": 3,
+    "date": "2024-12-05T00:00:00",
+    "date_gmt": "2024-12-05T00:00:00",
+    "slug": "poso-pos-tich-hop-voi-cac-cong-thanh-toan-moi",
+    "status": "publish",
+    "type": "post",
+    "link": "/news/3",
+    "title": {
+      "rendered": "POSO POS tích hợp với các cổng thanh toán mới"
+    },
+    "content": {
+      "rendered": "<p>POSO POS hiện hỗ trợ thêm nhiều cổng thanh toán phổ biến tại Việt Nam, giúp quá trình thanh toán tại quầy nhanh và linh hoạt hơn.</p><p>Đây là nội dung demo ngắn để minh họa phần chi tiết bài viết.</p>"
+    },
+    "excerpt": {
+      "rendered": "POSO POS tích hợp thêm nhiều cổng thanh toán phổ biến (mock content)."
+    },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "sticky": false,
+    "template": "",
+    "format": "standard",
+    "meta": {},
+    "categories": [1],
+    "tags": [],
+    "views": 1500
+  },
+  {
+    "id": 4,
+    "date": "2024-11-28T00:00:00",
+    "date_gmt": "2024-11-28T00:00:00",
+    "slug": "case-study-quan-cafe-tang-30-doanh-thu-nho-poso-pos",
+    "status": "publish",
+    "type": "post",
+    "link": "/news/4",
+    "title": {
+      "rendered": "Case study: Quán cafe tăng 30% doanh thu nhờ POSO POS"
+    },
+    "content": {
+      "rendered": "<p>Đây là một ví dụ ngắn về case study của một quán cafe sau khi áp dụng POSO POS vào vận hành.</p><p>Nội dung chi tiết được rút gọn để phục vụ mục đích demo giao diện trang chi tiết bài viết.</p>"
+    },
+    "excerpt": {
+      "rendered": "Case study demo: quán cafe áp dụng POSO POS (mock, nội dung rút gọn)."
+    },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "sticky": false,
+    "template": "",
+    "format": "standard",
+    "meta": {},
+    "categories": [3],
+    "tags": [],
+    "views": 2500
+  },
+  {
+    "id": 5,
+    "date": "2024-11-20T00:00:00",
+    "date_gmt": "2024-11-20T00:00:00",
+    "slug": "bao-mat-du-lieu-uu-tien-hang-dau-tai-poso-pos",
+    "status": "publish",
+    "type": "post",
+    "link": "/news/5",
+    "title": {
+      "rendered": "Bảo mật dữ liệu: Ưu tiên hàng đầu tại POSO POS"
+    },
+    "content": {
+      "rendered": "<p>Bài viết này mô tả ngắn gọn về cam kết bảo mật dữ liệu của POSO POS dành cho khách hàng.</p><p>Đây chỉ là nội dung minh họa ngắn, không phải tài liệu chính thức.</p>"
+    },
+    "excerpt": {
+      "rendered": "Giới thiệu ngắn về bảo mật dữ liệu tại POSO POS (mock)."
+    },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "sticky": false,
+    "template": "",
+    "format": "standard",
+    "meta": {},
+    "categories": [4],
+    "tags": [],
+    "views": 1800
+  },
+  {
+    "id": 6,
+    "date": "2024-11-15T00:00:00",
+    "date_gmt": "2024-11-15T00:00:00",
+    "slug": "poso-pos-phien-ban-2-0-nhieu-cai-tien-moi",
+    "status": "publish",
+    "type": "post",
+    "link": "/news/6",
+    "title": {
+      "rendered": "POSO POS phiên bản 2.0 - Nhiều cải tiến mới"
+    },
+    "content": {
+      "rendered": "<p>POSO POS phiên bản 2.0 mang lại giao diện mới và hiệu năng tốt hơn cho người dùng.</p><p>Đây là đoạn nội dung demo ngắn để test hiển thị chi tiết bài viết.</p>"
+    },
+    "excerpt": {
+      "rendered": "POSO POS 2.0 với giao diện và hiệu năng được cải thiện (mock)."
+    },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "sticky": false,
+    "template": "",
+    "format": "standard",
+    "meta": {},
+    "categories": [1],
+    "tags": [],
+    "views": 3200
+  }
+]

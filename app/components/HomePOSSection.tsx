@@ -68,28 +68,32 @@ export function HomePOSSection() {
     {
       num: "01",
       title: "Hoạt động",
-      detailDesc:
-        "Cập nhật hoạt động của cửa hàng theo thời gian thực.",
+      detailDesc: "Cập nhật hoạt động của cửa hàng theo thời gian thực.",
     },
     {
       num: "02",
       title: "Tổng quan doanh thu",
+      detailDesc: "Xem tổng quan doanh thu của cửa hàng theo thời gian thực.",
     },
     {
       num: "03",
       title: "Hóa đơn hiện tại",
+      detailDesc: "Xem hóa đơn hiện tại của cửa hàng.",
     },
     {
       num: "04",
       title: "Danh mục bán chạy nhất",
+      detailDesc: "Xem danh mục bán chạy nhất của cửa hàng.",
     },
     {
       num: "05",
       title: "Mặt hàng bán chạy",
+      detailDesc: "Xem mặt hàng bán chạy của cửa hàng.",
     },
     {
       num: "06",
       title: "Báo cáo khác",
+      detailDesc: "Xem báo cáo khác của cửa hàng.",
     },
   ];
 
@@ -97,10 +101,10 @@ export function HomePOSSection() {
   const activeFeature = features[selectedFeature] ?? features[0];
 
   return (
-    <section className="bg-white py-20">
-      <div className="w-full max-w-[1340px] mx-auto px-4">
-        <div className="relative mb-12">
-          <div className="relative flex justify-center gap-16">
+    <section className="bg-white py-12 md:py-20">
+      <div className="w-full max-w-[1250px] mx-auto px-4">
+        <div className="relative mb-8 md:mb-12">
+          <div className="relative flex justify-center gap-6 md:gap-16">
             <button
               onClick={() => {
                 setActiveTab("pos");
@@ -109,14 +113,14 @@ export function HomePOSSection() {
               className="relative cursor-pointer px-2"
             >
               <h2
-                className={`text-3xl md:text-4xl font-bold tracking-tight transition-colors ${
+                className={`text-xl sm:text-2xl md:text-4xl font-bold tracking-tight transition-colors ${
                   activeTab === "pos" ? "text-poso-primary" : "text-poso-gray"
                 } hover:text-poso-primary`}
               >
                 POSO POS
               </h2>
               <span
-                className={`absolute -bottom-2 left-1/2 -translate-x-1/2 h-[3px] w-10 rounded-full bg-poso-primary transition-all duration-300 ${
+                className={`absolute -bottom-2 left-1/2 -translate-x-1/2 h-[3px] w-8 md:w-10 rounded-full bg-poso-primary transition-all duration-300 ${
                   activeTab === "pos"
                     ? "opacity-100 scale-x-100"
                     : "opacity-0 scale-x-0"
@@ -132,14 +136,14 @@ export function HomePOSSection() {
               className="relative cursor-pointer px-2"
             >
               <h2
-                className={`text-3xl md:text-4xl font-bold tracking-tight transition-colors ${
+                className={`text-xl sm:text-2xl md:text-4xl font-bold tracking-tight transition-colors ${
                   activeTab === "boss" ? "text-poso-primary" : "text-poso-gray"
                 } hover:text-poso-primary`}
               >
                 POSO Boss
               </h2>
               <span
-                className={`absolute -bottom-2 left-1/2 -translate-x-1/2 h-[3px] w-10 rounded-full bg-poso-primary transition-all duration-300 ${
+                className={`absolute -bottom-2 left-1/2 -translate-x-1/2 h-[3px] w-8 md:w-10 rounded-full bg-poso-primary transition-all duration-300 ${
                   activeTab === "boss"
                     ? "opacity-100 scale-x-100"
                     : "opacity-0 scale-x-0"
@@ -149,7 +153,7 @@ export function HomePOSSection() {
           </div>
         </div>
 
-        <div className="block lg:hidden mb-10">
+        <div className="block lg:hidden">
           <Swiper
             modules={[Pagination]}
             slidesPerView={1}
@@ -160,8 +164,17 @@ export function HomePOSSection() {
           >
             {features.map((feature, index) => (
               <SwiperSlide key={feature.num}>
-                <div className="flex flex-col items-center text-center pb-10">
-                  <div className="w-full max-w-md mb-6">
+                <div className="flex flex-col items-center text-center pb-12">
+                  <div className="w-full max-w-xs sm:max-w-md mb-6 relative">
+                    {/* {activeTab === "pos" && (
+                      <div className="absolute -top-12 sm:-top-16 left-1/2 -translate-x-1/2 w-[75%] sm:w-[84%] h-[70%] sm:h-[80%] z-0">
+                        <img
+                          src="/terminal-images/image-2.png"
+                          alt="POSO POS"
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                    )} */}
                     <img
                       src={
                         activeTab === "pos"
@@ -169,27 +182,27 @@ export function HomePOSSection() {
                           : "/images/hero_poso_manager.png"
                       }
                       alt={activeTab === "pos" ? "POSO POS" : "POSO Boss"}
-                      className="w-full h-auto mx-auto"
+                      className="h-48 sm:h-64 md:h-72 w-auto mx-auto relative z-10"
                     />
                   </div>
-                  <div className="max-w-md mx-auto">
-                    <div className="flex items-center justify-center gap-2 mb-3">
-                      <span className="text-xl font-semibold text-poso-dark">
+                  <div className="w-full max-w-md mx-auto px-2">
+                    <div className="flex items-center justify-center gap-2 mb-3 flex-wrap">
+                      <span className="text-lg sm:text-xl font-semibold text-poso-dark">
                         {feature.num}
                       </span>
-                      <span className="text-xl font-bold text-poso-dark">
+                      <span className="text-lg sm:text-xl font-bold text-poso-dark">
                         {feature.title}
                       </span>
                       {activeTab === "pos" &&
                         features === posFeatures &&
                         (feature as (typeof posFeatures)[number]).badge && (
-                        <span className="text-[10px] uppercase tracking-wide bg-poso-primary text-white rounded-full px-2 py-0.5">
-                          {(feature as (typeof posFeatures)[number]).badge}
-                        </span>
+                          <span className="text-[9px] sm:text-[10px] uppercase tracking-wide bg-poso-primary text-white rounded-full px-2 py-0.5">
+                            {(feature as (typeof posFeatures)[number]).badge}
+                          </span>
                         )}
                     </div>
                     {feature.detailDesc && (
-                      <p className="text-sm text-poso-gray leading-relaxed">
+                      <p className="text-xs sm:text-sm text-poso-gray leading-relaxed px-2">
                         {feature.detailDesc}
                       </p>
                     )}
@@ -202,7 +215,7 @@ export function HomePOSSection() {
 
         <div className="hidden lg:grid grid-cols-1 lg:grid-cols-2 items-start">
           <div className="bg-order-2 lg:order-1">
-            <div className="rounded-3xl p-6 max-w-xl mx-auto relative bg-gradient-to-b from-gray-50 to-white shadow-lg">
+            <div className="rounded-3xl p-6 max-w-xl mx-auto relative bg-gradient-to-b from-gray-50 to-white">
               <img
                 src={
                   activeTab === "pos"
@@ -214,6 +227,15 @@ export function HomePOSSection() {
                   activeTab === "boss" ? "max-w-xs mx-auto" : ""
                 }`}
               />
+              {activeTab === "pos" && (
+                <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-[80%] h-[80%] z-0">
+                  <img
+                    src="/terminal-images/image-1.png"
+                    alt="POSO POS"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              )}
               <div className="absolute left-1/2 -translate-x-1/2 bottom-4 text-sm font-semibold text-poso-primary">
                 {activeTab === "pos" ? "POSO POS" : "POSO Boss"}
               </div>

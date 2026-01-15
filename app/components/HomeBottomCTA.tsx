@@ -2,26 +2,42 @@ import { Link } from "react-router";
 
 export function HomeBottomCTA() {
   return (
-    <section className="bg-poso-primary py-16 relative overflow-hidden">
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto text-center text-white">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">POSO POS</h2>
-          <p className="text-xl mb-2 opacity-90">
-            Hệ thống quản lý bán hàng chuyên nghiệp
+    <section className="relative overflow-hidden bg-gradient-to-r from-poso-primary to-gray-500 py-16 md:py-20">
+      {/* lớp mờ nền phía sau giống hình mẫu */}
+      <div className="pointer-events-none absolute inset-0 opacity-30 mix-blend-soft-light bg-[url('/images/pos-staff.png')] bg-cover bg-center" />
+
+      <div className="relative z-10 max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10 md:gap-16">
+        {/* Hình máy POS bên trái */}
+        <div className="w-full md:w-1/2 flex justify-center md:justify-start">
+          <div className="relative max-w-md">
+            <div className="absolute -inset-6 rounded-3xl bg-black/10 blur-2xl" />
+            <img
+              src="/terminal-images/image-1.png"
+              alt="POSO POS terminal"
+              className="relative rounded shadow-2xl shadow-black/30 border border-white/10 max-h-[170px] md:max-h-[340px] w-auto object-contain"
+            />
+          </div>
+        </div>
+
+        {/* Nội dung text bên phải */}
+        <div className="w-full md:w-1/2 text-white text-center md:text-left">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4">
+            POSO POS
+          </h2>
+          <p className="text-base md:text-2xl font-medium mb-3 opacity-95">
+            Hệ thống quản lý nhà hàng chuyên nghiệp
           </p>
-          <p className="text-lg mb-8 opacity-80">Giải pháp bán hàng toàn diện</p>
+          <p className="text-sm md:text-lg mb-8 opacity-90">
+            Giải pháp nhà hàng toàn diện cho vận hành, bán hàng và báo cáo.
+          </p>
           <Link
-            to="/contact"
-            className="bg-white text-poso-primary px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors inline-block"
+            to={`${import.meta.env.VITE_MERCHANT_URL}/register`}
+            className="inline-block rounded-full bg-white px-6 md:px-10 py-2 md:py-3.5 text-sm md:text-lg font-semibold text-poso-primary shadow-lg shadow-black/10 hover:bg-gray-100 transition-colors"
           >
-            Đăng ký Ngay
+            Đăng ký Ngay!
           </Link>
         </div>
-      </div>
-      <div className="absolute right-0 top-0 bottom-0 w-1/3 opacity-10">
-        <div className="h-full bg-gray-900 rounded-l-full" />
       </div>
     </section>
   );
 }
-

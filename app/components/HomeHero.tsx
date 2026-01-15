@@ -28,21 +28,19 @@ export function HomeHero() {
             <div className="flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-20 text-center lg:text-left">
               <div className="space-y-6">
                 <div className="flex flex-col md:flex-row md:items-center md:gap-4">
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-poso-dark leading-tight">
+                  <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-poso-dark leading-tight">
                     Poso Boss
                   </h1>
-                  <p className="w-full md:w-[30%] text-lg md:text-xl text-poso-dark md:border-l md:border-gray-500 md:pl-6 mt-3 md:mt-0 mx-auto md:mx-0">
+                  <p className="w-full md:w-[40%] text-base md:text-xl text-poso-dark md:border-l md:border-gray-500 md:pl-6 mt-3 md:mt-0 mx-auto md:mx-0">
                     Quản lý quán mọi lúc,
-                    <br className="block md:hidden" />
+                    <br className=" hidden" />
                     <span className="md:ml-1">mọi nơi</span>
                   </p>
                 </div>
-
                 <p className="text-base md:text-lg text-poso-gray-dark">
                   Ứng dụng quản lý cho chủ quán
                 </p>
-
-                <div className="flex flex-col items-center md:flex-row md:items-center gap-4">
+                <div className="hidden md:flex flex-col items-center md:flex-row md:items-center gap-4">
                   <div className="flex gap-4 justify-center">
                     <StoreButton type="google" />
                     <StoreButton type="apple" />
@@ -55,8 +53,17 @@ export function HomeHero() {
 
               <HeroImage
                 src="/images/hero_poso_manager.png"
-                className="max-w-sm"
+                className="max-w-[40%] md:max-w-sm"
               />
+              <div className="md:hidden flex flex-col items-center md:flex-row md:items-center gap-4">
+                <div className="flex gap-4 justify-center">
+                  <StoreButton type="google" />
+                  <StoreButton type="apple" />
+                </div>
+                <p className="text-sm text-poso-gray-dark md:ml-6">
+                  Email: support@poso.vn
+                </p>
+              </div>
             </div>
           </div>
         </SwiperSlide>
@@ -75,30 +82,46 @@ export function HomeHero() {
           <div className="max-w-7xl mx-auto px-6 lg:px-24 py-16">
             <div className="flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-12 text-center lg:text-left">
               <div className="order-2 lg:order-1">
-                <h2 className="text-5xl md:text-6xl font-bold text-poso-dark mb-6 leading-tight">
+                <h2 className="text-3xl md:text-6xl font-bold text-poso-dark mb-6 leading-tight">
                   POSO POS
                 </h2>
 
-                <p className="text-xl text-poso-gray-dark mb-6 leading-relaxed">
+                <p className="text-base md:text-xl text-poso-gray-dark mb-6 leading-relaxed">
                   Hệ thống quản lý bán hàng chuyên nghiệp
                   <br />
                   Giải pháp bán hàng toàn diện
                 </p>
 
-                <p className="text-base text-poso-primary mb-4">
-                  Nay tích hợp tính năng ShopeeFood Delivery <span className="inline-block align-middle text-[10px] bg-poso-primary text-white px-2 py-0.5 rounded-full ml-1">NEW</span>
+                <p className="text-base font-medium md:text-xl text-poso-primary mb-4">
+                  Nay tích hợp tính năng ShopeeFood Delivery{" "}
+                  <span className="inline-block align-middle text-[10px] bg-poso-primary text-white px-2 py-0.5 rounded-full ml-1">
+                    NEW
+                  </span>
                 </p>
-
+                <div className="order-1 lg:order-2 md:hidden">
+                  <HeroImage
+                    src="/images/poso_sunmi_device.png"
+                    className="max-w-[45%] md:max-w-sm relative"
+                  >
+                    <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-[88%] h-[88%] z-10">
+                      <img
+                        src="/terminal-images/image-2.png"
+                        className="w-full h-full object-contain"
+                        alt="POSO Boss"
+                      />
+                    </div>
+                  </HeroImage>
+                </div>
                 <div className="mb-6">
                   <Link
-                    to="/contact"
-                    className="inline-block bg-poso-primary text-white px-10 py-4 rounded-lg font-semibold text-lg hover:bg-poso-primary-hover transition-colors w-full md:w-auto"
+                    to={`${import.meta.env.VITE_MERCHANT_URL}/register`}
+                    className="w-full md:w-auto py-4  inline-block bg-poso-primary text-white px-10 rounded-lg font-medium text-sm md:text-lg hover:bg-poso-primary-hover transition-colors"
                   >
                     Đăng ký ngay
                   </Link>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <FeatureItem title="Quản lý đơn hàng" />
                   <FeatureItem title="Báo cáo thời gian thực" />
                   <FeatureItem title="Quản lý kho hàng" />
@@ -110,11 +133,19 @@ export function HomeHero() {
                 </p>
               </div>
 
-              <div className="order-1 lg:order-2">
+              <div className="order-1 lg:order-2 hidden md:block">
                 <HeroImage
                   src="/images/poso_sunmi_device.png"
-                  className="max-w-sm"
-                />
+                  className="max-w-sm relative"
+                >
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-[91%] h-[90%] z-10">
+                    <img
+                      src="/terminal-images/image-2.png"
+                      className="w-full h-full object-contain"
+                      alt="POSO Boss"
+                    />
+                  </div>
+                </HeroImage>
               </div>
             </div>
           </div>
@@ -126,13 +157,22 @@ export function HomeHero() {
 
 /* ================= COMPONENTS ================= */
 
-function HeroImage({ src, className }: { src: string; className?: string }) {
+function HeroImage({
+  src,
+  className,
+  children,
+}: {
+  src: string;
+  className?: string;
+  children?: React.ReactNode;
+}) {
   return (
     <div className="flex justify-center">
       <div
         className={`${className} w-full aspect-3/4 flex items-center justify-center`}
       >
         <img src={src} className="w-full h-full object-contain" alt="" />
+        {children}
       </div>
     </div>
   );
@@ -153,7 +193,7 @@ function FeatureItem({ title }: { title: string }) {
       <div className="w-12 h-12 bg-poso-primary/90 rounded-full flex items-center justify-center">
         <span className="text-white text-xl">✓</span>
       </div>
-      <span className="text-poso-gray text-sm">{title}</span>
+      <span className="text-poso-gray-dark text-sm">{title}</span>
     </div>
   );
 }

@@ -6,7 +6,9 @@ export function HomeFooter() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h4 className="text-xl font-bold text-poso-primary mb-4">POSO</h4>
+            {/* <h4 className="text-xl font-bold text-poso-primary mb-4">POSO</h4> */}
+            <img src="/logo.png" alt="POSO POS" className="w-20 h-6" />
+            <br />
             <p className="text-gray-400 text-sm leading-relaxed">
               Giải pháp quản lý bán hàng hàng đầu Việt Nam. Chúng tôi cung cấp
               các sản phẩm và dịch vụ tốt nhất để giúp doanh nghiệp của bạn

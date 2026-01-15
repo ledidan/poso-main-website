@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Cập nhật",
+    "slug": "cap-nhat"
+  },
+  {
+    "id": 2,
+    "name": "Hướng dẫn",
+    "slug": "huong-dan"
+  },
+  {
+    "id": 3,
+    "name": "Case study",
+    "slug": "case-study"
+  },
+  {
+    "id": 4,
+    "name": "Bảo mật",
+    "slug": "bao-mat"
+  }
+]
