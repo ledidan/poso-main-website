@@ -4,7 +4,7 @@ import { useState } from "react";
 import { SiteHeader } from "../../components/SiteHeader";
 import { PageFooter } from "../../components/PageFooter";
 
-export function meta({}: Route.MetaArgs) {
+export function meta({ }: Route.MetaArgs) {
   return [
     { title: "Tính năng POSO POS - POSO POS" },
     {
@@ -18,8 +18,8 @@ export function meta({}: Route.MetaArgs) {
 export default function FeaturesPOS() {
   const featureList = [
     {
-      id: "delivery",
-      label: "Quản lý giao hàng",
+      id: "cash",
+      label: "Quản lý thu chi",
     },
     {
       id: "table",
@@ -48,87 +48,100 @@ export default function FeaturesPOS() {
   ] as const;
 
   const [activeFeatureId, setActiveFeatureId] =
-    useState<(typeof featureList)[number]["id"]>("delivery");
+    useState<(typeof featureList)[number]["id"]>("cash");
+
+  // Mapping feature IDs to screenshots in /poso-screens/
+  const featureScreens: Record<(typeof featureList)[number]["id"], string> = {
+    cash: "/poso-screens/image-6.png",
+    table: "/poso-screens/image-11.png",
+    order: "/poso-screens/image-9.png",
+    realtime: "/poso-screens/image-3.png",
+    inventory: "/poso-screens/image-5.png",
+    staff: "/poso-screens/image-10.png",
+    chain: "/poso-screens/image-10.png",
+  };
+
+  const activeScreen = featureScreens[activeFeatureId];
 
   const activeFeature =
-    activeFeatureId === "delivery"
+    activeFeatureId === "cash"
       ? {
-          title: "Quản lý Giao Hàng",
-          badge: "Mới",
-          subtitle: "(Chỉ trên Sunmi)",
-          summary:
-            "Tích hợp dịch vụ giao thức ăn trực tuyến ShopeeFood.vn giúp quản lý và tự động hóa giao hàng.",
-          bullets: [
-            "Quản lý đơn hàng từ ShopeeFood Delivery trên hệ thống POSO POS",
-            "Đồng bộ thực đơn giữa POSO POS và ShopeeFood Delivery",
-            "Chỉnh sửa món, hết món, hủy đơn ShopeeFood trực tiếp từ POSO POS",
-          ],
-        }
+        title: "Quản lý Thu Chi",
+        badge: "Mới",
+        subtitle: "(Chỉ trên Poso)",
+        summary:
+          "Tích hợp quản lý thu chi tự động, không cần tính toán thủ công.",
+        bullets: [
+          "Quản lý thu chi tự động, không cần tính toán thủ công",
+          "Quản lý thu chi theo ngày, tuần, tháng, năm",
+          "Quản lý thu chi theo món, hóa đơn, nhân viên",
+        ],
+      }
       : activeFeatureId === "table"
         ? {
-            title: "Quản lý Bàn",
-            summary:
-              "Theo dõi sơ đồ bàn trực quan, cập nhật trạng thái theo thời gian thực để phục vụ khách nhanh hơn.",
-            bullets: [
-              "Thiết kế sơ đồ khu vực và bàn theo mặt bằng quán",
-              "Theo dõi trạng thái bàn: trống, đang phục vụ, đã đặt trước",
-              "Hỗ trợ gộp bàn, tách bàn và chuyển bàn linh hoạt",
-            ],
-          }
+          title: "Quản lý Bàn",
+          summary:
+            "Theo dõi sơ đồ bàn trực quan, cập nhật trạng thái theo thời gian thực để phục vụ khách nhanh hơn.",
+          bullets: [
+            "Thiết kế sơ đồ khu vực và bàn theo mặt bằng quán",
+            "Theo dõi trạng thái bàn: trống, đang phục vụ, đã đặt trước",
+            "Hỗ trợ gộp bàn, tách bàn và chuyển bàn linh hoạt",
+          ],
+        }
         : activeFeatureId === "order"
           ? {
-              title: "Quản lý Đơn Hàng",
-              summary:
-                "Tổng hợp đơn hàng từ nhiều kênh bán, xử lý tập trung trên một màn hình duy nhất.",
-              bullets: [
-                "Nhận đơn tại quán, đơn giao hàng và đơn đặt bàn",
-                "Theo dõi trạng thái đơn: mới, đang pha chế, đang giao, hoàn tất",
-                "Giảm sai sót nhờ quy trình xử lý đơn rõ ràng",
-              ],
-            }
+            title: "Quản lý Đơn Hàng",
+            summary:
+              "Tổng hợp đơn hàng từ nhiều kênh bán, xử lý tập trung trên một màn hình duy nhất.",
+            bullets: [
+              "Nhận đơn tại quán, đơn giao hàng và đơn đặt bàn",
+              "Theo dõi trạng thái đơn: mới, đang pha chế, đang giao, hoàn tất",
+              "Giảm sai sót nhờ quy trình xử lý đơn rõ ràng",
+            ],
+          }
           : activeFeatureId === "realtime"
             ? {
-                title: "Báo cáo Thời gian thực",
-                summary:
-                  "Cập nhật doanh thu và hiệu quả kinh doanh liên tục giúp chủ quán ra quyết định nhanh chóng.",
-                bullets: [
-                  "Xem doanh thu theo ca, theo ngày, tuần, tháng",
-                  "Theo dõi món bán chạy, khung giờ cao điểm",
-                  "Xuất báo cáo chi tiết để phân tích sâu hơn",
-                ],
-              }
+              title: "Báo cáo Thời gian thực",
+              summary:
+                "Cập nhật doanh thu và hiệu quả kinh doanh liên tục giúp chủ quán ra quyết định nhanh chóng.",
+              bullets: [
+                "Xem doanh thu theo ca, theo ngày, tuần, tháng",
+                "Theo dõi món bán chạy, khung giờ cao điểm",
+                "Xuất báo cáo chi tiết để phân tích sâu hơn",
+              ],
+            }
             : activeFeatureId === "inventory"
               ? {
-                  title: "Quản lý Hàng tồn",
-                  summary:
-                    "Quản lý nguyên vật liệu và hàng hóa chặt chẽ, hạn chế thất thoát.",
-                  bullets: [
-                    "Theo dõi tồn kho theo thời gian thực cho từng mặt hàng",
-                    "Cảnh báo khi sắp hết hàng hoặc vượt định mức",
-                    "Ghi nhận đầy đủ nhập kho, xuất kho và điều chỉnh tồn",
-                  ],
-                }
+                title: "Quản lý Hàng tồn",
+                summary:
+                  "Quản lý nguyên vật liệu và hàng hóa chặt chẽ, hạn chế thất thoát.",
+                bullets: [
+                  "Theo dõi tồn kho theo thời gian thực cho từng mặt hàng",
+                  "Cảnh báo khi sắp hết hàng hoặc vượt định mức",
+                  "Ghi nhận đầy đủ nhập kho, xuất kho và điều chỉnh tồn",
+                ],
+              }
               : activeFeatureId === "staff"
                 ? {
-                    title: "Quản lý Nhân viên",
-                    summary:
-                      "Kiểm soát hoạt động nhân viên trong ca làm việc và bảo vệ doanh thu.",
-                    bullets: [
-                      "Phân quyền chi tiết theo vai trò: thu ngân, phục vụ, quản lý",
-                      "Theo dõi doanh thu theo nhân viên, ca làm việc",
-                      "Hạn chế truy cập nhạy cảm bằng mật khẩu và phân quyền",
-                    ],
-                  }
+                  title: "Quản lý Nhân viên",
+                  summary:
+                    "Kiểm soát hoạt động nhân viên trong ca làm việc và bảo vệ doanh thu.",
+                  bullets: [
+                    "Phân quyền chi tiết theo vai trò: thu ngân, phục vụ, quản lý",
+                    "Theo dõi doanh thu theo nhân viên, ca làm việc",
+                    "Hạn chế truy cập nhạy cảm bằng mật khẩu và phân quyền",
+                  ],
+                }
                 : {
-                    title: "Quản lý Chuỗi",
-                    summary:
-                      "Hỗ trợ vận hành nhiều chi nhánh trong cùng một hệ thống POSO POS.",
-                    bullets: [
-                      "Xem báo cáo gộp toàn chuỗi hoặc từng chi nhánh",
-                      "Đồng bộ thực đơn và chương trình khuyến mãi cho toàn hệ thống",
-                      "So sánh hiệu quả kinh doanh giữa các chi nhánh",
-                    ],
-                  };
+                  title: "Quản lý Chuỗi",
+                  summary:
+                    "Hỗ trợ vận hành nhiều chi nhánh trong cùng một hệ thống POSO POS.",
+                  bullets: [
+                    "Xem báo cáo gộp toàn chuỗi hoặc từng chi nhánh",
+                    "Đồng bộ thực đơn và chương trình khuyến mãi cho toàn hệ thống",
+                    "So sánh hiệu quả kinh doanh giữa các chi nhánh",
+                  ],
+                };
 
   return (
     <div className="min-h-screen bg-white">
@@ -140,7 +153,14 @@ export default function FeaturesPOS() {
               <div className="relative max-w-md mx-auto">
                 <div className="absolute -top-6 -left-10 w-24 h-24 bg-white/40 rounded-[32px]" />
                 <div className="absolute -bottom-10 -right-8 w-28 h-28 bg-white/30 rounded-full" />
-                <div className="hidden md:block relative rounded-[32px]  border border-gray-100 px-4 py-6 md:px-6 md:py-8">
+                <div className="hidden md:block relative rounded-[32px] border border-gray-100">
+                  <div className="absolute top-2 left-2 rounded-[32px] w-[430px] h-[240px]" >
+                    <img
+                      src="/poso-screens/image-12.png"
+                      alt="POSO POS"
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
                   <img
                     src="/images/poso_sunmi_device.png"
                     alt="POSO POS"
@@ -164,6 +184,13 @@ export default function FeaturesPOS() {
                 </li>
               </ul>
               <div className="md:hidden relative rounded-[32px] border border-gray-100 px-4 py-6 md:px-6 md:py-8">
+                <div className="absolute top-7 left-29 rounded-[32px] w-[235px] h-[120px]" >
+                  <img
+                    src={activeScreen}
+                    alt="POSO POS"
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
                 <img
                   src="/images/poso_sunmi_device.png"
                   alt="POSO POS"
@@ -172,7 +199,7 @@ export default function FeaturesPOS() {
               </div>
               <div className="flex md:flex-grow sm:flex-row gap-3 justify-center md:justify-start">
                 <Link
-                  to={`${import.meta.env.VITE_MERCHANT_URL}/register`}
+                  to={`${import.meta.env.VITE_MERCHANT_URL}`}
                   className="inline-flex items-center justify-center bg-poso-primary text-white px-8 py-3 rounded-full font-semibold  md: hover:bg-poso-primary-hover transition-colors"
                 >
                   Trải nghiệm ngay
@@ -213,11 +240,10 @@ export default function FeaturesPOS() {
                               item.id as (typeof featureList)[number]["id"]
                             )
                           }
-                          className={`text-left px-4 py-2.5 rounded-full  md: whitespace-nowrap transition-colors lg:w-full ${
-                            isActive
-                              ? "bg-white text-poso-primary font-semibold shadow-sm border border-gray-200"
-                              : "text-poso-gray hover:bg-white"
-                          }`}
+                          className={`text-left px-4 py-2.5 rounded-full  md: whitespace-nowrap transition-colors lg:w-full ${isActive
+                            ? "bg-white text-poso-primary font-semibold shadow-sm border border-gray-200"
+                            : "text-poso-gray hover:bg-white"
+                            }`}
                         >
                           {item.label}
                         </button>
@@ -232,7 +258,7 @@ export default function FeaturesPOS() {
                   <div className="border-b border-gray-100 px-4 md:px-6 py-3 flex items-center justify-between">
                     <div className="flex items-center gap-2  md: text-poso-gray">
                       <span className="w-2 h-2 rounded-full bg-green-500" />
-                      <span>POSO POS Sunmi</span>
+                      <span>POSO POS</span>
                     </div>
                     <div className="flex items-center gap-2 text-[10px] md: text-poso-gray">
                       <span className="px-2 py-0.5 rounded-full bg-gray-100">
@@ -244,10 +270,12 @@ export default function FeaturesPOS() {
                     </div>
                   </div>
                   <div className="bg-gray-50 px-2 md:px-4 py-4">
-                    <div className="rounded-2xl bg-white border border-dashed border-gray-200 h-64 md:h-80 flex items-center justify-center">
-                      <span className=" md: text-poso-gray">
-                        Khu vực mô phỏng màn hình POSO POS / Sunmi
-                      </span>
+                    <div className="rounded-2xl bg-white border border-dashed border-gray-200 h-64 md:h-full flex items-center justify-center">
+                      <img
+                        src={activeScreen}
+                        alt="POSO POS"
+                        className="w-full h-auto object-contain"
+                      />
                     </div>
                   </div>
                 </div>

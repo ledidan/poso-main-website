@@ -130,7 +130,7 @@ export default function Features() {
             Trải nghiệm tất cả tính năng ngay hôm nay
           </h2>
           <Link
-            to={`${import.meta.env.VITE_MERCHANT_URL}/register`}
+            to={`${import.meta.env.VITE_MERCHANT_URL}`}
             className="bg-white text-[#fa7313] px-8 py-4 rounded-md font-semibold text-lg hover:bg-gray-100 transition-colors inline-block mt-4"
           >
             Dùng thử miễn phí

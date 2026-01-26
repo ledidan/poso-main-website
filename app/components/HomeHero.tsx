@@ -52,8 +52,8 @@ export function HomeHero() {
               </div>
 
               <HeroImage
-                src="/images/hero_poso_manager.png"
-                className="max-w-[30%] md:max-w-sm"
+                src="/poso-mobile-screen/image-1.png"
+                className="max-w-[40%] md:max-w-md"
               />
               <div className="md:hidden flex flex-col items-center md:flex-row md:items-center gap-4">
                 <div className="flex gap-4 justify-center">
@@ -83,8 +83,7 @@ export function HomeHero() {
                 <h2 className="text-3xl md:text-6xl font-bold text-poso-dark mb-6 leading-tight">
                   POSO POS
                 </h2>
-
-                <p className="md:text-xl text-poso-gray-dark leading-relaxed">
+                <p className="md:text-xl text-poso-gray-dark leading-relaxed mb-3">
                   Hệ thống quản lý bán hàng chuyên nghiệp
                   <br />
                   Giải pháp bán hàng toàn diện
@@ -106,7 +105,7 @@ export function HomeHero() {
                 </div>
                 <div className="mb-6">
                   <Link
-                    to={`${import.meta.env.VITE_MERCHANT_URL}/register`}
+                    to={`${import.meta.env.VITE_MERCHANT_URL}`}
                     className="w-full md:w-auto py-3 inline-block bg-poso-primary text-white px-10 rounded-lg font-medium  md:text-lg hover:bg-poso-primary-hover transition-colors"
                   >
                     Đăng ký ngay
@@ -132,7 +131,7 @@ export function HomeHero() {
                 >
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-[91%] h-[90%] z-10">
                     <img
-                      src="/terminal-images/image-2.png"
+                      src="/poso-screens/image-6.png"
                       className="w-full h-full object-contain"
                       alt="POSO Boss"
                     />

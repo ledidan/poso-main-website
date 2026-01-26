@@ -9,6 +9,25 @@ export function HomePOSSection() {
   const [activeTab, setActiveTab] = useState<"pos" | "boss">("pos");
   const [selectedFeature, setSelectedFeature] = useState(0);
 
+  const posScreens = [
+    "/poso-screens/image-6.png",
+    "/poso-screens/image-1.png",
+    "/poso-screens/image-13.png",
+    "/poso-screens/image-7.png",
+    "/poso-screens/image-5.png",
+    "/poso-screens/image-12.png",
+    "/poso-screens/image-10.png",
+  ] as const;
+
+  const bossScreens = [
+    "/poso-mobile-screen/image-1.png",
+    "/poso-mobile-screen/image-2.png",
+    "/poso-mobile-screen/image-3.png",
+    "/poso-mobile-screen/image-4.png",
+    "/poso-mobile-screen/image-5.png",
+    "/poso-mobile-screen/image-6.png",
+  ] as const;
+
   const posFeatures: {
     num: string;
     title: string;
@@ -17,9 +36,9 @@ export function HomePOSSection() {
   }[] = [
     {
       num: "01",
-      title: "Quản lý giao hàng",
+      title: "Quản lý thu chi",
       detailDesc:
-        "Tích hợp dịch vụ giao thức ăn trực tuyến ShopeeFood.vn giúp quản lý và tự động hóa giao hàng. Xem và xử lý đơn hàng giao hàng trong thời gian thực.",
+        "Tích hợp quản lý thu chi tự động, không cần tính toán thủ công.",
       badge: "MỚI" as const,
     },
     {
@@ -48,10 +67,16 @@ export function HomePOSSection() {
     },
     {
       num: "06",
-      title: "Quản lý hàng tồn",
+      title: "Bán nhanh",
       detailDesc:
-        "Theo dõi tồn kho tự động, cảnh báo khi hàng sắp hết. Quản lý nhập xuất hàng hóa chi tiết với lịch sử đầy đủ.",
+        "Bán hàng nhanh chóng, không cần đợi quản lý đơn hàng.",
     },
+    // {
+    //   num: "06",
+    //   title: "Quản lý hàng tồn",
+    //   detailDesc:
+    //     "Theo dõi tồn kho tự động, cảnh báo khi hàng sắp hết. Quản lý nhập xuất hàng hóa chi tiết với lịch sử đầy đủ.",
+    // },
     {
       num: "07",
       title: "Quản lý nhân viên",
@@ -99,6 +124,10 @@ export function HomePOSSection() {
 
   const features = activeTab === "pos" ? posFeatures : bossFeatures;
   const activeFeature = features[selectedFeature] ?? features[0];
+  const activeScreen =
+    activeTab === "pos"
+      ? posScreens[selectedFeature] ?? posScreens[0]
+      : bossScreens[selectedFeature] ?? bossScreens[0];
 
   return (
     <section className="bg-white py-12 md:py-20">
@@ -178,11 +207,11 @@ export function HomePOSSection() {
                     <img
                       src={
                         activeTab === "pos"
-                          ? "/images/poso_sunmi_device.png"
-                          : "/images/hero_poso_manager.png"
+                          ? posScreens[index] ?? posScreens[0]
+                          : bossScreens[index] ?? bossScreens[0]
                       }
                       alt={activeTab === "pos" ? "POSO POS" : "POSO Boss"}
-                      className="h-48 sm:h-64 md:h-72 w-auto mx-auto relative z-10"
+                      className="h-48 sm:h-64 md:h-72 w-auto mx-auto relative z-10 object-contain"
                     />
                   </div>
                   <div className="w-full max-w-md mx-auto px-2">
@@ -215,12 +244,12 @@ export function HomePOSSection() {
 
         <div className="hidden lg:grid grid-cols-1 lg:grid-cols-2 items-start">
           <div className="bg-order-2 lg:order-1">
-            <div className="rounded-3xl p-6 max-w-xl mx-auto relative bg-gradient-to-b from-gray-50 to-white">
+            <div className="rounded-3xl p-6 max-w-xl mx-auto relative bg-linear-to-b from-gray-50 to-white">
               <img
                 src={
                   activeTab === "pos"
                     ? "/images/poso_sunmi_device.png"
-                    : "/images/hero_poso_manager.png"
+                    : activeScreen
                 }
                 alt={activeTab === "pos" ? "POSO POS" : "POSO Boss"}
                 className={`w-full h-auto pointer-events-none ${
@@ -230,8 +259,8 @@ export function HomePOSSection() {
               {activeTab === "pos" && (
                 <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-[80%] h-[80%] z-0">
                   <img
-                    src="/terminal-images/image-1.png"
-                    alt="POSO POS"
+                    src={activeScreen}
+                    alt={`${activeFeature.num} ${activeFeature.title}`}
                     className="w-full h-full object-contain"
                   />
                 </div>
@@ -240,7 +269,7 @@ export function HomePOSSection() {
                 {activeTab === "pos" ? "POSO POS" : "POSO Boss"}
               </div>
               {activeTab === "pos" && (
-                <div className="absolute -left-4 top-8 bg-white/95 rounded-2xl shadow-xl px-5 py-4 max-w-xs">
+                <div className="absolute -left-4 bottom-30 bg-white/95 rounded-2xl shadow-xl px-5 py-4 max-w-xs">
                   <div className=" font-semibold text-poso-primary mb-1">
                     {activeFeature.num} {activeFeature.title}
                   </div>

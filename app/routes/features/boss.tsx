@@ -4,7 +4,7 @@ import { useState } from "react";
 import { SiteHeader } from "../../components/SiteHeader";
 import { PageFooter } from "../../components/PageFooter";
 
-export function meta({}: Route.MetaArgs) {
+export function meta({ }: Route.MetaArgs) {
   return [
     { title: "Tính năng POSO Boss - POSO POS" },
     {
@@ -28,72 +28,83 @@ export default function FeaturesBoss() {
   const [activeFeatureId, setActiveFeatureId] =
     useState<(typeof featureList)[number]["id"]>("activity");
 
+  const featureScreens: Record<(typeof featureList)[number]["id"], string> = {
+    activity: "/poso-mobile-screen/image-1.png",
+    currentBills: "/poso-mobile-screen/image-3.png",
+    revenue: "/poso-mobile-screen/image-2.png",
+    categoryTop: "/poso-mobile-screen/image-4.png",
+    itemTop: "/poso-mobile-screen/image-5.png",
+    otherReports: "/poso-mobile-screen/image-7.png",
+  };
+
+  const activeScreen = featureScreens[activeFeatureId];
+
   const activeFeature =
     activeFeatureId === "activity"
       ? {
-          title: "Hoạt động",
-          summary:
-            "Cập nhật tình hình kinh doanh theo thời gian thực, mọi biến động đều được hiển thị ngay trên ứng dụng.",
-          bullets: [
-            "Theo dõi và xem từng giao dịch theo: hóa đơn, thực đơn, nhân viên, phương thức thanh toán",
-            "Xem chi tiết dòng tiền ra vào trong từng khung giờ",
-            "Giúp theo dõi vận hành của quán sát sao hơn dù bạn ở bất cứ đâu",
-          ],
-        }
+        title: "Hoạt động",
+        summary:
+          "Cập nhật tình hình kinh doanh theo thời gian thực, mọi biến động đều được hiển thị ngay trên ứng dụng.",
+        bullets: [
+          "Theo dõi và xem từng giao dịch theo: hóa đơn, thực đơn, nhân viên, phương thức thanh toán",
+          "Xem chi tiết dòng tiền ra vào trong từng khung giờ",
+          "Giúp theo dõi vận hành của quán sát sao hơn dù bạn ở bất cứ đâu",
+        ],
+      }
       : activeFeatureId === "currentBills"
         ? {
-            title: "Hóa đơn hiện tại",
-            summary:
-              "Nắm được tất cả hóa đơn đang mở và trạng thái thanh toán theo thời gian thực.",
-            bullets: [
-              "Xem danh sách hóa đơn đang phục vụ tại quán",
-              "Kiểm tra nhanh giá trị hóa đơn và phương thức thanh toán",
-              "Giảm thất thoát do bỏ sót hóa đơn hoặc thanh toán sai",
-            ],
-          }
+          title: "Hóa đơn hiện tại",
+          summary:
+            "Nắm được tất cả hóa đơn đang mở và trạng thái thanh toán theo thời gian thực.",
+          bullets: [
+            "Xem danh sách hóa đơn đang phục vụ tại quán",
+            "Kiểm tra nhanh giá trị hóa đơn và phương thức thanh toán",
+            "Giảm thất thoát do bỏ sót hóa đơn hoặc thanh toán sai",
+          ],
+        }
         : activeFeatureId === "revenue"
           ? {
-              title: "Tổng quan doanh thu",
-              summary:
-                "Nắm toàn cảnh doanh thu cửa hàng trong ngày chỉ trong vài giây.",
-              bullets: [
-                "Xem doanh thu theo ngày, tuần, tháng với biểu đồ trực quan",
-                "So sánh doanh thu giữa các khung giờ trong ngày",
-                "Theo dõi doanh thu theo chi nhánh nếu vận hành chuỗi",
-              ],
-            }
+            title: "Tổng quan doanh thu",
+            summary:
+              "Nắm toàn cảnh doanh thu cửa hàng trong ngày chỉ trong vài giây.",
+            bullets: [
+              "Xem doanh thu theo ngày, tuần, tháng với biểu đồ trực quan",
+              "So sánh doanh thu giữa các khung giờ trong ngày",
+              "Theo dõi doanh thu theo chi nhánh nếu vận hành chuỗi",
+            ],
+          }
           : activeFeatureId === "categoryTop"
             ? {
-                title: "Danh mục bán chạy nhất",
-                summary:
-                  "Biết danh mục nào đang mang lại doanh thu chính để tối ưu thực đơn.",
-                bullets: [
-                  "Xếp hạng danh mục theo doanh thu và số lượng bán",
-                  "Hỗ trợ quyết định tăng cường khuyến mãi cho danh mục chủ lực",
-                  "Phát hiện danh mục hoạt động kém để điều chỉnh",
-                ],
-              }
+              title: "Danh mục bán chạy nhất",
+              summary:
+                "Biết danh mục nào đang mang lại doanh thu chính để tối ưu thực đơn.",
+              bullets: [
+                "Xếp hạng danh mục theo doanh thu và số lượng bán",
+                "Hỗ trợ quyết định tăng cường khuyến mãi cho danh mục chủ lực",
+                "Phát hiện danh mục hoạt động kém để điều chỉnh",
+              ],
+            }
             : activeFeatureId === "itemTop"
               ? {
-                  title: "Mặt hàng bán chạy",
-                  summary:
-                    "Theo dõi món bán chạy giúp tối ưu tồn kho và chiến dịch marketing.",
-                  bullets: [
-                    "Xếp hạng từng món theo số lượng và doanh thu",
-                    "Nhận biết món chủ lực để đưa lên vị trí nổi bật trong menu",
-                    "Phân tích hiệu quả giá bán và combo",
-                  ],
-                }
+                title: "Mặt hàng bán chạy",
+                summary:
+                  "Theo dõi món bán chạy giúp tối ưu tồn kho và chiến dịch marketing.",
+                bullets: [
+                  "Xếp hạng từng món theo số lượng và doanh thu",
+                  "Nhận biết món chủ lực để đưa lên vị trí nổi bật trong menu",
+                  "Phân tích hiệu quả giá bán và combo",
+                ],
+              }
               : {
-                  title: "Các báo cáo khác",
-                  summary:
-                    "Bộ báo cáo đa dạng giúp chủ quán theo dõi sâu hơn về vận hành và tài chính.",
-                  bullets: [
-                    "Báo cáo chi phí, lợi nhuận và hiệu quả theo từng khoảng thời gian",
-                    "Báo cáo hiệu suất nhân viên, ca làm việc",
-                    "Xuất dữ liệu phục vụ kế toán và quản trị doanh nghiệp",
-                  ],
-                };
+                title: "Các báo cáo khác",
+                summary:
+                  "Bộ báo cáo đa dạng giúp chủ quán theo dõi sâu hơn về vận hành và tài chính.",
+                bullets: [
+                  "Báo cáo chi phí, lợi nhuận và hiệu quả theo từng khoảng thời gian",
+                  "Báo cáo hiệu suất nhân viên, ca làm việc",
+                  "Xuất dữ liệu phục vụ kế toán và quản trị doanh nghiệp",
+                ],
+              };
 
   return (
     <div className="min-h-screen bg-white">
@@ -106,9 +117,9 @@ export default function FeaturesBoss() {
               <div className="relative max-w-xs mx-auto">
                 <div className="absolute -top-6 -left-10 w-24 h-24 bg-white/40 rounded-[32px]" />
                 <div className="absolute -bottom-10 -right-8 w-28 h-28 bg-white/30 rounded-full" />
-                <div className="hidden md:block relative rounded-[32px] bg-white shadow-xl border border-gray-100 px-4 py-6 md:px-6 md:py-8">
+                <div className="hidden md:block relative rounded-[32px]  shadow-xl border border-gray-100 px-4 py-6 md:px-6 md:py-8">
                   <img
-                    src="/images/hero_poso_manager.png"
+                    src="/poso-mobile-screen/image-4.png"
                     alt="POSO Boss"
                     className="w-full h-auto object-contain"
                   />
@@ -130,7 +141,7 @@ export default function FeaturesBoss() {
               </ul>
               <div className="md:hidden relative rounded-[32px] px-4 py-6 md:px-6 md:py-8">
                 <img
-                  src="/images/hero_poso_manager.png"
+                  src="/poso-mobile-screen/image-4.png"
                   alt="POSO Boss"
                   className="w-full h-48 md:h-auto object-contain"
                 />
@@ -174,11 +185,10 @@ export default function FeaturesBoss() {
                               item.id as (typeof featureList)[number]["id"]
                             )
                           }
-                          className={`text-left px-4 py-2.5 rounded-full  md: whitespace-nowrap transition-colors lg:w-full ${
-                            isActive
+                          className={`text-left px-4 py-2.5 rounded-full  md: whitespace-nowrap transition-colors lg:w-full ${isActive
                               ? "bg-white text-poso-primary font-semibold shadow-sm border border-gray-200"
                               : "text-poso-gray hover:bg-white"
-                          }`}
+                            }`}
                         >
                           {item.label}
                         </button>
@@ -194,20 +204,14 @@ export default function FeaturesBoss() {
                       <span className="w-2 h-2 rounded-full bg-green-500" />
                       <span>POSO Boss</span>
                     </div>
-                    <div className="flex items-center gap-2 text-[10px] md: text-poso-gray">
-                      <span className="px-2 py-0.5 rounded-full bg-gray-100">
-                        Doanh thu
-                      </span>
-                      <span className="px-2 py-0.5 rounded-full bg-gray-100">
-                        Hóa đơn
-                      </span>
-                    </div>
                   </div>
                   <div className="bg-gray-50 px-2 md:px-4 py-4">
-                    <div className="rounded-2xl bg-white border border-dashed border-gray-200 h-64 md:h-80 flex items-center justify-center">
-                      <span className=" md: text-poso-gray">
-                        Khu vực mô phỏng màn hình báo cáo POSO Boss
-                      </span>
+                    <div className="h-48 md:h-120 rounded-2xl bg-white border border-dashed border-gray-200 flex items-center justify-center">
+                    <img
+                      src={activeScreen}
+                      alt={activeFeature.title}
+                      className="w-full h-full object-contain"
+                    />
                     </div>
                   </div>
                 </div>

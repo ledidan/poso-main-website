@@ -158,7 +158,7 @@ export function SiteHeader({ variant }: { variant: HeaderVariant }) {
             {variant === "home" ? (
               <>
                 <Link
-                  to={`${import.meta.env.VITE_MERCHANT_URL}/register`}
+                  to={`${import.meta.env.VITE_MERCHANT_URL}`}
                   className="border border-poso-primary text-poso-primary px-6 py-2 rounded-full font-semibold hover:text-white hover:bg-poso-primary-hover transition-colors"
                 >
                   Đăng ký
@@ -166,7 +166,7 @@ export function SiteHeader({ variant }: { variant: HeaderVariant }) {
               </>
             ) : (
               <Link
-                to={`${import.meta.env.VITE_MERCHANT_URL}/register`}
+                to={`${import.meta.env.VITE_MERCHANT_URL}`}
                 className="border border-poso-primary text-poso-primary px-6 py-2 rounded-full font-semibold hover:text-white hover:bg-poso-primary-hover transition-colors"
               >
                 Dùng thử miễn phí
@@ -300,7 +300,7 @@ export function SiteHeader({ variant }: { variant: HeaderVariant }) {
                   {variant === "home" ? (
                     <>
                       <Link
-                        to={`${import.meta.env.VITE_MERCHANT_URL}/register`}
+                        to={`${import.meta.env.VITE_MERCHANT_URL}`}
                         onClick={() => setMobileMenuOpen(false)}
                         className="bg-poso-primary text-white px-6 py-2 rounded-full font-semibold hover:text-white hover:bg-poso-primary-hover transition-colors text-center"
                       >
@@ -309,7 +309,7 @@ export function SiteHeader({ variant }: { variant: HeaderVariant }) {
                     </>
                   ) : (
                     <Link
-                      to={`${import.meta.env.VITE_MERCHANT_URL}/register`}
+                      to={`${import.meta.env.VITE_MERCHANT_URL}`}
                       onClick={() => setMobileMenuOpen(false)}
                       className="bg-poso-primary text-white px-6 py-2 rounded-full font-semibold hover:text-white hover:bg-poso-primary-hover transition-colors text-center"
                     >

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { SiteHeader } from "../components/SiteHeader";
 import { PageFooter } from "../components/PageFooter";
 
-export function meta({}: Route.MetaArgs) {
+export function meta({ }: Route.MetaArgs) {
   return [
     { title: "Sản phẩm - POSO POS" },
     {
@@ -117,15 +117,15 @@ export default function Products() {
             </div>
 
             <div className="flex-1 w-full">
-              <div className="relative max-w-md mx-auto">
+              <div className="relative max-w-full mx-auto h-full">
                 <div className="absolute -top-6 -left-10 w-24 h-24 bg-poso-primary/10 rounded-[32px]" />
                 <div className="absolute -bottom-10 -right-8 w-28 h-28 bg-poso-primary/5 rounded-full" />
-                <div className="relative rounded-[32px]  border border-gray-100 px-4 py-6 md:px-6 md:py-8">
-                  <img
-                    src="/images/poso_sunmi_device.png"
-                    alt="Thiết bị POSO"
-                    className="w-full h-48 md:h-auto object-contain"
-                  />
+                <div className="relative rounded-md border border-gray-100">
+                    <img
+                      src="/poso-screens/image-7.png"
+                      alt="POSO POS"
+                      className="w-full h-auto object-contain"
+                    />
                 </div>
               </div>
             </div>
@@ -270,18 +270,17 @@ export default function Products() {
                     onClick={() =>
                       setActiveFeatureTab(
                         tab.id as
-                          | "all"
-                          | "selling"
-                          | "management"
-                          | "reports"
-                          | "integrations"
+                        | "all"
+                        | "selling"
+                        | "management"
+                        | "reports"
+                        | "integrations"
                       )
                     }
-                    className={`pb-3  md: font-medium transition-colors border-b-2 ${
-                      isActive
+                    className={`pb-3  md: font-medium transition-colors border-b-2 ${isActive
                         ? "text-poso-primary border-poso-primary"
                         : "text-poso-gray border-transparent hover:text-poso-primary"
-                    }`}
+                      }`}
                   >
                     {tab.label}
                   </button>
