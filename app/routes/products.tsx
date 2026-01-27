@@ -103,13 +103,13 @@ export default function Products() {
               <div className="flex md:flex-row gap-3 justify-center md:justify-start">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center bg-poso-primary text-white px-8 py-3 rounded-full font-semibold  md: hover:bg-poso-primary-hover transition-colors"
+                  className="md:text-[10px] lg:text-[10px] text-[11px] inline-flex items-center justify-center bg-poso-primary text-white px-8 py-3 rounded-full font-semibold  md: hover:bg-poso-primary-hover transition-colors"
                 >
                   Tư vấn miễn phí
                 </Link>
                 <Link
                   to="/features"
-                  className="inline-flex items-center justify-center border border-poso-primary text-poso-primary px-8 py-3 rounded-full font-semibold  md: hover:bg-poso-primary/5 transition-colors"
+                  className="md:text-[10px] lg:text-[10px] text-[11px] inline-flex items-center justify-center border border-poso-primary text-poso-primary px-8 py-3 rounded-full font-semibold  md: hover:bg-poso-primary/5 transition-colors"
                 >
                   Xem tính năng chi tiết
                 </Link>

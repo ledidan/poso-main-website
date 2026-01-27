@@ -154,7 +154,7 @@ export default function FeaturesPOS() {
                 <div className="absolute -top-6 -left-10 w-24 h-24 bg-white/40 rounded-[32px]" />
                 <div className="absolute -bottom-10 -right-8 w-28 h-28 bg-white/30 rounded-full" />
                 <div className="hidden md:block relative rounded-[32px] border border-gray-100">
-                  <div className="absolute top-2 left-2 rounded-[32px] w-[430px] h-[240px]" >
+                  <div className="absolute top-2 left-2 rounded-[32px] w-[320px] lg:w-[430px] h-[240px] md:h-[240px]" >
                     <img
                       src="/poso-screens/image-12.png"
                       alt="POSO POS"
@@ -183,30 +183,25 @@ export default function FeaturesPOS() {
                   • Giải pháp nhà hàng toàn diện cho quán cafe, trà sữa, F&amp;B
                 </li>
               </ul>
-              <div className="md:hidden relative rounded-[32px] border border-gray-100 px-4 py-6 md:px-6 md:py-8">
-                <div className="absolute top-7 left-29 rounded-[32px] w-[235px] h-[120px]" >
+              <div className="md:hidden flex items-center justify-center relative rounded-[32px] border border-gray-100 px-4 py-6 md:px-6 md:py-8">
+                <div className="md:w-full w-56 h-48 md:h-auto object-contain flex" >
                   <img
-                    src={activeScreen}
+                    src="/poso-screens/image-13.png"
                     alt="POSO POS"
                     className="w-full h-auto object-contain"
                   />
                 </div>
-                <img
-                  src="/images/poso_sunmi_device.png"
-                  alt="POSO POS"
-                  className="w-full h-48 md:h-auto object-contain"
-                />
               </div>
-              <div className="flex md:flex-grow sm:flex-row gap-3 justify-center md:justify-start">
+              <div className="flex flex-1 md:flex-grow sm:flex-row gap-3 justify-center md:justify-start">
                 <Link
                   to={`${import.meta.env.VITE_MERCHANT_URL}`}
-                  className="inline-flex items-center justify-center bg-poso-primary text-white px-8 py-3 rounded-full font-semibold  md: hover:bg-poso-primary-hover transition-colors"
+                  className="text-[12px] md:text-[12px] inline-flex items-center justify-center bg-poso-primary text-white md:px-4 md:py-3 px-8 py-4 rounded-full font-semibold md: hover:bg-poso-primary-hover transition-colors"
                 >
                   Trải nghiệm ngay
                 </Link>
                 <Link
                   to="/products"
-                  className="inline-flex items-center justify-center border border-poso-primary text-poso-primary px-8 py-3 rounded-full font-semibold  md: hover:bg-poso-primary/5 transition-colors"
+                  className="text-[12px] md:text-[12px] inline-flex items-center justify-center border border-poso-primary text-poso-primary px-8 py-3 rounded-full font-semibold  md: hover:bg-poso-primary/5 transition-colors"
                 >
                   Xem sản phẩm POSO
                 </Link>

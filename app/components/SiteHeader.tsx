@@ -42,7 +42,7 @@ export function SiteHeader({ variant }: { variant: HeaderVariant }) {
               <img src="/logo.png" alt="POSO" className="h-6" />
             </Link>
 
-            <div className="hidden md:flex items-center justify-start space-x-4">
+            <div className="hidden md:flex items-center justify-start space-x-4 text-[14px]">
               <NavLink
                 to="/products"
                 className={({ isActive }) =>

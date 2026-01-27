@@ -10,13 +10,13 @@ export function HomePOSSection() {
   const [selectedFeature, setSelectedFeature] = useState(0);
 
   const posScreens = [
-    "/poso-screens/image-6.png",
-    "/poso-screens/image-1.png",
-    "/poso-screens/image-13.png",
-    "/poso-screens/image-7.png",
-    "/poso-screens/image-5.png",
-    "/poso-screens/image-12.png",
-    "/poso-screens/image-10.png",
+    "/poso-screens-device/thu-chi-screen.png",
+    "/poso-screens-device/quanlythucdon-screen.png",
+    "/poso-screens-device/quanlyban-screen.png",
+    "/poso-screens-device/quanlydonhang-screen.png",
+    "/poso-screens-device/baocao-screen.png",
+    "/poso-screens-device/bannhanh-screen.png",
+    "/poso-screens-device/quanlynhanvien-screen.png",
   ] as const;
 
   const bossScreens = [
@@ -244,19 +244,17 @@ export function HomePOSSection() {
 
         <div className="hidden lg:grid grid-cols-1 lg:grid-cols-2 items-start">
           <div className="bg-order-2 lg:order-1">
-            <div className="rounded-3xl p-6 max-w-xl mx-auto relative bg-linear-to-b from-gray-50 to-white">
+            <div className="rounded-3xl p-6 max-w-lg mx-auto relative ">
               <img
                 src={
-                  activeTab === "pos"
-                    ? "/images/poso_sunmi_device.png"
-                    : activeScreen
+                  activeScreen
                 }
                 alt={activeTab === "pos" ? "POSO POS" : "POSO Boss"}
                 className={`w-full h-auto pointer-events-none ${
-                  activeTab === "boss" ? "max-w-xs mx-auto" : ""
+                  activeTab === "boss" ? "max-w-[250px] mx-auto" : ""
                 }`}
               />
-              {activeTab === "pos" && (
+              {/* {activeTab === "pos" && (
                 <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-[80%] h-[80%] z-0">
                   <img
                     src={activeScreen}
@@ -264,9 +262,9 @@ export function HomePOSSection() {
                     className="w-full h-full object-contain"
                   />
                 </div>
-              )}
-              <div className="absolute left-1/2 -translate-x-1/2 bottom-4  font-semibold text-poso-primary">
-                {activeTab === "pos" ? "POSO POS" : "POSO Boss"}
+              )} */}
+              <div className="absolute left-1/2 -translate-x-1/2 bottom-14  font-semibold text-poso-primary">
+                {activeTab === "pos" ? "POSO POS" : ""}
               </div>
               {activeTab === "pos" && (
                 <div className="absolute -left-4 bottom-30 bg-white/95 rounded-2xl shadow-xl px-5 py-4 max-w-xs">
@@ -281,8 +279,8 @@ export function HomePOSSection() {
                 </div>
               )}
               {activeTab === "boss" && (
-                <div className="absolute left-1/2 -translate-x-1/2 top-10 bg-white/95 rounded-full shadow-xl px-6 py-3 flex items-center gap-3">
-                  <div className=" font-semibold text-poso-dark">
+                <div className="absolute left-1/2 -translate-x-1/2 top-0 bg-white/100 rounded-full shadow-xl px-6 py-3 flex items-center gap-3">
+                  <div className=" font-semibold text-poso-dark text-[12px]">
                     {activeFeature.num} {activeFeature.title}
                   </div>
                 </div>
