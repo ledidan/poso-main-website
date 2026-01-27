@@ -195,13 +195,13 @@ export default function FeaturesPOS() {
               <div className="flex flex-1 md:flex-grow sm:flex-row gap-3 justify-center md:justify-start">
                 <Link
                   to={`${import.meta.env.VITE_MERCHANT_URL}`}
-                  className="text-[12px] md:text-[12px] inline-flex items-center justify-center bg-poso-primary text-white md:px-4 md:py-3 px-8 py-4 rounded-full font-semibold md: hover:bg-poso-primary-hover transition-colors"
+                  className="text-[12px] md:text-[14px] inline-flex items-center justify-center bg-poso-primary text-white md:px-4 md:py-3 px-8 py-4 rounded-full font-semibold md: hover:bg-poso-primary-hover transition-colors"
                 >
                   Trải nghiệm ngay
                 </Link>
                 <Link
                   to="/products"
-                  className="text-[12px] md:text-[12px] inline-flex items-center justify-center border border-poso-primary text-poso-primary px-8 py-3 rounded-full font-semibold  md: hover:bg-poso-primary/5 transition-colors"
+                  className="text-[12px] md:text-[14px] inline-flex items-center justify-center border border-poso-primary text-poso-primary px-8 py-3 rounded-full font-semibold  md: hover:bg-poso-primary/5 transition-colors"
                 >
                   Xem sản phẩm POSO
                 </Link>
