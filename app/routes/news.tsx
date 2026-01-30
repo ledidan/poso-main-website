@@ -3,34 +3,35 @@ import { Link, NavLink } from "react-router";
 import { PageHero } from "../components/PageHero";
 import { SiteHeader } from "../components/SiteHeader";
 import { PageFooter } from "../components/PageFooter";
-import newsData from "../data/news.json";
-import categoriesData from "../data/categories.json";
+import {
+  fetchPosts,
+  fetchCategories,
+  formatDate,
+  getCategoryName,
+  decodeHtmlEntities,
+  stripHtml,
+  type WordPressPost,
+  type WordPressCategory,
+} from "../lib/wordpress-api";
 
-type NewsItem = typeof newsData[number];
-type Category = typeof categoriesData[number];
+export async function loader({}: Route.LoaderArgs) {
+  try {
+    const [posts, categories] = await Promise.all([
+      fetchPosts(),
+      fetchCategories(),
+    ]);
 
-function formatDate(dateString: string): string {
-  const date = new Date(dateString);
-  const months = [
-    "Tháng 1",
-    "Tháng 2",
-    "Tháng 3",
-    "Tháng 4",
-    "Tháng 5",
-    "Tháng 6",
-    "Tháng 7",
-    "Tháng 8",
-    "Tháng 9",
-    "Tháng 10",
-    "Tháng 11",
-    "Tháng 12",
-  ];
-  return `${date.getDate()} ${months[date.getMonth()]}, ${date.getFullYear()}`;
-}
-
-function getCategoryName(categoryId: number): string {
-  const category = categoriesData.find((cat) => cat.id === categoryId);
-  return category?.name || "Khác";
+    return {
+      posts,
+      categories,
+    };
+  } catch (error) {
+    console.error("Error loading news:", error);
+    return {
+      posts: [] as WordPressPost[],
+      categories: [] as WordPressCategory[],
+    };
+  }
 }
 
 export function meta({}: Route.MetaArgs) {
@@ -40,14 +41,16 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function News() {
-  const newsItems = newsData
-    .filter((item) => item.status === "publish")
-    .map((item) => ({
-      ...item,
-      formattedDate: formatDate(item.date),
-      categoryName: getCategoryName(item.categories[0] || 0),
-    }));
+export default function News({ loaderData }: Route.ComponentProps) {
+  const { posts, categories } = loaderData;
+
+  const newsItems = posts.map((item) => ({
+    ...item,
+    formattedDate: formatDate(item.date),
+    categoryName: getCategoryName(item.categories[0] || 0, categories),
+    decodedTitle: decodeHtmlEntities(item.title.rendered),
+    featuredImage: item.jetpack_featured_media_url || null,
+  }));
 
   return (
     <div className="min-h-screen bg-white">
@@ -67,7 +70,14 @@ export default function News() {
               <article
                 key={item.id}
                 className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
-              >
+              > 
+                  <div className="h-48 overflow-hidden">
+                    <img
+                      src={item.featuredImage || "/image_placeholder.png"}
+                      alt={item.decodedTitle}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
                     <span className="font-semibold text-poso-primary bg-poso-primary/10 px-3 py-1 rounded-full">
@@ -78,10 +88,10 @@ export default function News() {
                     </span>
                   </div>
                   <NavLink to={`/news/${item.id}`} className="cursor-pointer text-xl font-bold text-poso-dark mb-3 hover:text-poso-primary transition-colors">
-                    {item.title.rendered}
+                    {item.decodedTitle}
                   </NavLink>
                   <p className="text-poso-gray opacity-80 leading-relaxed mb-4">
-                    {item.excerpt.rendered.replace(/<[^>]*>/g, "")}
+                    {stripHtml(item.excerpt.rendered).substring(0, 150)}...
                   </p>
                   <Link
                     to={`/news/${item.id}`}

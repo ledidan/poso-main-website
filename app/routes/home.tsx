@@ -8,6 +8,21 @@ import { HomeTestimonials } from "../components/HomeTestimonials";
 import { HomeNewsSection } from "../components/HomeNewsSection";
 import { HomeBottomCTA } from "../components/HomeBottomCTA";
 import { HomeFooter } from "../components/HomeFooter";
+import { fetchPosts } from "../lib/wordpress-api";
+
+export async function loader({}: Route.LoaderArgs) {
+  try {
+    const posts = await fetchPosts();
+    return {
+      posts: posts.slice(0, 4), // Only get first 4 posts for home page
+    };
+  } catch (error) {
+    console.error("Error loading news for home:", error);
+    return {
+      posts: [],
+    };
+  }
+}
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -20,7 +35,7 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function Home() {
+export default function Home({ loaderData }: Route.ComponentProps) {
   return (
     <div className="min-h-screen bg-white ">
       <SiteHeader variant="home" />
@@ -30,7 +45,7 @@ export default function Home() {
       <HomePOSSection />
       <HomeVideoIntro />
       <HomeTestimonials />
-      <HomeNewsSection />
+      <HomeNewsSection posts={loaderData.posts} />
       <HomeBottomCTA />
       <HomeFooter />
     </div>

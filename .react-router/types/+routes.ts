@@ -14,10 +14,10 @@ type Pages = {
   "/": {
     params: {};
   };
-  "/terms-of-service": {
+  "/terms": {
     params: {};
   };
-  "/privacy-policy": {
+  "/privacy": {
     params: {};
   };
   "/products": {
@@ -54,7 +54,7 @@ type Pages = {
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/terms-of-service" | "/privacy-policy" | "/products" | "/features" | "/features/pos" | "/features/boss" | "/faq" | "/news" | "/news/:id" | "/contact" | "/about";
+    page: "/" | "/terms" | "/privacy" | "/products" | "/features" | "/features/pos" | "/features/boss" | "/faq" | "/news" | "/news/:id" | "/contact" | "/about";
   };
   "routes/home.tsx": {
     id: "routes/home";
@@ -62,11 +62,11 @@ type RouteFiles = {
   };
   "routes/terms.tsx": {
     id: "routes/terms";
-    page: "/terms-of-service";
+    page: "/terms";
   };
   "routes/privacy.tsx": {
     id: "routes/privacy";
-    page: "/privacy-policy";
+    page: "/privacy";
   };
   "routes/products.tsx": {
     id: "routes/products";

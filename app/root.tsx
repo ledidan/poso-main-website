@@ -23,6 +23,16 @@ export const links: Route.LinksFunction = () => [
   },
 ];
 
+export const meta: Route.MetaFunction = () => {
+  return [
+    { title: "POSO – Nền tảng POS quản lý bán hàng bất kỳ ngành nghề nào" },
+    {
+      name: "description",
+      content:
+        "POSO giúp bất kỳ ngành nghề nào quản lý bán hàng một cách hiệu quả và tiện lợi.",
+    },
+  ];
+};
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="vi">

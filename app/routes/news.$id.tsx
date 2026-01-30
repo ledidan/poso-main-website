@@ -1,48 +1,72 @@
 import type { Route } from "./+types/news.$id";
-import { Link, useParams } from "react-router";
+import { Link } from "react-router";
 import { PageHero } from "../components/PageHero";
 import { SiteHeader } from "../components/SiteHeader";
 import { PageFooter } from "../components/PageFooter";
-import newsData from "../data/news.json";
-import categoriesData from "../data/categories.json";
+import {
+  fetchPostById,
+  fetchPosts,
+  fetchCategories,
+  formatDate,
+  getCategoryName,
+  stripHtml,
+  decodeHtmlEntities,
+  type WordPressPost,
+  type WordPressCategory,
+} from "../lib/wordpress-api";
 
-type NewsItem = typeof newsData[number];
-type Category = typeof categoriesData[number];
-
-function formatDate(dateString: string): string {
-  const date = new Date(dateString);
-  const months = [
-    "Tháng 1",
-    "Tháng 2",
-    "Tháng 3",
-    "Tháng 4",
-    "Tháng 5",
-    "Tháng 6",
-    "Tháng 7",
-    "Tháng 8",
-    "Tháng 9",
-    "Tháng 10",
-    "Tháng 11",
-    "Tháng 12",
-  ];
-  return `${date.getDate()} ${months[date.getMonth()]}, ${date.getFullYear()}`;
-}
-
-function getCategoryName(categoryId: number): string {
-  const category = categoriesData.find((cat) => cat.id === categoryId);
-  return category?.name || "Khác";
-}
-
-function formatViews(views: number): string {
-  if (views >= 1000) {
-    return `${(views / 1000).toFixed(1)}K`;
+export async function loader({ params }: Route.LoaderArgs) {
+  const postId = params.id;
+  
+  if (!postId) {
+    return {
+      post: null,
+      relatedPosts: [] as WordPressPost[],
+      categories: [] as WordPressCategory[],
+    };
   }
-  return views.toString();
+
+  try {
+    const [post, allPosts, categories] = await Promise.all([
+      fetchPostById(postId),
+      fetchPosts(),
+      fetchCategories(),
+    ]);
+
+    if (!post) {
+      return {
+        post: null,
+        relatedPosts: [] as WordPressPost[],
+        categories,
+      };
+    }
+
+    // Get related posts (same category, exclude current post)
+    const relatedPosts = allPosts
+      .filter(
+        (item) =>
+          item.id !== post.id &&
+          item.categories.some((catId) => post.categories.includes(catId))
+      )
+      .slice(0, 3);
+
+    return {
+      post,
+      relatedPosts,
+      categories,
+    };
+  } catch (error) {
+    console.error("Error loading post:", error);
+    return {
+      post: null,
+      relatedPosts: [] as WordPressPost[],
+      categories: [] as WordPressCategory[],
+    };
+  }
 }
 
-export function meta({ params }: Route.MetaArgs) {
-  const postId = parseInt(params.id || "0", 10);
-  const post = newsData.find((item) => item.id === postId && item.status === "publish");
+export function meta({ loaderData }: Route.MetaArgs) {
+  const { post } = loaderData;
 
   if (!post) {
     return [
@@ -51,19 +75,17 @@ export function meta({ params }: Route.MetaArgs) {
     ];
   }
 
-  const excerpt = post.excerpt.rendered.replace(/<[^>]*>/g, "").substring(0, 160);
+  const excerpt = stripHtml(post.excerpt.rendered).substring(0, 160);
+  const decodedTitle = decodeHtmlEntities(post.title.rendered);
 
   return [
-    { title: `${post.title.rendered} - POSO POS` },
+    { title: `${decodedTitle} - POSO POS` },
     { name: "description", content: excerpt },
   ];
 }
 
-export default function NewsDetail() {
-  const { id } = useParams();
-  const postId = parseInt(id || "0", 10);
-
-  const post = newsData.find((item) => item.id === postId && item.status === "publish");
+export default function NewsDetail({ loaderData }: Route.ComponentProps) {
+  const { post, relatedPosts, categories } = loaderData;
 
   if (!post) {
     return (
@@ -84,19 +106,10 @@ export default function NewsDetail() {
     );
   }
 
-  const categoryName = getCategoryName(post.categories[0] || 0);
+  const categoryName = getCategoryName(post.categories[0] || 0, categories);
   const formattedDate = formatDate(post.date);
-  const formattedViews = formatViews(post.views || 0);
-
-  // Get related posts (same category, exclude current post)
-  const relatedPosts = newsData
-    .filter(
-      (item) =>
-        item.id !== post.id &&
-        item.status === "publish" &&
-        item.categories.some((catId) => post.categories.includes(catId))
-    )
-    .slice(0, 3);
+  const decodedTitle = decodeHtmlEntities(post.title.rendered);
+  const featuredImage = post.jetpack_featured_media_url || null;
 
   return (
     <div className="min-h-screen bg-white">
@@ -104,14 +117,25 @@ export default function NewsDetail() {
 
       {/* Hero Section */}
       <PageHero
-        title={post.title.rendered}
-        subtitle={`${categoryName} • ${formattedDate} • ${formattedViews} lượt xem`}
+        title={decodedTitle}
+        subtitle={`${categoryName} • ${formattedDate}`}
       />
 
       {/* Article Content */}
       <article className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
+            {/* Featured Image */}
+            {featuredImage && (
+              <div className="mb-8 rounded-lg overflow-hidden">
+                <img
+                  src={featuredImage}
+                  alt={decodedTitle}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            )}
+
             {/* Category Badge */}
             <div className="mb-6">
               <span className=" font-semibold text-poso-primary bg-poso-primary/10 px-3 py-1 rounded-full">
@@ -144,15 +168,27 @@ export default function NewsDetail() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {relatedPosts.map((relatedPost) => {
                     const relatedCategoryName = getCategoryName(
-                      relatedPost.categories[0] || 0
+                      relatedPost.categories[0] || 0,
+                      categories
                     );
                     const relatedFormattedDate = formatDate(relatedPost.date);
+                    const relatedDecodedTitle = decodeHtmlEntities(relatedPost.title.rendered);
+                    const relatedFeaturedImage = relatedPost.jetpack_featured_media_url || null;
                     return (
                       <Link
                         key={relatedPost.id}
                         to={`/news/${relatedPost.id}`}
                         className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow block"
                       >
+                        {relatedFeaturedImage && (
+                          <div className="h-40 overflow-hidden">
+                            <img
+                              src={relatedFeaturedImage}
+                              alt={relatedDecodedTitle}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        )}
                         <div className="p-6">
                           <div className="flex items-center justify-between mb-3">
                             <span className=" font-semibold text-poso-primary bg-poso-primary/10 px-2 py-1 rounded-full">
@@ -163,10 +199,10 @@ export default function NewsDetail() {
                             </span>
                           </div>
                           <h3 className="text-lg font-bold text-poso-dark mb-2 line-clamp-2 hover:text-poso-primary transition-colors">
-                            {relatedPost.title.rendered}
+                            {relatedDecodedTitle}
                           </h3>
                           <p className=" text-poso-gray opacity-80 line-clamp-2">
-                            {relatedPost.excerpt.rendered.replace(/<[^>]*>/g, "")}
+                            {stripHtml(relatedPost.excerpt.rendered)}
                           </p>
                         </div>
                       </Link>
