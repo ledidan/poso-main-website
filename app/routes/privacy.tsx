@@ -50,7 +50,7 @@ export default function Privacy() {
         2. Mục đích sử dụng thông tin
       </h2>
       <ul className="mb-4 list-disc pl-6">
-        <li>Cung cấp và duy trì hoạt động của hệ thống POSO POS.</li>
+        <li>Cung cấp và duy trì hoạt động của hệ thống POSO.</li>
         <li>Quản lý đơn hàng, thanh toán và báo cáo kinh doanh.</li>
         <li>Cải thiện trải nghiệm người dùng và hiệu suất hệ thống.</li>
         <li>Gửi thông báo hệ thống, cảnh báo hoặc cập nhật quan trọng.</li>

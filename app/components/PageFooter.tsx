@@ -72,18 +72,18 @@ export function PageFooter() {
         </div>
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 ">
           <p>© 2024 POSO POS. Tất cả quyền được bảo lưu.</p>
-          <Link
-              to="/terms-of-service"
-              className="hover:text-white transition-colors text-amber-700 mx-1"
-            >
-              Điều khoản và điều kiện.
-            </Link>
-            <Link
-              to="/privacy-policy"
-              className="hover:text-white text-amber-700 transition-colors "
-            >
-              Quyền riêng tư
-            </Link>
+          <a
+            href="/terms-of-service"
+            className="mx-2 text-amber-500 hover:text-white underline"
+          >
+            Điều khoản & Điều kiện
+          </a>
+          <a
+            href="/privacy-policy"
+            className="mx-2 text-amber-500 hover:text-white underline"
+          >
+            Chính sách Quyền riêng tư
+          </a>
         </div>
       </div>
     </footer>
