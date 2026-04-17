@@ -1,327 +1,121 @@
-import { useState, useEffect } from "react";
-import { Link, NavLink, useLocation } from "react-router";
+import { useState } from "react";
+import { Link } from "react-router";
 
 type HeaderVariant = "home" | "page";
 
+type NavItem = {
+  label: string;
+  href: string;
+  external?: boolean;
+};
+
+const navItems: NavItem[] = [
+  { label: "Tính năng", href: "/#features", external: true },
+  { label: "Giải pháp", href: "/#solutions", external: true },
+  { label: "Bảng giá", href: "/#pricing", external: true },
+  { label: "Khách hàng", href: "/#customers", external: true },
+  { label: "Tài nguyên", href: "/tai-nguyen" },
+  { label: "Hỗ trợ", href: "/ho-tro" },
+];
+
 export function SiteHeader({ variant }: { variant: HeaderVariant }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [featuresDropdownOpen, setFeaturesDropdownOpen] = useState(false);
-  const location = useLocation();
-
-  // Auto-open dropdown when on features pages
-  useEffect(() => {
-    if (
-      location.pathname === "/features" ||
-      location.pathname === "/features/pos" ||
-      location.pathname === "/features/boss"
-    ) {
-      setFeaturesDropdownOpen(true);
-    }
-  }, [location.pathname]);
-
-  const navigationLinks = [
-    { to: "/products", label: "Sản phẩm" },
-    { to: "/faq", label: "FAQ" },
-    { to: "/news", label: "Tin tức" },
-    { to: "/contact", label: "Liên hệ" },
-    { to: "/about", label: "Giới thiệu" },
-  ];
-
-  const featuresSubmenu = [
-    { to: "/features", label: "Tất cả tính năng" },
-    { to: "/features/pos", label: "POSO POS" },
-    { to: "/features/boss", label: "POSO Boss" },
-  ];
 
   return (
-    <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
-      <nav className="max-w-6xl mx-auto px-4 py-3">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center justify-start gap-8">
-            <Link to="/" className="flex items-center">
-              <img src="/logo.png" alt="POSO" className="h-6" />
-            </Link>
+    <header className="sticky top-0 z-50 border-b border-orange-100 bg-white/95 backdrop-blur">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+        <Link to="/" className="flex items-center">
+          <img src="/branding/poso-logo-grocery.png" alt="POSO" className="h-8 w-auto" />
+        </Link>
 
-            <div className="hidden md:flex items-center justify-start space-x-4 text-[14px]">
-              <NavLink
-                to="/products"
-                className={({ isActive }) =>
-                  isActive
-                    ? "text-poso-primary font-medium"
-                    : "text-poso-dark hover:text-poso-primary transition-colors "
-                }
+        <div className="hidden items-center gap-6 text-sm md:flex">
+          {navItems.map((item) =>
+            item.external ? (
+              <a
+                key={item.label}
+                href={item.href}
+                className="font-medium text-poso-dark transition hover:text-poso-primary"
               >
-                Sản phẩm
-              </NavLink>
-
-              {/* Features Dropdown */}
-              <div
-                className="relative"
-                onMouseEnter={() => setFeaturesDropdownOpen(true)}
-                onMouseLeave={() => setFeaturesDropdownOpen(false)}
-              >
-                <NavLink
-                  to="/features"
-                  className={({ isActive }) =>
-                    isActive
-                      ? "text-poso-primary flex items-center gap-1 font-medium"
-                      : " hover:text-poso-primary transition-colors flex items-center gap-1"
-                  }
-                >
-                  Tính năng
-                  <svg
-                    className={`w-4 h-4 transition-transform ${
-                      featuresDropdownOpen ? "rotate-180" : ""
-                    }`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </NavLink>
-
-                {featuresDropdownOpen && (
-                  <div className="absolute left-0 right-0 mx-auto bg-white rounded-xl shadow-xl border border-gray-200 p-6 w-[520px]">
-                    <div className="grid grid-cols-2 gap-6">
-                      <NavLink
-                        to="/features/pos"
-                        onClick={() => setFeaturesDropdownOpen(false)}
-                        className="group rounded-lg p-4 hover:border-poso-primary hover:bg-poso-primary/5 transition"
-                      >
-                        <div className="mb-3">
-                          {/* icon */}
-                          <div className="w-full h-full text-poso-primary flex items-center justify-center rounded-md">
-                            <img
-                              src="/images/pos-staff.png"
-                              alt="POSO POS"
-                              className="w-full h-full"
-                            />
-                          </div>
-                        </div>
-                        <h3 className="font-semibold text-center text-gray-900 group-hover:text-poso-primary">
-                          POSO POS
-                        </h3>
-                        <p className=" text-gray-500 mt-1">
-                          Dành cho Quản lý và Nhân viên
-                        </p>
-                      </NavLink>
-
-                      <NavLink
-                        to="/features/boss"
-                        onClick={() => setFeaturesDropdownOpen(false)}
-                        className="group rounded-lg  p-4 hover:border-poso-primary hover:bg-poso-primary/5 transition"
-                      >
-                        <div className="mb-3">
-                          <div className="w-full h-full text-poso-primary flex items-center justify-center rounded-md">
-                            <img
-                              src="/images/pos-terminal-owner.png"
-                              alt="POSO Boss"
-                              className="w-full h-full"
-                            />
-                          </div>
-                        </div>
-                        <h3 className="font-semibold text-center text-gray-900 group-hover:text-poso-primary">
-                          POSO Boss
-                        </h3>
-                        <p className=" text-gray-500 mt-1">
-                          Dành cho Chủ Nhà Hàng
-                        </p>
-                      </NavLink>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {navigationLinks.slice(1).map((link) => (
-                <NavLink
-                  key={link.to}
-                  to={link.to}
-                  className={({ isActive }) =>
-                    isActive
-                      ? "text-poso-primary font-medium"
-                      : "hover:text-poso-primary transition-colors"
-                  }
-                >
-                  {link.label}
-                </NavLink>
-              ))}
-            </div>
-          </div>
-
-          <div className="hidden md:flex items-center justify-end space-x-4">
-            {variant === "home" ? (
-              <>
-                <Link
-                  to={`${import.meta.env.VITE_MERCHANT_URL}`}
-                  className="border border-poso-primary text-poso-primary px-6 py-2 rounded-full font-semibold hover:text-white hover:bg-poso-primary-hover transition-colors"
-                >
-                  Đăng ký
-                </Link>
-              </>
+                {item.label}
+              </a>
             ) : (
               <Link
-                to={`${import.meta.env.VITE_MERCHANT_URL}`}
-                className="border border-poso-primary text-poso-primary px-6 py-2 rounded-full font-semibold hover:text-white hover:bg-poso-primary-hover transition-colors"
+                key={item.label}
+                to={item.href}
+                className="font-medium text-poso-dark transition hover:text-poso-primary"
               >
-                Dùng thử miễn phí
+                {item.label}
               </Link>
-            )}
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMobileMenuOpen((v) => !v)}
-            className="md:hidden p-2 cursor-pointer text-poso-gray hover:text-poso-primary transition-colors"
-            aria-label="Toggle menu"
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              {mobileMenuOpen ? (
-                <path d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
+            )
+          )}
         </div>
 
-        {/* Mobile Menu - Slide in from right */}
-        <div className="md:hidden">
-          <div
-            className={`fixed inset-0 z-40 flex justify-end transform transition-transform duration-300 ${
-              mobileMenuOpen ? "translate-x-0" : "translate-x-full"
+        <div className="hidden md:block">
+          <Link
+            to={`${import.meta.env.VITE_MERCHANT_URL}`}
+            className={`rounded-full px-5 py-2 font-semibold transition ${
+              variant === "home"
+                ? "bg-poso-primary text-white hover:bg-poso-primary-hover"
+                : "border border-poso-primary text-poso-primary hover:bg-poso-primary hover:text-white"
             }`}
           >
-            {/* Overlay */}
-            <button
-              type="button"
-              aria-label="Đóng menu"
-              className="flex-1 bg-black/40"
-              onClick={() => {
-                setMobileMenuOpen(false);
-                setFeaturesDropdownOpen(false);
-              }}
-            />
+            Dùng thử miễn phí
+          </Link>
+        </div>
 
-            {/* Panel */}
-            <div className="w-80 max-w-[80%] h-full bg-white shadow-xl border-l border-gray-200 px-4 py-6 overflow-y-auto">
-              <div className="flex flex-col space-y-4">
-                <NavLink
-                  to="/products"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={({ isActive }) =>
-                    isActive
-                      ? "text-poso-primary font-semibold transition-colors py-2"
-                      : "text-poso-gray hover:text-poso-primary transition-colors py-2"
-                  }
-                >
-                  Sản phẩm
-                </NavLink>
+        <button
+          type="button"
+          onClick={() => setMobileMenuOpen((v) => !v)}
+          className="p-2 md:hidden"
+          aria-label="Toggle menu"
+        >
+          <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            {mobileMenuOpen ? (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            ) : (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            )}
+          </svg>
+        </button>
+      </nav>
 
-                {/* Mobile Features Dropdown */}
-                <div>
-                  <button
-                    onClick={() =>
-                      setFeaturesDropdownOpen(!featuresDropdownOpen)
-                    }
-                    className="w-full text-left text-poso-gray hover:text-poso-primary transition-colors py-2 flex items-center justify-between"
-                  >
-                    Tính năng
-                    <svg
-                      className={`w-4 h-4 transition-transform ${
-                        featuresDropdownOpen ? "rotate-180" : ""
-                      }`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </button>
-                  {featuresDropdownOpen && (
-                    <div className="pl-4 mt-2 space-y-2">
-                      {featuresSubmenu.map((item) => (
-                        <NavLink
-                          key={item.to}
-                          to={item.to}
-                          onClick={() => {
-                            setMobileMenuOpen(false);
-                            setFeaturesDropdownOpen(false);
-                          }}
-                          className={({ isActive }) =>
-                            `block py-2 transition-colors ${
-                              isActive
-                                ? "text-poso-primary font-semibold"
-                                : "text-poso-gray hover:text-poso-primary"
-                            }`
-                          }
-                        >
-                          {item.label}
-                        </NavLink>
-                      ))}
-                    </div>
-                  )}
-                </div>
-
-                {navigationLinks.slice(1).map((link) => (
-                  <NavLink
-                    key={link.to}
-                    to={link.to}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className={({ isActive }) =>
-                      isActive
-                        ? "text-poso-primary font-semibold transition-colors py-2"
-                        : "text-poso-gray hover:text-poso-primary transition-colors py-2"
-                    }
-                  >
-                    {link.label}
-                  </NavLink>
-                ))}
-
-                <div className="flex flex-col space-y-2 pt-2 border-t border-gray-200">
-                  {variant === "home" ? (
-                    <>
-                      <Link
-                        to={`${import.meta.env.VITE_MERCHANT_URL}`}
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="bg-poso-primary text-white px-6 py-2 rounded-full font-semibold hover:text-white hover:bg-poso-primary-hover transition-colors text-center"
-                      >
-                        Đăng ký
-                      </Link>
-                    </>
-                  ) : (
-                    <Link
-                      to={`${import.meta.env.VITE_MERCHANT_URL}`}
+      {mobileMenuOpen && (
+        <div className="border-t border-orange-100 bg-white px-4 py-4 md:hidden">
+          <div className="flex flex-col gap-2">
+            {navItems.flatMap((item) =>
+              item.external
+                ? [
+                    <a
+                      key={item.label}
+                      href={item.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="bg-poso-primary text-white px-6 py-2 rounded-full font-semibold hover:text-white hover:bg-poso-primary-hover transition-colors text-center"
+                      className="rounded-lg px-3 py-2 font-medium text-poso-dark transition hover:bg-orange-50"
                     >
-                      Dùng thử miễn phí
-                    </Link>
-                  )}
-                </div>
-              </div>
-            </div>
+                      {item.label}
+                    </a>,
+                  ]
+                : [
+                    <Link
+                      key={item.label}
+                      to={item.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="rounded-lg px-3 py-2 font-medium text-poso-dark transition hover:bg-orange-50"
+                    >
+                      {item.label}
+                    </Link>,
+                  ]
+            )}
+
+            <Link
+              to={`${import.meta.env.VITE_MERCHANT_URL}`}
+              onClick={() => setMobileMenuOpen(false)}
+              className="mt-2 rounded-full bg-poso-primary px-5 py-2 text-center font-semibold text-white"
+            >
+              Dùng thử miễn phí
+            </Link>
           </div>
         </div>
-      </nav>
+      )}
     </header>
   );
 }

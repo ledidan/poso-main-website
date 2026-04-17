@@ -4,28 +4,47 @@ export function HomeFooter() {
   return (
     <footer className="bg-poso-dark text-white py-12">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8">
           <div>
             {/* <h4 className="text-xl font-bold text-poso-primary mb-4">POSO</h4> */}
             <img src="/logo.png" alt="POSO POS" className="w-20 h-6" />
             <br />
             <p className="text-gray-400  leading-relaxed">
-              Giải pháp quản lý bán hàng hàng đầu Việt Nam. Chúng tôi cung cấp
-              các sản phẩm và dịch vụ tốt nhất để giúp doanh nghiệp của bạn phát
-              triển.
+              POSO xây dựng Mobile App và Web App giúp cửa hàng tạp hoá bán
+              hàng nhanh, quản lý gọn và vận hành ổn định mỗi ngày.
             </p>
           </div>
           <div>
-            <h5 className="font-semibold mb-4">Liên hệ</h5>
-            <ul className="space-y-2 text-gray-400 ">
-              <li>Email: poso@autuna.com</li>
-              <li>Địa chỉ: 198 QL55, Xã Hàm Tân, Tỉnh Lâm Đồng Việt Nam</li>
-            </ul>
-            <h5 className="font-semibold mb-4 mt-6">Sitemap</h5>
+            <h5 className="font-semibold mb-4">Sản phẩm</h5>
             <ul className="space-y-2 text-gray-400 ">
               <li>
-                <Link to="/faq" className="hover:text-white transition-colors">
-                  FAQ
+                <a href="/#features" className="hover:text-white transition-colors">
+                  Tính năng
+                </a>
+              </li>
+              <li>
+                <a href="/#solutions" className="hover:text-white transition-colors">
+                  Giải pháp
+                </a>
+              </li>
+              <li>
+                <a href="/#pricing" className="hover:text-white transition-colors">
+                  Bảng giá
+                </a>
+              </li>
+              <li>
+                <a href="/#customers" className="hover:text-white transition-colors">
+                  Khách hàng
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h5 className="font-semibold mb-4">Tài nguyên</h5>
+            <ul className="space-y-2 text-gray-400 ">
+              <li>
+                <Link to="/tai-nguyen" className="hover:text-white transition-colors">
+                  Blog & tài nguyên
                 </Link>
               </li>
               <li>
@@ -34,19 +53,30 @@ export function HomeFooter() {
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/contact"
-                  className="hover:text-white transition-colors"
-                >
-                  Liên hệ
+                <Link to="/faq" className="hover:text-white transition-colors">
+                  FAQ
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/about"
-                  className="hover:text-white transition-colors"
-                >
-                  Giới thiệu
+                <Link to="/ho-tro" className="hover:text-white transition-colors">
+                  Trung tâm hỗ trợ
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h5 className="font-semibold mb-4">Liên hệ</h5>
+            <ul className="space-y-2 text-gray-400 ">
+              <li>Email: poso@autuna.com</li>
+              <li>Địa chỉ: 198 QL55, Xã Hàm Tân, Tỉnh Lâm Đồng Việt Nam</li>
+              <li>
+                <Link to="/contact" className="hover:text-white transition-colors">
+                  Liên hệ tư vấn
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="hover:text-white transition-colors">
+                  Về POSO
                 </Link>
               </li>
             </ul>

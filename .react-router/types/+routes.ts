@@ -14,6 +14,12 @@ type Pages = {
   "/": {
     params: {};
   };
+  "/tai-nguyen": {
+    params: {};
+  };
+  "/ho-tro": {
+    params: {};
+  };
   "/terms": {
     params: {};
   };
@@ -54,11 +60,19 @@ type Pages = {
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/terms" | "/privacy" | "/products" | "/features" | "/features/pos" | "/features/boss" | "/faq" | "/news" | "/news/:id" | "/contact" | "/about";
+    page: "/" | "/tai-nguyen" | "/ho-tro" | "/terms" | "/privacy" | "/products" | "/features" | "/features/pos" | "/features/boss" | "/faq" | "/news" | "/news/:id" | "/contact" | "/about";
   };
   "routes/home.tsx": {
     id: "routes/home";
     page: "/";
+  };
+  "routes/tai-nguyen.tsx": {
+    id: "routes/tai-nguyen";
+    page: "/tai-nguyen";
+  };
+  "routes/ho-tro.tsx": {
+    id: "routes/ho-tro";
+    page: "/ho-tro";
   };
   "routes/terms.tsx": {
     id: "routes/terms";
@@ -109,6 +123,8 @@ type RouteFiles = {
 type RouteModules = {
   "root": typeof import("./app/root.tsx");
   "routes/home": typeof import("./app/routes/home.tsx");
+  "routes/tai-nguyen": typeof import("./app/routes/tai-nguyen.tsx");
+  "routes/ho-tro": typeof import("./app/routes/ho-tro.tsx");
   "routes/terms": typeof import("./app/routes/terms.tsx");
   "routes/privacy": typeof import("./app/routes/privacy.tsx");
   "routes/products": typeof import("./app/routes/products.tsx");

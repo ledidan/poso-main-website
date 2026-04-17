@@ -1,52 +1,24 @@
 import type { Route } from "./+types/home";
 import { SiteHeader } from "../components/SiteHeader";
-import { HomeHero } from "../components/HomeHero";
-import { HomeHighlights } from "../components/HomeHighlights";
-import { HomePOSSection } from "../components/HomePOSSection";
-import { HomeVideoIntro } from "../components/HomeVideoIntro";
-import { HomeTestimonials } from "../components/HomeTestimonials";
-import { HomeNewsSection } from "../components/HomeNewsSection";
-import { HomeBottomCTA } from "../components/HomeBottomCTA";
 import { HomeFooter } from "../components/HomeFooter";
-import { fetchPosts } from "../lib/wordpress-api";
-
-export async function loader({}: Route.LoaderArgs) {
-  try {
-    const posts = await fetchPosts();
-    return {
-      posts: posts.slice(0, 4), // Only get first 4 posts for home page
-    };
-  } catch (error) {
-    console.error("Error loading news for home:", error);
-    return {
-      posts: [],
-    };
-  }
-}
+import { HomePage } from "../components/home/HomePage";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "POSO POS" },
+    { title: "POSO | Bán hàng tinh gọn dành cho tạp hoá" },
     {
       name: "description",
       content:
-        "POSO là Nhãn Hiệu Máy Bán Hàng Hàng Đầu Thế Giới. Giải pháp quản lý bán hàng duy nhất bạn cần.",
+        "POSO giúp cửa hàng tạp hoá bán nhanh tại quầy, quản lý tồn kho chính xác và chốt sổ cuối ngày trong 5 phút.",
     },
   ];
 }
 
-export default function Home({ loaderData }: Route.ComponentProps) {
+export default function Home() {
   return (
-    <div className="min-h-screen bg-white ">
+    <div className="min-h-screen bg-white">
       <SiteHeader variant="home" />
-
-      <HomeHero />
-      <HomeHighlights />
-      <HomePOSSection />
-      <HomeVideoIntro />
-      <HomeTestimonials />
-      <HomeNewsSection posts={loaderData.posts} />
-      <HomeBottomCTA />
+      <HomePage />
       <HomeFooter />
     </div>
   );

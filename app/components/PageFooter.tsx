@@ -4,7 +4,7 @@ export function PageFooter() {
   return (
     <footer className="bg-[#191b1e] text-white py-12">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           <div>
             {/* <h4 className="text-xl font-bold mb-4">POSO POS</h4> */}
             <img src="/logo.png" alt="POSO POS" className="w-20 h-6" />
@@ -16,19 +16,44 @@ export function PageFooter() {
             <h5 className="font-semibold mb-4">Sản phẩm</h5>
             <ul className="space-y-2 text-gray-400 ">
               <li>
+                <a href="/#features" className="hover:text-white transition-colors">
+                  Tính năng
+                </a>
+              </li>
+              <li>
+                <a href="/#solutions" className="hover:text-white transition-colors">
+                  Giải pháp
+                </a>
+              </li>
+              <li>
+                <a href="/#pricing" className="hover:text-white transition-colors">
+                  Bảng giá
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h5 className="font-semibold mb-4">Tài nguyên</h5>
+            <ul className="space-y-2 text-gray-400 ">
+              <li>
                 <Link
-                  to="/products"
+                  to="/tai-nguyen"
                   className="hover:text-white transition-colors"
                 >
-                  Sản phẩm
+                  Blog & tài nguyên
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/features"
+                  to="/news"
                   className="hover:text-white transition-colors"
                 >
-                  Tính năng
+                  Tin tức
+                </Link>
+              </li>
+              <li>
+                <Link to="/faq" className="hover:text-white transition-colors">
+                  FAQ
                 </Link>
               </li>
             </ul>
@@ -37,15 +62,12 @@ export function PageFooter() {
             <h5 className="font-semibold mb-4">Hỗ trợ</h5>
             <ul className="space-y-2 text-gray-400 ">
               <li>
-                <Link to="/faq" className="hover:text-white transition-colors">
-                  FAQ
+                <Link to="/ho-tro" className="hover:text-white transition-colors">
+                  Trung tâm hỗ trợ
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/contact"
-                  className="hover:text-white transition-colors"
-                >
+                <Link to="/contact" className="hover:text-white transition-colors">
                   Liên hệ
                 </Link>
               </li>
@@ -55,17 +77,14 @@ export function PageFooter() {
             <h5 className="font-semibold mb-4">Công ty</h5>
             <ul className="space-y-2 text-gray-400 ">
               <li>
-                <Link
-                  to="/about"
-                  className="hover:text-white transition-colors"
-                >
+                <Link to="/about" className="hover:text-white transition-colors">
                   Giới thiệu
                 </Link>
               </li>
               <li>
-                <Link to="/news" className="hover:text-white transition-colors">
-                  Tin tức
-                </Link>
+                <a href="/#customers" className="hover:text-white transition-colors">
+                  Khách hàng
+                </a>
               </li>
             </ul>
           </div>
